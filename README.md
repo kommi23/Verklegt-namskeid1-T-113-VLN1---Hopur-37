@@ -57,11 +57,22 @@ Umræður dagsins:
     hvaða user group væri með hvaða requirements.
 
 Dagskrá fyrir næsta fund:
-    Næsti fundur er boðaður föstudaginn 27. klukkan 10:00
+    Næsti fundur er boðaður miðvikudaginn 27. klukkan 10:00
 
     1)Fyrsta markmið okkar er að klára B og C kröfur fyrir requirement 
     analysis.
 
     2)Byrja á að gera use cases útfrá requirement list.
 
-###################lok færslu fyrir (26.11)###########################   
+###################lok færslu fyrir (27.11)###########################   
+
+################## færsla fyrir (28.11) ##############################
+
+Unnum í Use cases og wireframeinu. hönnuðum hvernig TUI á að líta út. ætlum líklegast 
+að klára Use cases fyrir morgundaginn og byrja svo í að vinna í klasaritunum.
+fengum leiðbeiningar frá kennara TA og hann skýrði fyrir okkur mörg atriði.
+Mættir:
+
+################# lok færslu fyrir (28.11) ##########################
+
+
