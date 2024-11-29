@@ -75,4 +75,17 @@ Mættir:
 
 ################# lok færslu fyrir (28.11) ##########################
 
+################ færsla fyrir (29.11) ###############################
+
+fundað var í byrjun dags og ákveðið var að klára bæði klasaritið fyrir 3 laga hönnunnina og model klasana.
+
+klasaritið og model klasarnir voru kláraðir og við skilum skýrlsunni seinna í kvöld eftir að hafa farið yfir
+hana vel.
+mættir: 
+  Anton Breki Bjarnþórsson
+  Jóhann Gunnar Bergþórsson
+  Victor Blær Ciesielski Jensen
+  Viktor Már Heiðarsson
+
+############### lok færslu (29.11) ################################
 
