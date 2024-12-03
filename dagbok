@@ -100,3 +100,27 @@ Dagskrá fyrir næsta fund:
         Helsta markmið okkar í næsta fundi er að skrifa meiri kóða.
 
 #################lok færsla 6 (2.12)##########################################
+
+#################færsla 7 (3.12)#############################################
+
+Mættir: Anton Breki Bjarnþórsson 
+        Kormákur Máni Bjarnason 
+        Jóhann Gunnar Bergþórsson 
+        Alexander Joseph Emilsson 
+        Victor Blær Ciesielski Jensen 
+        Viktor Már Heiðarsson
+
+Umræður dagsins: 1)Við byrjuðum að ræða mikið um Data layerinn, sérstaklega 
+                   hvernig hann communicatear við logic layer og hvernig 
+                   error messages eru passed frá data uppi logic layer.
+
+Dagskrá fyrir næsta fund: 
+        Næsti fundur er boðaður miðvikudaginn 3. klukkan 12:00
+        
+        Helsta markmið okkar fyrir næsta fund er að taka stöðuna hjá öllum 
+        liðum sem eru að vinna í sitthvorum layers og að ná að tala við Gylfa 
+        svo hann geti sagt okkur hvort við séum nokkuð að brjóta einhverjar 
+        reglur í 3 layer architecture. Einnig langar okkar að koma kóðanum á 
+        þann stað þar sem allir layers communicatea saman.
+
+#################lok færsla 7 (3.12)##########################################
