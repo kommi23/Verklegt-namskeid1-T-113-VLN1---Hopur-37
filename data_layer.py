@@ -4,80 +4,118 @@ class EmployeeData:
     def __init__(self):
         pass
     def add_employee(self, employee):
-        with open("employees.csv", "a") as csv_file:
-            csv_file.write(employee)
+        try:
+            with open("employees.csv", "a") as csv_file:
+                csv_file.write(employee)
+                return True 
+        except:
+            return None 
     def get_employees(self):
         employees = []
-        with open("employees.csv", "r") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                employees.append(line)
+        try:
+            with open("employees.csv", "r") as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for line in csv_reader:
+                    employees.append(line)
             return employees
-        
+        except:
+            return None
+    def get_singular_employee(self, employee): 
+        try:    
+            with open("filefile.csv", "r") as csv_file:
+                for line in csv_file:
+                    if employee in line:
+                        return employee
+        except: 
+            return None 
+                
 class ProbertyData:
     def __init__(self):
         pass
     def add_property(self, proberty):
-        with open("properties.csv", "a") as csv_file:
-            csv_file.write(proberty)
+        try:
+            with open("properties.csv", "a") as csv_file:
+                csv_file.write(proberty)
+                return True
+        except: return None
     def get_proberty(self):
         properties = []
-        with open("properties.csv") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                properties.append(line)
-        return properties
+        try:
+            with open("properties.csv") as csv_file:
+                csv_reader = csv.reader(csv_file)
+
+                for line in csv_reader:
+                    properties.append(line)
+            return properties
+        except: return None
 
 class LocationData:
     def __init__(self):
         pass
     def get_locations(self):
         locations = []
-        with open("locations.csv", "r") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                locations.append(line)
-        return locations
+        try:
+            with open("locations.csv", "r") as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for line in csv_reader:
+                    locations.append(line)
+            return locations
+        except: return None
 
 class MaintenanceData:
     def __init__(self):
         pass
     def add_maintenance(self, maintenance):
-        with open("maintenances.csv", "a") as csv_file:
-            csv_file.write(maintenance)
+        try:
+            with open("maintenances.csv", "a") as csv_file:
+                csv_file.write(maintenance)
+                return True 
+        except: return None
     def get_maintenences(self):
         maintenances = []
-        with open("maintenances.csv", "r") as csv_file:
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                maintenances.append(line)
-        return maintenances
+        try:
+            with open("maintenances.csv", "r") as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for line in csv_reader:
+                    maintenances.append(line)
+            return maintenances
+        except: return None
 
 class MaintenanceReportData:
     def __init__(self):
         pass
     def add_maintenancereport(self, maintenancereport):
-        with open("maintenancereports.csv", "a") as csv_file:
-            csv_file.write(maintenancereport)        
+        try:
+            with open("maintenancereports.csv", "a") as csv_file:
+                csv_file.write(maintenancereport) 
+                return True
+        except: return None        
     def get_maintenanreport(self):
-        with open("maintenancereports.csv", "r") as csv_file:
-            maintenancereports = []
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                maintenancereports.append(line)
-        return maintenancereports
-
+        try:
+            with open("maintenancereports.csv", "r") as csv_file:
+                maintenancereports = []
+                csv_reader = csv.reader(csv_file)
+                for line in csv_reader:
+                    maintenancereports.append(line)
+            return maintenancereports
+        except: return None 
 class ContractorReport:
     def __init__(self):
         pass
     def add_contractoreports(self, contractorreport):
-        with open("contractorreports.csv", "a") as csv_file:
-            csv_file.write(contractorreport)
+        try:
+            with open("contractorreports.csv", "a") as csv_file:
+                csv_file.write(contractorreport)
+                return True
+        except: return None
     def get_contractorReports(self):
         contractorreports = []
-        with open("contractorreports.csv", "r") as csv_file:
-            contractorreports = []
-            csv_reader = csv.reader(csv_file)
-            for line in csv_reader:
-                contractorreports.append(line)
-        return contractorreports      
+        try:
+            with open("contractorreports.csv", "r") as csv_file:
+                contractorreports = []
+                csv_reader = csv.reader(csv_file)
+                for line in csv_reader:
+                    contractorreports.append(line)
+            return contractorreports      
+        except: return None 
+        
