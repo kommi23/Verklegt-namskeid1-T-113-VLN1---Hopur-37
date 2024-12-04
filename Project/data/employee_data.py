@@ -6,7 +6,8 @@ class EmployeeData:
     def add_employee(self, employee):
         try:
             with open("employees.csv", "a", newline='', encoding='utf-8') as csv_file:
-                csv_file.write(employee)
+                list_writer = csv.writer(csv_file)
+                list_writer.writerow(employee)
                 return True 
         except: raise 
             
