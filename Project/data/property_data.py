@@ -8,7 +8,7 @@ class ProbertyData:
             with open("properties.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(proberty)
                 return True
-        except: return None
+        except: raise
     def get_proberty(self):
         properties = []
         try:
@@ -18,4 +18,4 @@ class ProbertyData:
                 for line in csv_reader:
                     properties.append(line)
             return properties
-        except: return None
+        except: raise

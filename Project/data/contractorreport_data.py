@@ -8,7 +8,7 @@ class ContractorReport:
             with open("contractorreports.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(contractorreport)
                 return True
-        except: return None
+        except: raise
     def get_contractorReports(self):
         contractorreports = []
         try:
@@ -18,4 +18,4 @@ class ContractorReport:
                 for line in csv_reader:
                     contractorreports.append(line)
             return contractorreports      
-        except: return None 
+        except: raise 

@@ -11,4 +11,4 @@ class LocationData:
                 for line in csv_reader:
                     locations.append(line)
             return locations
-        except: return None
+        except: raise 
