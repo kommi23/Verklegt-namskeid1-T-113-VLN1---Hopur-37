@@ -5,14 +5,14 @@ class ProbertyData:
         pass
     def add_property(self, proberty):
         try:
-            with open("properties.csv", "a") as csv_file:
+            with open("properties.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(proberty)
                 return True
         except: return None
     def get_proberty(self):
         properties = []
         try:
-            with open("properties.csv") as csv_file:
+            with open("properties.csv", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
 
                 for line in csv_reader:
