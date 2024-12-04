@@ -8,8 +8,8 @@ class EmployeeData:
             with open("employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(employee)
                 return True 
-        except:
-            return None 
+        except: raise 
+            
     def get_employees(self):
         employees = []
         try:
@@ -18,13 +18,13 @@ class EmployeeData:
                 for line in csv_reader:
                     employees.append(line)
             return employees
-        except:
-            return None
+        except: raise 
     def get_singular_employee(self, employee, newline='', encoding='utf-8'): 
         try:    
-            with open("filefile.csv", "r") as csv_file:
-                for line in csv_file:
-                    if employee in line:
-                        return employee
-        except: 
-            return None 
+                with open("employees.csv", "r") as csv_file:
+                    for line in csv_file:
+                        line = line.split(",")
+                        if self in line[0]:
+                            return line
+            
+        except: raise  
