@@ -21,7 +21,7 @@ class EmployeeData:
         except: raise 
     def get_singular_employee(self): 
         try:    
-                with open("Project/data/csv_files/employees.csv", "r") as csv_file:
+                with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
                         line = line.split(",")
                         if self in line[0]:
