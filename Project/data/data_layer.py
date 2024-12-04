@@ -84,7 +84,7 @@ class MaintenanceData:
 class MaintenanceReportData:
     def __init__(self):
         pass
-    def add_maintenancereport(self, maintenancereport, newline='', encoding='utf-8'):
+    def add_maintenancereport(self, maintenancereport):
         try:
             with open("maintenancereports.csv", "a") as csv_file:
                 csv_file.write(maintenancereport) 
