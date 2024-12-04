@@ -13,15 +13,15 @@ class Employee:
         # Loop through all the employees and check if the id, name or email already exist in the db
         for existing_employee in all_employees:
             if employee[0] == existing_employee[0]:
-                return "An employee with this id already exists"
-            if employee[1] == existing_employee[1]:
-                return "An employee with this name already exists"
-            if employee[4] == existing_employee[4]:
-                return "An employee with this email already exists"
-            
-        # If none of the flags are raised append the new employee to the employee list and return it
-        employee_list.append(employee)
-        return employee_list
+                raise RuntimeError("An employee with this id already exists")
+            elif employee[1] == existing_employee[1]:
+                raise RuntimeError("An employee with this name already exists")
+            elif employee[4] == existing_employee[4]:
+                raise RuntimeError("An employee with this email already exists")
+            else:
+                # If none of the flags are raised append the new employee to the employee list and return it
+                employee_list.append(employee)
+                return employee_list
 
     # Get the list of all employees in the data layer and send it to the UI layer
     def get_employee_list(data_wrapper, __):
