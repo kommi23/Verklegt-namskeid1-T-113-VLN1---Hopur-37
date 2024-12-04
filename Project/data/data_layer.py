@@ -5,7 +5,7 @@ class EmployeeData:
         pass
     def add_employee(self, employee):
         try:
-            with open("employees.csv", "a") as csv_file:
+            with open("employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(employee)
                 return True 
         except:
@@ -13,7 +13,7 @@ class EmployeeData:
     def get_employees(self):
         employees = []
         try:
-            with open("employees.csv", "r") as csv_file:
+            with open("employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
                     employees.append(line)
@@ -22,7 +22,7 @@ class EmployeeData:
             return None
     def get_singular_employee(self, employee): 
         try:    
-            with open("filefile.csv", "r") as csv_file:
+            with open("filefile.csv", "r", newline='', encoding='utf-8') as csv_file:
                 for line in csv_file:
                     if employee in line:
                         return employee
@@ -34,14 +34,14 @@ class ProbertyData:
         pass
     def add_property(self, proberty):
         try:
-            with open("properties.csv", "a") as csv_file:
+            with open("properties.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(proberty)
                 return True
         except: return None
     def get_proberty(self):
         properties = []
         try:
-            with open("properties.csv") as csv_file:
+            with open("properties.csv", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
 
                 for line in csv_reader:
@@ -55,7 +55,7 @@ class LocationData:
     def get_locations(self):
         locations = []
         try:
-            with open("locations.csv", "r") as csv_file:
+            with open("locations.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
                     locations.append(line)
@@ -67,14 +67,14 @@ class MaintenanceData:
         pass
     def add_maintenance(self, maintenance):
         try:
-            with open("maintenances.csv", "a") as csv_file:
+            with open("maintenances.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(maintenance)
                 return True 
         except: return None
     def get_maintenences(self):
         maintenances = []
         try:
-            with open("maintenances.csv", "r") as csv_file:
+            with open("maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
                     maintenances.append(line)
@@ -92,7 +92,7 @@ class MaintenanceReportData:
         except: return None        
     def get_maintenanreport(self):
         try:
-            with open("maintenancereports.csv", "r") as csv_file:
+            with open("maintenancereports.csv", "r", newline='', encoding='utf-8') as csv_file:
                 maintenancereports = []
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
@@ -104,14 +104,14 @@ class ContractorReport:
         pass
     def add_contractoreports(self, contractorreport):
         try:
-            with open("contractorreports.csv", "a") as csv_file:
+            with open("contractorreports.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(contractorreport)
                 return True
         except: return None
     def get_contractorReports(self):
         contractorreports = []
         try:
-            with open("contractorreports.csv", "r") as csv_file:
+            with open("contractorreports.csv", "r", newline='', encoding='utf-8') as csv_file:
                 contractorreports = []
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
