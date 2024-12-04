@@ -110,9 +110,9 @@ Mættir: Anton Breki Bjarnþórsson
         Victor Blær Ciesielski Jensen 
         Viktor Már Heiðarsson
 
-Umræður dagsins: 1)Við byrjuðum að ræða mikið um Data layerinn, sérstaklega 
-                   hvernig hann communicatear við logic layer og hvernig 
-                   error messages eru passed frá data uppi logic layer.
+Umræður dagsins: Við byrjuðum að ræða mikið um Data layerinn, sérstaklega 
+                 hvernig hann communicatear við logic layer og hvernig 
+                 error messages eru passed frá data uppi logic layer.
 
 Dagskrá fyrir næsta fund: 
         Næsti fundur er boðaður miðvikudaginn 3. klukkan 12:00
@@ -124,3 +124,31 @@ Dagskrá fyrir næsta fund:
         þann stað þar sem allir layers communicatea saman.
 
 #################lok færsla 7 (3.12)##########################################
+
+
+
+#################færsla 8 (4.12)##############################################
+
+Mættir: Anton Breki Bjarnþórsson 
+        Kormákur Máni Bjarnason 
+        Jóhann Gunnar Bergþórsson 
+        Alexander Joseph Emilsson 
+        Victor Blær Ciesielski Jensen 
+        Viktor Már Heiðarsson
+
+Umræður dagsins: 1)Við hittusmt klukkan 12:00 í sólinni og ræddum mikið um 
+                   uppsetningu forritsins. fyrsta og það helsta sem við ræddum 
+                   saman var um hvernig wrappers virka og hvaða gögn wrappers 
+                   myndu senda á milli layers.
+                 2)Við ræddum einnig um model classes og hvaða layer höndlar 
+                   þau.
+                 3)Við ræddum einnig mikið um Raise þegar það kemur error og
+                   hvaða layers höndla raise.
+
+Dagskrá fyrir næsta fund: 
+        Næsti fundur er boðaður fimmtudaginn 4. klukkan 12:00
+
+        Okkar plan er bara að hlada áfram að kóða verkefnið og ræða þær
+        pælingar á næsta fundi sem koma upp á meðan við kóðum.
+
+#################lok færsla 8 (4.12)##########################################
