@@ -11,7 +11,7 @@ class EmployeeData:
                 return True 
         except: raise 
             
-    def get_employees(self):
+    def get_employees():
         employees = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
