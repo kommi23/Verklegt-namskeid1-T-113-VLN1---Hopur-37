@@ -28,17 +28,31 @@ def write_employee(self,employee):
     if x == True:
         print("success")
     else: print(":(")
+
+
+#2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
+
+employee_id = "2203792244"
+def delete_employee(employee_id):
+    x = EmployeeData.delete_employee(employee_id)
+    if x == True:
+        print("success")
+    else: print(":(")
      
 
     
 
 #############test kóði################ 
-get_employee()
-print("")
-print("")
+#get_employee()
+#print("")
+#print("")
+#self = "" 
+#get_employees(self)
+#print("")
+#print("")
+#write_employee(self,employee)
 self = "" 
 get_employees(self)
-print("")
-print("")
-write_employee(self,employee)
+delete_employee(employee_id)
+get_employees(self)
 #####################################
