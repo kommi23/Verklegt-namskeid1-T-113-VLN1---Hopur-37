@@ -3,6 +3,7 @@ import csv
 class LocationData:
     def __init__(self):
         pass
+                
     def get_locations(self):
         locations = []
         try:
