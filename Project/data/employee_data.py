@@ -42,5 +42,5 @@ class EmployeeData:
             with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
                 list_writer = csv.writer(new_csv_file)
                 list_writer.writerows(new_file)
+            return True
         except: raise
-        return True
