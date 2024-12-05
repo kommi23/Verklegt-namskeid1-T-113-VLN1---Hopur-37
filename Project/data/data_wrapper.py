@@ -12,11 +12,11 @@ def get_employee(employee_id = "2203792244"):
            #############test kóði################
     print(EmployeeData.get_singular_employee(employee_id))
 
-def get_employees(self):
+def get_employees():
     # return EmployeeData.get_employees(self)
 
     #############test kóði################
-    print(EmployeeData.get_employees(self))
+    print(EmployeeData.get_employees())
 
 #placeholder
 employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
