@@ -5,39 +5,39 @@ from maintanencereport_data import MaintenanceReportData
 from maintenance_data import MaintenanceData
 from property_data import ProbertyData
 
+class dw_employee:
+    def get_employee(employee_id = "2203792244"):
+        # return EmployeeData.get_singular_employee(employee_id)
 
-def get_employee(employee_id = "2203792244"):
-    # return EmployeeData.get_singular_employee(employee_id)
+            #############test kóði################
+        print(EmployeeData.get_singular_employee(employee_id))
 
-           #############test kóði################
-    print(EmployeeData.get_singular_employee(employee_id))
+    def get_employees():
+        # return EmployeeData.get_employees(self)
 
-def get_employees():
-    # return EmployeeData.get_employees(self)
+        #############test kóði################
+        print(EmployeeData.get_employees())
 
-    #############test kóði################
-    print(EmployeeData.get_employees())
+    #placeholder
+    employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
 
-#placeholder
-employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
-
-def write_employee(self,employee):
-    
-    #############test kóði################
-    x = EmployeeData.add_employee(self, employee)
-    if x == True:
-        print("success")
-    else: print(":(")
+    def write_employee(self,employee):
+        
+        #############test kóði################
+        x = EmployeeData.add_employee(self, employee)
+        if x == True:
+            print("success")
+        else: print(":(")
 
 
-#2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
+    #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
 
-employee_id = "2203792244"
-def delete_employee(employee_id):
-    x = EmployeeData.delete_employee(employee_id)
-    if x == True:
-        print("success")
-    else: print(":(")
+    employee_id = "2203792244"
+    def delete_employee(employee_id):
+        x = EmployeeData.delete_employee(employee_id)
+        if x == True:
+            print("success")
+        else: print(":(")
      
 
     
