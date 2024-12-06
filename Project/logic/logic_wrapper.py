@@ -1,7 +1,7 @@
-class ll_employee(Employee):
+class ll_employee():
     # Setur inn allar upplýsingar um employee og ég gef til baka streng sem segir til um hvort það hafi tekist að skrá hann
     def add_employee(self, id: int, name: str, location: str, phone_number: int, email: str, address: str) -> list:
-        return Employee.add_employee(Employee.turn_into_list(id, name, location, phone_number, email, address))
+        return Employee.add_employee(0, Employee.turn_into_list(0, id, name, location, phone_number, email, address))
     
     # Ekkert input, færð bara lista af öllum eployees
     def get_employee_list(self) -> list:
@@ -25,4 +25,4 @@ class ll_employee(Employee):
     def search_employee_location(self, location: str) -> list:
         return Employee.search_employee_location(location)
     
-from Employee import *
+from logic.Employee import *

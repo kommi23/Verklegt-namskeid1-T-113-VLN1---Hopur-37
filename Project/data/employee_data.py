@@ -19,7 +19,7 @@ class EmployeeData:
                 for line in csv_reader:
                     employees.append(line)
             return employees
-        except: raise 
+        except: raise ValueError("Shit no work")
     def get_singular_employee(self): 
         try:    
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:

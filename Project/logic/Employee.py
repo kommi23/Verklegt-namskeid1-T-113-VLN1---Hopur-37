@@ -37,7 +37,7 @@ class Employee:
                 raise RuntimeError("An employee with this email already exists")
         
         # If none of the flags are raised return the employee for the data layer to append
-        return employee 
+        dw_employee.write_employee(self, employee)
 
     # Get the list of all employees in the data layer and send it to the UI layer
     def get_employee_list():
@@ -94,4 +94,4 @@ class Employee:
 
         return f"No employees form location {location} found"
 
-from data_wrapper import *
+from data.data_wrapper import *

@@ -1,7 +1,5 @@
-"""
 class Employee:
     def __init__(self, id: int, name: str, location: str, phone_number: int, email: str, address: str):
-        
         self.id = id
         self.name = name
         self.location = location
@@ -9,22 +7,10 @@ class Employee:
         self.email = email
         self.address = address
 
-
-    def turn_into_list(self, id: int, name: str, location: str, phone_number: int, email: str, address: str):
-        employee = []
-        employee.append(self.id)
-        employee.append(self.name)
-        employee.append(self.location)
-        employee.append(self.phone_number)
-        employee.append(self.email)
-        employee.append(self.address)
-
-        return employee
-
     def __str__(self) -> str:
         return f"[{self.id}, {self.name}, {self.location}, {self.phone_number}, {self.email}, {self.address}]"
 
-    def add_employee(employee):
+    def add_employee(employee: list):
         # Get a list of all employees from the data layer
         all_employees = dl_wrapper.list_all_employees()
         # Loop through all the employees and check if the id, name or email already exist in the db
@@ -80,9 +66,6 @@ class Employee:
         return f"No employees form location {location} found"
 
 
-
-
-
 class Contractor:
 
     def __init__(self, id: int, name: str, location: str, gsm: int, address: str, opening_hours: str):
@@ -113,10 +96,12 @@ class Contractor:
 
     def update_contractor(self, id: int, updated_data, what_data: int):
         # On hold for testing
+        """
         contractor_list = data_wrapper.get_contractor_list()
 
         for contractor in contractor_list:
             if id == contractor[0]:
+        """
         pass
 
 
@@ -143,5 +128,24 @@ class Contractor:
 
 
 
+
+
+
+######### TEST CASE #########
+class dl_wrapper:
+    def list_all_employees():
+        return test_all_employees
+
+employee_a = Employee(1, "Alex", "Reykjavik", 6151306, "alexanderje24@ru.is", "Heima 1")
+employee_b = Employee(2, "John", "Malmo", 5812345, "jon@mamlo.net", "Heima 2")
+new_employee = Employee(3, "Doe", "Berlin", 5885522, "doe@berlin.de", "Heima 3")
+
+test_all_employees = [employee_a, employee_b]
+    
+new_list = Employee.get_employee_list()
+
+for employee in new_list:
+    print(employee)
+
+
 #from data_wrapper import * 
-"""
