@@ -115,7 +115,7 @@ Umræður dagsins: Við byrjuðum að ræða mikið um Data layerinn, sérstakle
                  error messages eru passed frá data uppi logic layer.
 
 Dagskrá fyrir næsta fund: 
-        Næsti fundur er boðaður miðvikudaginn 3. klukkan 12:00
+        Næsti fundur er boðaður miðvikudaginn 4. klukkan 12:00
         
         Helsta markmið okkar fyrir næsta fund er að taka stöðuna hjá öllum 
         liðum sem eru að vinna í sitthvorum layers og að ná að tala við Gylfa 
@@ -146,9 +146,35 @@ Umræður dagsins: 1)Við hittusmt klukkan 12:00 í sólinni og ræddum mikið u
                    hvaða layers höndla raise.
 
 Dagskrá fyrir næsta fund: 
-        Næsti fundur er boðaður fimmtudaginn 4. klukkan 12:00
+        Næsti fundur er boðaður fimmtudaginn 5. klukkan 12:00
 
         Okkar plan er bara að hlada áfram að kóða verkefnið og ræða þær
         pælingar á næsta fundi sem koma upp á meðan við kóðum.
 
 #################lok færsla 8 (4.12)##########################################
+
+#################færsla 9 (5.12)##############################################
+
+Mættir: Anton Breki Bjarnþórsson 
+        Kormákur Máni Bjarnason 
+        Jóhann Gunnar Bergþórsson 
+        Alexander Joseph Emilsson 
+        Victor Blær Ciesielski Jensen 
+        Viktor Már Heiðarsson
+
+Umræður dagsins: 1)Fyrst eyddum við miklum tíma til að bæta við leið til að 
+                   deletea hlutum úr skrám, tildæmis remove employee.
+                 2)Næst byrjuðum við að bæta við update skrá í forritið, 
+                   tildæmis change employee name.
+                 3)Seinnast fórum við að ræða hvernig við myndum tengja saman
+                   alla layers og wrappers.
+
+Dagskrá fyrir næsta fund: 
+        Næsti fundur er boðaður föstudaginn 6. klukkan 12:00
+
+        Aðal planið okkar er að láta öll opperations fyrir employee ganga
+        þar sem allir layers eru að tala saman, eins og verði fyrir notanda
+        að nota kerfið okkar til að skrá nýjan employee.
+
+#################lok færsla 9 (5.12)##########################################
+
