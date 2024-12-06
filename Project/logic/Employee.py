@@ -9,7 +9,7 @@ class Employee:
         self.address = address
 
 
-    def turn_into_list(self, id: int, name: str, location: str, phone_number: int, email: str, address: str):
+    def turn_into_list(id: int, name: str, location: str, phone_number: int, email: str, address: str):
         employee = []
         employee.append(id)
         employee.append(name)
@@ -17,16 +17,18 @@ class Employee:
         employee.append(phone_number)
         employee.append(email)
         employee.append(address)
-
+        print("DEBUG STRING|| After turn_into_list")
+        print(employee)
         return employee
 
     def __str__(self) -> str:
         return f"[{self.id}, {self.name}, {self.location}, {self.phone_number}, {self.email}, {self.address}]"
 
-    def add_employee(self, employee: list):
+    def add_employee(employee: list):
+        print("DEBUG PRINT|| in the beginning of add_employee")
         # Get a list of all employees from the data layer
         all_employees = dw_employee.get_employees()
-
+        print("DEBUG PRINT|| After fetching the list")
         # Loop through all the employees and check if the id, name or email already exist in the db
         for existing_employee in all_employees:
             if employee[0] == existing_employee[0]:
@@ -37,7 +39,7 @@ class Employee:
                 raise RuntimeError("An employee with this email already exists")
         
         # If none of the flags are raised return the employee for the data layer to append
-        return employee 
+        dw_employee.write_employee(employee)
 
     # Get the list of all employees in the data layer and send it to the UI layer
     def get_employee_list():
@@ -94,4 +96,4 @@ class Employee:
 
         return f"No employees form location {location} found"
 
-from data_wrapper import *
+from data.data_wrapper import *
