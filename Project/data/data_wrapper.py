@@ -13,18 +13,18 @@ class dw_employee:
         print(EmployeeData.get_singular_employee(employee_id))
 
     def get_employees():
-        # return EmployeeData.get_employees(self)
+        return EmployeeData.get_employees()
 
         #############test kóði################
-        print(EmployeeData.get_employees())
+       #print(EmployeeData.get_employees())
 
     #placeholder
     #employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
 
-    def write_employee(self, employee):
+    def write_employee(employee):
         
         #############test kóði################
-        x = EmployeeData.add_employee(self, employee)
+        x = EmployeeData.add_employee(employee)
         if x == True:
             print("success")
         else: print(":(")
