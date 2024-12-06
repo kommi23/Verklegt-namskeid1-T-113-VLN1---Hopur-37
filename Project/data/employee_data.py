@@ -5,7 +5,7 @@ class EmployeeData:
         pass
     def add_employee(self, employee):
         try:
-            with open("employees.csv", "a", newline='', encoding='utf-8') as csv_file:
+            with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
                 list_writer.writerow(employee)
                 return True 
