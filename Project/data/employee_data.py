@@ -5,7 +5,7 @@ class EmployeeData:
         pass
     def add_employee(self, employee):
         try:
-            with open("employees.csv", "a", newline='', encoding='utf-8') as csv_file:
+            with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
                 list_writer.writerow(employee)
                 return True 
@@ -27,6 +27,19 @@ class EmployeeData:
                         line = line.split(",")
                         if self in line[0]:
                             return line
+            
+        except: raise  
+
+
+    def get_employees_by_location(self): 
+        try:    
+                employees = []
+                with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                    for line in csv_file:
+                        line = line.split(",")
+                        if self in line[-1]:
+                            employees.append(line)
+                    return employees
             
         except: raise  
 
