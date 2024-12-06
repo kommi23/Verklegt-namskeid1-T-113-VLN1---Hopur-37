@@ -1,8 +1,11 @@
-#from logic.elemloyee import Employee # type: ignore
 
-class EmployeeMenu_UI:
+from Project.logic.logic_layer import Employee
+from logic.logic_wrapper import ll_employee
+    
+class EmployeeMenuUI:
+     
     def __init__(self):
-        self.employee_logic = employee_logic
+        self.logic_wrapper = ll_employee()
 
     def employee_menu(self):
         print("Employee Menu")
@@ -11,16 +14,17 @@ class EmployeeMenu_UI:
         print("3. change employee")
         print("E. Go back")
     
-   def input_menu(self):
+    def input_menu(self):
         while True:
-            self.output_menu()
+            self.employee_menu()
             user_input = input("Enter your choice: ")
             user_input = user_input.lower()
             if user_input == 'e':
                  print("Returning")
+                 break
 
             elif user_input == '1':
-                emp = employee()
+                emp = Employee()
                 emp.name = input("Enter employee's name: ")
                 emp.ID = input("Enter employee's ID: ")
                 emp.email = input("Enter employee's email: ")
@@ -28,10 +32,11 @@ class EmployeeMenu_UI:
                 emp.work_phone = input("Enter employee's work phone: ")
                 emp.personal_phone = input("Enter employee's personal phone: ")
                 emp.location = input("Enter employee's location: ")
-                self.employee_logic.create.employee(emp)
+                self.logic_wrapper.add_employee(emp)
             
             elif user_input == '2':
-                results = self.employee_logic.get_all_employees()
+                results = self.logic_wrapper.get_employee_list()
+                # ELements inside list
                 for  elem in results:
                      print(f"name: {elem.name}, ID: {elem.ID}, email: {elem.email}, address: {elem.address}, work phone: {elem.work_phone}, personal phone: {elem.personal_phone}, location: {elem.location}")
 

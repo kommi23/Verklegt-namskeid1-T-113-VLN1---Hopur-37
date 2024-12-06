@@ -1,4 +1,4 @@
-from employee_ui import EmployeeMenu_UI
+from ui.employee_ui import EmployeeMenuUI
 
 class Mainmenu_UI:
      def __init__(self, employee, manager, contractor):
