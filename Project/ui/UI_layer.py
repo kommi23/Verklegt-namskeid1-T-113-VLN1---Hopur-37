@@ -16,7 +16,7 @@ class MenuDisplayer:
 
     def write_to_file(self, file_choice, data):
         filename = self.files[file_choice]
-        with open(filename, 'a' , )
+        with open(filename, 'a' , ):
         # bæti við síðar
         
 
