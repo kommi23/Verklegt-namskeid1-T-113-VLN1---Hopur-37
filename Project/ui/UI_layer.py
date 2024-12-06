@@ -1,8 +1,23 @@
 # For the UI layer
+
+# For the UI layer
+
+import csv
+import os
+
 class MenuDisplayer:
 
     def __init__(self):
-        self.files = 
+        self.files = {
+            "employee": "employees.csv",
+            "manager": "managers.csv",
+            "contractor": "contractors.csv"
+        }
+
+    def write_to_file(self, file_choice, data):
+        filename = self.files[file_choice]
+        with open(filename, 'a' , )
+        # bæti við síðar
         
 
     def create_employee(self):
@@ -77,7 +92,26 @@ class MenuDisplayer:
     except OSError:
         print(f"An error occurred while accessing the file '{filename}'.")
 
-    
+    def display_menu(self):
+        # forsiða
+        while True:
+            print("\nMain Menu")
+            print("1. Employee")
+            print("2. Manager")
+            print("3. Contractor")
+            print("4. Exit")
+            choice = input("Enter your choice: ")
+            if choice == '1':
+                self.employee_menu()
+            elif choice == '2':
+                self.manager_menu()
+            elif choice == '3':
+                self.contractor_menu()
+            elif choice == '4':
+                print("Exiting the program.")
+                break
+            else:
+                print("Invalid choice. Please try again.")
 
     def employee_menu(self):
         # menu fyrir starfsmenn

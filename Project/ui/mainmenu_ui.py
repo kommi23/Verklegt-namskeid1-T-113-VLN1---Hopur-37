@@ -5,8 +5,6 @@ class Mainmenu_UI:
         self.employee = employee
         pass
           
-
-
 def display_menu(self):
         # forsiða
         while True:
