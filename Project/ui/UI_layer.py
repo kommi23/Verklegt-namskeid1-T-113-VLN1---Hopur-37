@@ -2,16 +2,7 @@
 class MenuDisplayer:
 
     def __init__(self):
-        self.files = {
-            "employee": "employees.csv",
-            "manager": "managers.csv",
-            "contractor": "contractors.csv"
-        }
-
-    def write_to_file(self, file_choice, data):
-        filename = self.files[file_choice]
-        with open(filename, 'a' , )
-        # bæti við síðar
+        self.files = 
         
 
     def create_employee(self):

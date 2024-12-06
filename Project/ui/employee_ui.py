@@ -1,4 +1,4 @@
-from logic_layer import Employee
+#from logic.employee import Employee # type: ignore
 
 class EmployeeMenu_UI:
     def __init__(self):
@@ -11,7 +11,7 @@ class EmployeeMenu_UI:
         print("3. change employee")
         print("E. Go back")
     
-    def input_menu(self):
+   # def input_menu(self):
         while True:
             self.output_menu()
             user_input = input("Enter your choice: ")
@@ -25,5 +25,5 @@ class EmployeeMenu_UI:
                 emp.work_phone = input("Enter employee's work phone: ")
                 emp.personal_phone = input("Enter employee's personal phone: ")
                 emp.location = input("Enter employee's location: ")
-                self.employee_logic.create.employee(e)
+                self.employee_logic.create.employee(emp)
 
