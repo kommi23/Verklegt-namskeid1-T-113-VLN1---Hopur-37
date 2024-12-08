@@ -39,7 +39,9 @@ class dw_employee:
             print("success")
         else: print(":(")
      
+class dw_contractors:
 
+    pass
     
 
 #############test kóði################ 

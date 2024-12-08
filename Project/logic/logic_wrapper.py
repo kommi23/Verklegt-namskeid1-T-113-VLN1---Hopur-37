@@ -25,4 +25,4 @@ class ll_employee():
     def search_employee_location(self, location: str) -> list:
         return Employee.search_employee_location(location)
     
-from logic.Employee import *
+from Project.logic.employee_logic import *
