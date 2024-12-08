@@ -31,13 +31,13 @@ class EmployeeData:
                             return line    
         except: raise  
 
-    def get_employees_by_location(self): 
+    def get_employees_by_location(location): 
         try:    
                 employees = []
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
                         line = line.split(",")
-                        if self in line[-1]:
+                        if location in line[-1]:
                             employees.append(line)
                     return employees
             

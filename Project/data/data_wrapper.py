@@ -4,6 +4,7 @@ from location_data import LocationData
 from maintanencereport_data import MaintenanceReportData
 from maintenance_data import MaintenanceData
 from property_data import ProbertyData
+from contractor_data import ContractorData
 
 class dw_employee:
     def get_employee(employee_id = "2203792244"):
@@ -48,7 +49,21 @@ class dw_employee:
 
 class dw_contractors:
 
-    pass
+    def get_contractor(contractor):
+        return ContractorData.get_singular_contractor(contractor)
+    
+    def get_contractors():
+        return ContractorData.get_contractors()
+    
+    def write_contractor(contractor):
+        return ContractorData.add_contractor(contractor)
+
+    def get_contractors_by_location(location):
+        return ContractorData.get_contractor_by_location(location)
+
+
+    
+
     
 
 #x = dw_employee

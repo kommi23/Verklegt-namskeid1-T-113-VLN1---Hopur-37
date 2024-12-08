@@ -11,7 +11,7 @@ class ContractorData:
                 return True 
         except: raise     
 
-    def get_contractor():
+    def get_contractors():
         contractors = []
         try:
             with open("Project/data/csv_files/contractors.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -22,7 +22,7 @@ class ContractorData:
         except: 
             raise ValueError("Shit no work")
         
-    def get_singular_employee(contractor): 
+    def get_singular_contractor(contractor): 
         try:    
                 with open("Project/data/csv_files/contractors.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
@@ -32,19 +32,19 @@ class ContractorData:
             
         except: raise  
 
-    def get_contractor_by_location(contractor): 
+    def get_contractor_by_location(location): 
         try:    
                 contractors = []
                 with open("Project/data/csv_files/contractors.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
                         line = line.split(",")
-                        if contractor in line[-1]:
+                        if location in line[-1]:
                             contractors.append(line)
                     return contractors
             
         except: raise  
 
-    def delete_contractor(contractor):   
+    def delete_contractor(contractor):   #held að þetta þurfi ekki að vera
         new_file = []
         try:
             with open("Project/data/csv_files/contractors.csv", "r", newline='', encoding='utf-8') as csv_file:
