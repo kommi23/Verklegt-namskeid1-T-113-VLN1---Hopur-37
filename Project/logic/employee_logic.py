@@ -25,10 +25,8 @@ class Employee:
         return f"[{self.id}, {self.name}, {self.location}, {self.phone_number}, {self.email}, {self.address}]"
 
     def add_employee(employee: list):
-        print("DEBUG PRINT|| in the beginning of add_employee")
         # Get a list of all employees from the data layer
         all_employees = dw_employee.get_employees()
-        print("DEBUG PRINT|| After fetching the list")
         # Loop through all the employees and check if the id, name or email already exist in the db
         for existing_employee in all_employees:
             if employee[0] == existing_employee[0]:
@@ -49,43 +47,22 @@ class Employee:
 
     # ON HOLD FOR NOW
     # Get employee from data layer and update it
-    """
-    def update_employee(self, id: int, updated_data, what_data: int):
+    
+    def update_employee(id: int, updated_data, what_data: int):
         employee = dw_employee.search_employee_id(id)
 
         if employee[0] == id:
             employee[what_data] = updated_data
-            dl_wrapper.update_employee(employee)
+            dw_employee.update_employee(employee)
             return f"Employee with ID {id} updated successfully."
         else:
             return f"Employee with ID {id} not found."
-    """        
 
-    # On hold for now
-    """
-    def search_employee_name(self, name: str):
-        all_employees = dl_wrapper.list_all_employees()
-        for existing_employee in all_employees:
-            if existing_employee[1] == name:
-                return existing_employee
 
-        return f"Employee with name {name} not found"
-    """
-
-    def search_employee_id(self, id: int):
+    def search_employee_id(id: int):
         dw_employee.get_employee(id)
 
-        # Dont want to delete yet in case the other does not work
-        """
-        all_employees = dl_wrapper.list_all_employees()
-        for existing_employee in all_employees:
-            if existing_employee[0] == id:
-                return existing_employee
-
-        return f"Employee with ID {id} not found"
-        """
-
-    def search_employee_location(self, location: str):
+    def search_employee_location(location: str):
         pass
         """
         all_employees = dw_employee.list_all_employees()
