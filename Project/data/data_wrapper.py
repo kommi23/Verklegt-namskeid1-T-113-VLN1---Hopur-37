@@ -39,44 +39,12 @@ class dw_employee:
             print("success")
         else: print(":(")
      
-    def change_employee_name(employee_id, new_name):
-        x = EmployeeData.employee_change_name(employee_id, new_name)
+    def change_employee_data(employee_id,updated_data, what_data):
+        x = EmployeeData.employee_change_name(employee_id, updated_data, what_data)
         if x == True:
             print("success")
         else: print(":(")
-
-    def change_employee_email(employee_id, new_email):
-        x = EmployeeData.employee_change_email(employee_id, new_email)
-        if x == True:
-            print("success")
-        else: print(":(")
-
-    def change_employee_work_phone(employee_id, new_work_phone):
-        x = EmployeeData.employee_change_work_phone(employee_id, new_work_phone)
-        if x == True:
-            print("success")
-        else: print(":(")
-
-    def change_employee_personal_phone(employee_id, new_personal_phone):
-        x = EmployeeData.employee_change_personal_phone(employee_id, new_personal_phone)
-        if x == True:
-            print("success")
-        else: print(":(")
-
-    def change_employee_address(employee_id, new_address):
-        x = EmployeeData.employee_change_address(employee_id, new_address)
-        if x == True:
-            print("success")
-        else: print(":(")
-
-    def change_employee_location(employee_id, new_location):
-        x = EmployeeData.employee_change_location(employee_id, new_location)
-        if x == True:
-            print("success")
-        else: print(":(")
-
-
-
+        
 
 class dw_contractors:
 
