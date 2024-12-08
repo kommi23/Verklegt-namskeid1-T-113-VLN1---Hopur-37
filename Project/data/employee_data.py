@@ -28,10 +28,8 @@ class EmployeeData:
                     for line in csv_file:
                         line = line.split(",")
                         if self in line[0]:
-                            return line
-            
+                            return line    
         except: raise  
-
 
     def get_employees_by_location(self): 
         try:    
@@ -60,14 +58,14 @@ class EmployeeData:
             return True
         except: raise
 
-    def employee_change_name(Employee_id, new_name): #bætast við tvö files ef nafnið er sama, þarf að tékka í logic eða ui
+    def employee_data_change(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[1] = new_name
+                    if (row[0] == Employee_id and row[what_data] != updated_data): #er ekki búinn að prófa að run-a kóðann en vonandi kemur þetta í veg fyrir tvö files
+                        row[what_data] = updated_data
                         new_file.append(row)
                     new_file.append(row)
             
@@ -75,7 +73,13 @@ class EmployeeData:
                 list_writer = csv.writer(new_csv_file)
                 list_writer.writerows(new_file)
             return True
-        except: raise          
+        except: raise      
+
+
+    #held fyrri kóðanum hér f neðan til öryggis 
+
+        """
+        
 
     def employee_change_email(Employee_id, new_email): #bætast við tvö files ef emailið er sama, þarf að tékka í logic eða ui
         new_file = []
@@ -161,3 +165,4 @@ class EmployeeData:
                 list_writer.writerows(new_file)
             return True
         except: raise    
+         """   
