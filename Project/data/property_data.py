@@ -1,6 +1,6 @@
 import csv
 
-class ProbertyData:
+class PropertyData:
     def __init__(self):
         pass
     
@@ -32,13 +32,13 @@ class ProbertyData:
             return properties
         except: raise
 
-    def get_properties_by_location(self):
+    def get_properties_by_location(location):
         try:    
                 properties = []
                 with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
                         line = line.split(",")
-                        if self in line[-1]:
+                        if location in line[-1]:
                             properties.append(line)
                     return properties
         except: raise          

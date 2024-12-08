@@ -3,7 +3,7 @@ from contractorreport_data import ContractorReport
 from location_data import LocationData
 from maintanencereport_data import MaintenanceReportData
 from maintenance_data import MaintenanceData
-from property_data import ProbertyData
+from property_data import PropertyData
 from contractor_data import ContractorData
 
 class dw_employee:
@@ -61,8 +61,27 @@ class dw_contractors:
     def get_contractors_by_location(location):
         return ContractorData.get_contractor_by_location(location)
 
+class dw_properties:
 
+    def get_all_properties():
+        return PropertyData.get_proberty()
     
+    def get_property_by_number(number):
+        return PropertyData.get_singular_property(number)
+    
+    def get_property_by_location(location):
+        return PropertyData.get_properties_by_location(location)
+    
+    #def get_property_by_contractor_report() #þarf að hugsa þetta
+
+    def add_property(property):
+        return PropertyData.add_property(property)
+    
+    #þarf að bæta við fasteign
+
+    def delete_property(property_number):
+        return PropertyData.delete_property(property_number)
+
 
     
 
