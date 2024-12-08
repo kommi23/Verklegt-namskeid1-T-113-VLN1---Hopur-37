@@ -59,3 +59,105 @@ class EmployeeData:
                 list_writer.writerows(new_file)
             return True
         except: raise
+
+    def employee_change_name(Employee_id, new_name): #bætast við tvö files ef nafnið er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[1] = new_name
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise          
+
+    def employee_change_email(Employee_id, new_email): #bætast við tvö files ef emailið er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[2] = new_email
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise    
+
+    def employee_change_work_phone(Employee_id, new_work_phone): #bætast við tvö files ef síminn er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[4] = new_work_phone
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise    
+
+    def employee_change_personal_phone(Employee_id, new_personal_phone): #bætast við tvö files ef síminn er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[5] = new_personal_phone
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise    
+
+    def employee_change_location(Employee_id, new_location): #bætast við tvö files ef location er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[6] = new_location
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise    
+
+    def employee_change_address(Employee_id, new_address): #bætast við tvö files ef address er sama, þarf að tékka í logic eða ui
+        new_file = []
+        try:
+            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == Employee_id:
+                        row[3] = new_address
+                        new_file.append(row)
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise    

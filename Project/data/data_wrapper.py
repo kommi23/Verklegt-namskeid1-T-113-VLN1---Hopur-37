@@ -1,9 +1,9 @@
-from data.employee_data import EmployeeData 
-from data.contractorreport_data import ContractorReport
-from data.location_data import LocationData
-from data.maintanencereport_data import MaintenanceReportData
-from data.maintenance_data import MaintenanceData
-from data.property_data import ProbertyData
+from employee_data import EmployeeData 
+from contractorreport_data import ContractorReport
+from location_data import LocationData
+from maintanencereport_data import MaintenanceReportData
+from maintenance_data import MaintenanceData
+from property_data import ProbertyData
 
 class dw_employee:
     def get_employee(employee_id = "2203792244"):
@@ -39,10 +39,58 @@ class dw_employee:
             print("success")
         else: print(":(")
      
+    def change_employee_name(employee_id, new_name):
+        x = EmployeeData.employee_change_name(employee_id, new_name)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def change_employee_email(employee_id, new_email):
+        x = EmployeeData.employee_change_email(employee_id, new_email)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def change_employee_work_phone(employee_id, new_work_phone):
+        x = EmployeeData.employee_change_work_phone(employee_id, new_work_phone)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def change_employee_personal_phone(employee_id, new_personal_phone):
+        x = EmployeeData.employee_change_personal_phone(employee_id, new_personal_phone)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def change_employee_address(employee_id, new_address):
+        x = EmployeeData.employee_change_address(employee_id, new_address)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def change_employee_location(employee_id, new_location):
+        x = EmployeeData.employee_change_location(employee_id, new_location)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+
+
+
 class dw_contractors:
 
     pass
     
+
+#x = dw_employee
+
+
+
+employee_id = "2203792244"
+new_name = "King Theoden"
+dw_employee.change_employee_name(employee_id, new_name)
+
 
 #############test kóði################ 
 #get_employee()
