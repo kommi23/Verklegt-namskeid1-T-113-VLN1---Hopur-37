@@ -8,7 +8,7 @@ from contractor_data import ContractorData
 
 class dw_employee:
 
-    def write_employe_dw(employee: str) -> list: 
+    def write_employee_dw(employee: str) -> list: 
         
         #############test kóði################
         x = EmployeeData.write_employe_data(employee) 
@@ -17,12 +17,11 @@ class dw_employee:
         else: print(":(")
 
     def get_singular_employee_dw(employee_id = "2203792244"):
-        return EmployeeData.get_singular_employee(employee_id)
+        return EmployeeData.get_singular_employee_data(employee_id)
 
-  
 
-    def get_employees():
-        return EmployeeData.get_employees()
+    def get_employees_dw():    
+        return EmployeeData.get_employees_data()
 
         #############test kóði################
        #print(EmployeeData.get_employees())
@@ -34,20 +33,21 @@ class dw_employee:
         return EmployeeData.get_employees_location_data(location)
 
 
-
-    #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
-
-    employee_id = "2203792244"
-    def delete_employee(employee_id):
-        x = EmployeeData.delete_employee(employee_id)
+    def delete_employee_dw(employee_id):
+        x = EmployeeData.delete_employee_data(employee_id)
         if x == True:
             print("success")
         else: print(":(")
-     
-    def change_employee_data(employee_id,updated_data, what_data):
-        return EmployeeData.employee_change_name(employee_id, updated_data, what_data)
-        
 
+
+    def update_employee_dw(employee_id,updated_data, what_data):
+        return EmployeeData.update_employee_data(employee_id, updated_data, what_data)
+
+
+
+    #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
+
+            
 class dw_contractors:
 
     def get_contractor(contractor):
