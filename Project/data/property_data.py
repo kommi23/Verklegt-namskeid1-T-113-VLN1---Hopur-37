@@ -1,10 +1,10 @@
 import csv
 
 class PropertyData:
-    def __init__(self):
+    def __init__():
         pass
     
-    def get_singular_property(self, property_number): 
+    def get_singular_property(property_number): 
         try:    
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
                 for line in csv_file:
@@ -14,14 +14,14 @@ class PropertyData:
         except: 
             return None 
         
-    def add_property(self, proberty):
+    def add_property(proberty):
         try:
             with open("Project/data/csv_files/properties.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(proberty)
                 return True
         except: raise
 
-    def get_proberty(self):
+    def get_proberty():
         properties = []
         try:
             with open("Project/data/csv_files/properties.csv", newline='', encoding='utf-8') as csv_file:

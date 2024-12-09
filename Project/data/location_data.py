@@ -1,10 +1,10 @@
 import csv
 
 class LocationData:
-    def __init__(self):
+    def __init__():
         pass
                 
-    def get_locations(self):
+    def get_locations():
         locations = []
         try:
             with open("locations.csv", "r", newline='', encoding='utf-8') as csv_file:

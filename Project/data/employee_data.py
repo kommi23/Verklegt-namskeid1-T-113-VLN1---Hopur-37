@@ -1,7 +1,7 @@
 import csv
 
 class EmployeeData:
-    def __init__(self):
+    def __init__():
         pass
     def add_employee(employee):
         try:
@@ -22,12 +22,12 @@ class EmployeeData:
         except: 
             raise ValueError("Shit no work")
         
-    def get_singular_employee(self): 
+    def get_singular_employee(employee_id): 
         try:    
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                     for line in csv_file:
                         line = line.split(",")
-                        if self in line[0]:
+                        if employee_id in line[0]:
                             return line    
         except: raise  
 
