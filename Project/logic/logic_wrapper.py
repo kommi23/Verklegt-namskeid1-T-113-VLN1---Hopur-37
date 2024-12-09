@@ -25,4 +25,27 @@ class ll_employee():
     def search_employee_location(self, location: str) -> list:
         return Employee.search_employee_location(location)
     
-from Project.logic.employee_logic import *
+    class ll_contractor:
+        def get_contractor_list() -> list:
+            return Contractor.get_contractor_list()
+        
+        def add_contractor(contractor: list):
+            Contractor.add_contractor(contractor)
+
+        def update_contractor(id: int, updated_data, what_data: int):
+            Contractor.update_contractor(id, updated_data, what_data)
+
+        def add_contractor_review(id: int, review: str):
+            Contractor.add_contractor_review(id, review)
+
+        def get_contractor_review(id) -> list :
+            return Contractor.get_contractor_review
+        
+        def search_contractor_history(id) -> list:
+            return Contractor.search_contractor_maintainance_history(id)
+        
+
+    
+    
+from logic.employee_logic import *
+from logic.contractor_logic import *
