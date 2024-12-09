@@ -37,7 +37,8 @@ class ContractorUI:
             print("Invalid choice, try again")    
 
     def display_contractors(self):
-            contractors = logic.get_contractor_list()
+            contractors = c
+            c = logic.get_contractor_list()
             if not contractors:
                 print("")
                 return
