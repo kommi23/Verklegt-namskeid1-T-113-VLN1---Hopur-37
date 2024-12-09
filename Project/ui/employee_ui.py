@@ -39,8 +39,3 @@ class EmployeeMenuUI:
                 # ELements inside list
                 for  elem in results:
                      print(f"name: {elem.name}, ID: {elem.ID}, email: {elem.email}, address: {elem.address}, work phone: {elem.work_phone}, personal phone: {elem.personal_phone}, location: {elem.location}")
-
-                 
-                 
-
-

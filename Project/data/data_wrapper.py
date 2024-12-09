@@ -2,7 +2,7 @@ from employee_data import EmployeeData
 from contractorreport_data import ContractorReport
 from location_data import LocationData
 from maintanencereport_data import MaintenanceReportData
-from maintenance_data import MaintenanceData
+from maintenancerequests_data import MaintenanceData
 from property_data import PropertyData
 from contractor_data import ContractorData
 
