@@ -3,13 +3,22 @@ import csv
 class EmployeeData:
     def __init__():
         pass
-    def add_employee(employee):
+    def write_employe_data(employee):
         try:
             with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
                 list_writer.writerow(employee)
                 return True 
         except: raise 
+    
+    def get_singular_employee_data(employee_id): 
+        try:    
+                with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+                    for line in csv_file:
+                        line = line.split(",")
+                        if employee_id in line[0]:
+                            return line    
+        except: raise  
             
     def get_employees():
         employees = []
@@ -22,16 +31,9 @@ class EmployeeData:
         except: 
             raise ValueError("Shit no work")
         
-    def get_singular_employee(employee_id): 
-        try:    
-                with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                    for line in csv_file:
-                        line = line.split(",")
-                        if employee_id in line[0]:
-                            return line    
-        except: raise  
+    
 
-    def get_employees_by_location(location): 
+    def get_employees_location_data(location: str) -> list: 
         try:    
                 employees = []
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:

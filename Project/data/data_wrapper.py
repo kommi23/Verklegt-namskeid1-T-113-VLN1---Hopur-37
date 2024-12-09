@@ -7,11 +7,19 @@ from property_data import PropertyData
 from contractor_data import ContractorData
 
 class dw_employee:
-    def get_employee(employee_id = "2203792244"):
-        # return EmployeeData.get_singular_employee(employee_id)
 
-            #############test kóði################
-        print(EmployeeData.get_singular_employee(employee_id))
+    def write_employe_dw(employee: str) -> list: 
+        
+        #############test kóði################
+        x = EmployeeData.write_employe_data(employee) 
+        if x == True:
+            print("success")
+        else: print(":(")
+
+    def get_singular_employee_dw(employee_id = "2203792244"):
+        return EmployeeData.get_singular_employee(employee_id)
+
+  
 
     def get_employees():
         return EmployeeData.get_employees()
@@ -22,13 +30,9 @@ class dw_employee:
     #placeholder
     #employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
 
-    def write_employee(employee):
-        
-        #############test kóði################
-        x = EmployeeData.add_employee(employee)
-        if x == True:
-            print("success")
-        else: print(":(")
+    def get_employees_location_dw(location):
+        return EmployeeData.get_employees_location_data(location)
+
 
 
     #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
@@ -41,10 +45,7 @@ class dw_employee:
         else: print(":(")
      
     def change_employee_data(employee_id,updated_data, what_data):
-        x = EmployeeData.employee_change_name(employee_id, updated_data, what_data)
-        if x == True:
-            print("success")
-        else: print(":(")
+        return EmployeeData.employee_change_name(employee_id, updated_data, what_data)
         
 
 class dw_contractors:
