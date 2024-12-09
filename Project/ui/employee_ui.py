@@ -1,8 +1,8 @@
 
-from Project.logic.logic_layer import Employee
+from logic.employee_logic import Employee
 from logic.logic_wrapper import ll_employee
     
-class EmployeeMenuUI:
+class EmployeeUI:
      
     def __init__(self):
         self.logic_wrapper = ll_employee()
@@ -39,8 +39,3 @@ class EmployeeMenuUI:
                 # ELements inside list
                 for  elem in results:
                      print(f"name: {elem.name}, ID: {elem.ID}, email: {elem.email}, address: {elem.address}, work phone: {elem.work_phone}, personal phone: {elem.personal_phone}, location: {elem.location}")
-
-                 
-                 
-
-

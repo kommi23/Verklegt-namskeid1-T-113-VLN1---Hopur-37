@@ -1,4 +1,4 @@
-from logic_wrapper import Manager
+from logic.logic_wrapper import Manager
 
 class Manager_UI:
     def __init__(self):
