@@ -20,7 +20,7 @@ class EmployeeData:
                             return line    
         except: raise  
             
-    def get_employees():
+    def get_employees_data():
         employees = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -45,7 +45,7 @@ class EmployeeData:
             
         except: raise  
 
-    def delete_employee(Employee_id):   
+    def delete_employee_data(Employee_id):   
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -60,7 +60,7 @@ class EmployeeData:
             return True
         except: raise
 
-    def employee_data_change(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
+    def update_employee_data(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
