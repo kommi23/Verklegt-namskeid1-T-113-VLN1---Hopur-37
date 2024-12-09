@@ -1,4 +1,6 @@
 import csv
+from Models.Employee import Employee
+
 
 class EmployeeData:
     def __init__():
@@ -17,7 +19,8 @@ class EmployeeData:
                     for line in csv_file:
                         line = line.split(",")
                         if employee_id in line[0]:
-                            return line    
+                            employee = Employee(line)
+                            return employee
         except: raise  
             
     def get_employees_data():
