@@ -3,6 +3,8 @@ from ui.employee_ui import EmployeeMenuUI
 class Mainmenu_UI:
      def __init__(self, employee, manager, contractor):
         self.employee = employee
+        self.manager = manager
+        self.contractor = contractor
         pass
           
 def display_menu(self):
@@ -15,7 +17,7 @@ def display_menu(self):
             print("4. Exit")
             choice = input("Enter your choice: ")
             if choice == '1':
-                self.employee_menu()
+                EmployeeMenuUI()
             elif choice == '2':
                 self.manager_menu()
             elif choice == '3':

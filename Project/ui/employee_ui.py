@@ -1,8 +1,8 @@
 
-from Project.logic.logic_layer import Employee
+from logic.employee_logic import Employee
 from logic.logic_wrapper import ll_employee
     
-class EmployeeMenuUI:
+class EmployeeUI:
      
     def __init__(self):
         self.logic_wrapper = ll_employee()
