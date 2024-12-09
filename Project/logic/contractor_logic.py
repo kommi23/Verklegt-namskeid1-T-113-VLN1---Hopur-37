@@ -8,12 +8,12 @@ class Contractor:
         self.address = address
         self.opening_hours = opening_hours
 
-    def get_contractor_list():
-        return dw_contractors.get_contractor_list()
+    def get_contractor_list() -> list:
+        return dw_contractors.get_contractors()
 
     def add_contractor(contractor: list):
         # Get list of all the contractors
-        list_of_contractors = dw_contractors.get_contractor_list()
+        list_of_contractors = dw_contractors.write_contractor(contractor)
 
         # Check if the id or the name already exists in the db, if so raise a runtime error
         for existing_contractor in list_of_contractors:
@@ -38,34 +38,18 @@ class Contractor:
         
 
 
-    def get_contracotor_review():
+    def get_contractor_review() -> list:
         return dw_contractors.get_contractor_review()
 
-    def add_contractor_review(contractor: list):
-        all_contractors = dw_contractors.get_contractors()
-
-        for existing_contractor in all_contractors:
-            if contractor[0] == existing_contractor[0]:
-                raise RuntimeError("A contractor with this id already exists")
-            if contractor[1] == existing_contractor[1]:
-                raise RuntimeError("A contractor with this name already exists")
-            if contractor[4] == existing_contractor[4]:
-                raise RuntimeError("A contractor with this phone number already exists")
-            if contractor[6] == existing_contractor[6]:
-                raise RuntimeError("A contractor with this address already exists")
-            
-        dw_contractors.write_contractor(contractor)
+    def add_contractor_review(id: int, review: str):
+        dw_contractors.write_contractor_review(id, review)
 
 
     def get_contractor_review(id):
-        dw_contractors.get_contractor_review(id)
-    """
-    def search_contractor_by_location():
-        pass
-    """
+        return dw_contractors.get_contractor_review(id)
 
-    def search_contractor_maintainance_history(id):
-        dw_contractors.get_contractor_maintainance_history(id)
+    def search_contractor_maintainance_history(id) -> list:
+        return dw_contractors.get_contractor_maintainance_history(id)
 
 
 
