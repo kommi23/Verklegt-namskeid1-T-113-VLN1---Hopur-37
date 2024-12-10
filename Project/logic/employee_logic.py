@@ -1,4 +1,4 @@
-class employee_logic:
+class Employee_logic:
 
     def write_employee_logic(employee: list):
         # Get a list of all employees from the data layer
