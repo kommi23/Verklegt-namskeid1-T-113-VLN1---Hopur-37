@@ -5,10 +5,12 @@ from Models.Employee import Employee
 class EmployeeData:
     def __init__():
         pass
+
     def write_employe_data(employee):
         try:
             with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
+                employee = employee.to_list()
                 list_writer.writerow(employee)
                 return True 
         except: raise 
@@ -19,7 +21,7 @@ class EmployeeData:
                     for line in csv_file:
                         line = line.split(",")
                         if employee_id in line[0]:
-                            employee = Employee(line)
+                            employee = Employee(*line)
                             return employee
         except: raise  
             
