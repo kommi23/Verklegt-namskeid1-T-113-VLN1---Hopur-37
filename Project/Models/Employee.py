@@ -1,8 +1,7 @@
 class Employee:
-    def __init__(self , employee_id, name, social_security_number, email, address, work_phone, personal_phone, location):
+    def __init__(self , employee_id, name, email, address, work_phone, personal_phone, location):
         self.employee_id = employee_id
         self.name = name
-        self.social_security_number = social_security_number
         self.email = email
         self.address = address
         self.work_phone = work_phone
@@ -11,12 +10,12 @@ class Employee:
 
 
     def turn_employee_into_list(self):
-        return [self.employee_id, self.name, self.social_security_number, self.email, self.address,
+        return [self.employee_id, self.name, self.email, self.address,
                 self.work_phone, self.personal_phone, self.location]
    
     def turn_list_into_employee(employee: list):
         if len(employee) != 7:
-            raise ValueError("This does not work")
+            raise ValueError("Length of list not 7")
        
         return Employee(*employee)
        

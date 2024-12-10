@@ -1,7 +1,7 @@
-class ll_employee():
+class LL_employee():
     # Setur inn allar upplýsingar um employee og ég gef til baka streng sem segir til um hvort það hafi tekist að skrá hann
     def add_employee(new_employee) -> str:
-        return employee_logic.write_employee_logic(new_employee)
+        return Employee_logic.write_employee_logic(new_employee)
     
     # Ekkert input, færð bara lista af öllum eployees
     def get_employee_list(self) -> list:
@@ -25,28 +25,33 @@ class ll_employee():
     def search_employee_location(self, location: str) -> list:
         return Employee.search_employee_location(location)
     
-    class ll_contractor:
-        def get_contractor_list() -> list:
-            return Contractor.get_contractor_list()
+class LL_contractor:
+    def get_contractor_list() -> list:
+        return Contractor.get_contractor_list()
+    
+    def add_contractor(contractor: list):
+        Contractor.add_contractor(contractor)
+
+    def update_contractor(id: int, updated_data, what_data: int):
+        Contractor.update_contractor(id, updated_data, what_data)
+
+    def add_contractor_review(id: int, review: str):
+        Contractor.add_contractor_review(id, review)
+
+    def get_contractor_review(id) -> list :
+        return Contractor.get_contractor_review
+    
+    def search_contractor_history(id) -> list:
+        return Contractor.search_contractor_maintainance_history(id)
         
-        def add_contractor(contractor: list):
-            Contractor.add_contractor(contractor)
-
-        def update_contractor(id: int, updated_data, what_data: int):
-            Contractor.update_contractor(id, updated_data, what_data)
-
-        def add_contractor_review(id: int, review: str):
-            Contractor.add_contractor_review(id, review)
-
-        def get_contractor_review(id) -> list :
-            return Contractor.get_contractor_review
-        
-        def search_contractor_history(id) -> list:
-            return Contractor.search_contractor_maintainance_history(id)
+class LL_property():
+     def add_property(property):
+        Property_logic.add_property(property)
         
 
     
     
 from logic.employee_logic import *
 from logic.contractor_logic import *
+from logic.property_logic import *
 from Models.Employee import *
