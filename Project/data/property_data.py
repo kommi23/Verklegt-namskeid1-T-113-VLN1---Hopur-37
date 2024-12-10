@@ -41,7 +41,7 @@ class PropertyData:
                         if location in line[-1]:
                             properties.append(line)
                     return properties
-        except: raise          
+        except: raise 
 
 
     def delete_property(property_number):  
