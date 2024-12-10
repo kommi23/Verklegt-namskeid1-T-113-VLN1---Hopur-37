@@ -1,0 +1,11 @@
+
+class Property:
+    def __init__(self, property_number, condition, additional_maintenance, location):
+        self.property_number = property_number
+        self.condition = condition
+        self.additional_maintenance = additional_maintenance
+        self.location = location
+    def turn_property_into_list(self):
+        return [self.property_number, self.condition, self.additional_maintenance, self.location]
+    def __str__(self) -> str:
+        return f"{self.property_number} {self.condition} {self.additional_maintenance} {self.location}"
