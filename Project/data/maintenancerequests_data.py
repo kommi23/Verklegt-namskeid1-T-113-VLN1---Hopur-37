@@ -1,6 +1,6 @@
 import csv
 
-class MaintenanceRequ:
+class MaintenanceRequestData:
     def __init__():
         pass
 
