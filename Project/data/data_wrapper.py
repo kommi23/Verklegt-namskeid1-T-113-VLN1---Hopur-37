@@ -1,11 +1,13 @@
 from data.employee_data import EmployeeData 
 from data.property_data import PropertyData
+
 #from contractorreport_data import ContractorReport
 #from location_data import LocationData
 #from maintanencereport_data import MaintenanceReportData
 #from maintenancerequests_data import MaintenanceRequestData
 #from property_data import PropertyData
 #from contractor_data import ContractorData
+
 
 class DW_employee:
 
@@ -83,12 +85,14 @@ class dw_contractors:
     def write_contractor(contractor):
         return ContractorData.add_contractor(contractor)
 
+
     def get_contractors_by_location(location):
         return ContractorData.get_contractor_by_location(location)
 """
     
 
 #x = dw_employee
+
 
 
 #############test kóði################ 
