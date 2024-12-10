@@ -1,7 +1,7 @@
-class ll_employee():
+class LL_employee():
     # Setur inn allar upplýsingar um employee og ég gef til baka streng sem segir til um hvort það hafi tekist að skrá hann
     def add_employee(new_employee) -> str:
-        return employee_logic.write_employee_logic(new_employee)
+        return Employee_logic.write_employee_logic(new_employee)
     
     # Ekkert input, færð bara lista af öllum eployees
     def get_employee_list(self) -> list:

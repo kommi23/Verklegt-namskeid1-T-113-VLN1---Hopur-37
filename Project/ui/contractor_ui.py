@@ -33,7 +33,6 @@ class ContractorUI:
             self.view_maintenance_history
         elif choice == '7':
             print("Exititng..")
-            break
         else:
             print("Invalid choice, try again")    
 
