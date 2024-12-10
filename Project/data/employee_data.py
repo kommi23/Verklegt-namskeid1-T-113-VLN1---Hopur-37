@@ -1,5 +1,4 @@
-import csv
-from Models.Employee import Employee
+
 
 
 class EmployeeData:
@@ -7,7 +6,6 @@ class EmployeeData:
         pass
 
     def write_employe_data(employee):
-        employee_as_list = Employee.turn_employee_into_list(employee)
         try:
             with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
@@ -68,111 +66,28 @@ class EmployeeData:
             return True
         except: raise
 
-    def update_employee_data(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if (row[0] == Employee_id and row[what_data] != updated_data): #er ekki búinn að prófa að run-a kóðann en vonandi kemur þetta í veg fyrir tvö files
-                        row[what_data] = updated_data
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise      
 
 
-    #held fyrri kóðanum hér f neðan til öryggis 
 
-        """
+def update_employee_data(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
+    new_file = []
+    try:
+        with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
+            list_reader = csv.reader(csv_file)
+            for row in list_reader:
+                if row[0] == Employee_id: #er ekki búinn að prófa að run-a kóðann en vonandi kemur þetta í veg fyrir tvö files
+                    row[what_data] = updated_data
+                    
+                new_file.append(row)
         
+        with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+            list_writer = csv.writer(new_csv_file)
+            list_writer.writerows(new_file)
+        return True
+    except: raise      
+# test 
+#update_employee_data("2203792244", " Kári", what_data = 1)
 
-    def employee_change_email(Employee_id, new_email): #bætast við tvö files ef emailið er sama, þarf að tékka í logic eða ui
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[2] = new_email
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise    
 
-    def employee_change_work_phone(Employee_id, new_work_phone): #bætast við tvö files ef síminn er sama, þarf að tékka í logic eða ui
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[4] = new_work_phone
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise    
-
-    def employee_change_personal_phone(Employee_id, new_personal_phone): #bætast við tvö files ef síminn er sama, þarf að tékka í logic eða ui
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[5] = new_personal_phone
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise    
-
-    def employee_change_location(Employee_id, new_location): #bætast við tvö files ef location er sama, þarf að tékka í logic eða ui
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[6] = new_location
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise    
-
-    def employee_change_address(Employee_id, new_address): #bætast við tvö files ef address er sama, þarf að tékka í logic eða ui
-        new_file = []
-        try:
-            with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                list_reader = csv.reader(csv_file)
-                for row in list_reader:
-                    if row[0] == Employee_id:
-                        row[3] = new_address
-                        new_file.append(row)
-                    new_file.append(row)
-            
-            with open("Project/data/csv_files/employees.csv", "w", newline='', encoding='utf-8') as new_csv_file:
-                list_writer = csv.writer(new_csv_file)
-                list_writer.writerows(new_file)
-            return True
-        except: raise    
-         """   
+import csv
+from Models.Employee import *
