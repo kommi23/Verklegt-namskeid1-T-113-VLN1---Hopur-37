@@ -1,5 +1,5 @@
-locations
-Reykjavik
+location, country, airport, phone_number, opening_time, manager
+Reykjavik, iceland, keflavík, 123456789, 8:00, 
 Nuuk
 Kulusuk
 Þórshöfn
