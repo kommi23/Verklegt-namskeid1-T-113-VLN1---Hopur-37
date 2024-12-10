@@ -1,16 +1,15 @@
-from employee_data import EmployeeData 
+from data.employee_data import EmployeeData 
 #from contractorreport_data import ContractorReport
 #from location_data import LocationData
 #from maintanencereport_data import MaintenanceReportData
 #from maintenancerequests_data import MaintenanceRequestData
-from property_data import PropertyData
-from contractor_data import ContractorData
+#from property_data import PropertyData
+#from contractor_data import ContractorData
 
 class dw_employee:
 
-    def write_employee_dw(employee: str) -> list: 
+    def write_employee_dw(employee): 
         
-        #############test kóði################
         x = EmployeeData.write_employe_data(employee) 
         if x == True:
             print("success")
@@ -20,7 +19,7 @@ class dw_employee:
         return EmployeeData.get_singular_employee_data(employee_id)
 
 
-    def get_employees_dw():    
+    def get_employees_dw() -> list:    
         return EmployeeData.get_employees_data()
 
         #############test kóði################
@@ -87,12 +86,6 @@ class dw_properties:
     
 
 #x = dw_employee
-
-
-
-employee_id = "2203792244"
-new_name = "King Theoden"
-dw_employee.change_employee_name(employee_id, new_name)
 
 
 #############test kóði################ 

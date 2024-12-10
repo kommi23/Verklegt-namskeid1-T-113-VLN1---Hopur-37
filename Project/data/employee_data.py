@@ -7,11 +7,12 @@ class EmployeeData:
         pass
 
     def write_employe_data(employee):
+        employee_as_list = Employee.turn_employee_into_list(employee)
         try:
             with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
-                employee = employee.to_list()
-                list_writer.writerow(employee)
+                employee_as_list = Employee.turn_employee_into_list(employee)
+                list_writer.writerow(employee_as_list)
                 return True 
         except: raise 
     
@@ -31,7 +32,9 @@ class EmployeeData:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
-                    employees.append(line)
+                    employee = []
+                    employee = Employee.turn_list_into_employee(line)
+                    employees.append(employee)
             return employees
         except: 
             raise ValueError("Shit no work")
