@@ -31,6 +31,7 @@ class EmployeeData:
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
+                
                 for line in csv_reader:
                     employee = []
                     employee = Employee.turn_list_into_employee(line)

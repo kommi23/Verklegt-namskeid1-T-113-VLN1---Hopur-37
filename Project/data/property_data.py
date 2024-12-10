@@ -1,4 +1,5 @@
 import csv
+from Models.Property import *
 
 class PropertyData:
     def __init__():
@@ -14,10 +15,12 @@ class PropertyData:
         except: 
             return None 
         
-    def add_property_data(proberty):
+    def add_property_data(property):
         try:
             with open("Project/data/csv_files/properties.csv", "a", newline='', encoding='utf-8') as csv_file:
-                csv_file.write(proberty)
+                list_writer = csv.writer(csv_file)
+                new_property_as_list = Property.turn_property_into_list(property)
+                list_writer.writerow(new_property_as_list)
                 return True
         except: raise
 
@@ -28,7 +31,10 @@ class PropertyData:
                 csv_reader = csv.reader(csv_file)
 
                 for line in csv_reader:
-                    properties.append(line)
+                    property = []
+                    property = Property.turn_list_into_property(line)
+                    properties.append(property)
+
             return properties
         except: raise
 

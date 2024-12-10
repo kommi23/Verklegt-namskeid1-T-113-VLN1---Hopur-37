@@ -1,4 +1,4 @@
-from ui.manager_menu import *
+from ui.manager_ui import *
 import os
 
 class Mainmenu_UI:
@@ -13,9 +13,8 @@ class Mainmenu_UI:
                 choice = input("Enter your choice: ")
                 if choice == '1':
                      pass
-                    #EmployeeMenuUI()
                 elif choice == '2':
-                    ManagerUI.manager_menu()
+                    Manager_ui.display_menu()
                 elif choice == '3':
                      pass
                 elif choice == '0':

@@ -5,7 +5,6 @@ from data.property_data import PropertyData
 #from location_data import LocationData
 #from maintanencereport_data import MaintenanceReportData
 #from maintenancerequests_data import MaintenanceRequestData
-#from property_data import PropertyData
 #from contractor_data import ContractorData
 
 
@@ -71,43 +70,3 @@ class DW_properties:
     def delete_property_dw(property_number):
         return PropertyData.delete_property_data(property_number)
 
-
-
-""""          
-class dw_contractors:
-
-    def get_contractor(contractor):
-        return ContractorData.get_singular_contractor(contractor)
-    
-    def get_contractors():
-        return ContractorData.get_contractors()
-    
-    def write_contractor(contractor):
-        return ContractorData.add_contractor(contractor)
-
-
-    def get_contractors_by_location(location):
-        return ContractorData.get_contractor_by_location(location)
-"""
-    
-
-#x = dw_employee
-
-
-
-#############test kóði################ 
-#get_employee()
-#print("")
-#print("")
-#self = "" 
-#get_employees(self)
-#print("")
-#print("")
-#write_employee(self,employee)
-"""
-self = "" 
-get_employees(self)
-delete_employee(employee_id)
-get_employees(self)
-"""
-#####################################
