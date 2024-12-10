@@ -1,4 +1,6 @@
 from data.employee_data import EmployeeData 
+from data.property_data import PropertyData
+
 #from contractorreport_data import ContractorReport
 #from location_data import LocationData
 #from maintanencereport_data import MaintenanceReportData
@@ -6,7 +8,8 @@ from data.employee_data import EmployeeData
 #from property_data import PropertyData
 #from contractor_data import ContractorData
 
-class dw_employee:
+
+class DW_employee:
 
     def write_employee_dw(employee): 
         
@@ -46,7 +49,31 @@ class dw_employee:
 
     #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
 
-            
+
+class DW_properties:
+
+    def get_all_properties_dw():
+        return PropertyData.get_proberty_data()
+    
+    def get_property_by_number_dw(number):
+        return PropertyData.get_singular_property_data(number)
+    
+    def get_property_by_location_dw(location):
+        return PropertyData.get_properties_by_location_data(location)
+    
+    #def get_property_by_contractor_report() #þarf að hugsa þetta
+
+    def add_property_dw(property):
+        return PropertyData.add_property_data(property)
+    
+    #þarf að bæta við fasteign
+
+    def delete_property_dw(property_number):
+        return PropertyData.delete_property_data(property_number)
+
+
+
+""""          
 class dw_contractors:
 
     def get_contractor(contractor):
@@ -58,34 +85,14 @@ class dw_contractors:
     def write_contractor(contractor):
         return ContractorData.add_contractor(contractor)
 
+
     def get_contractors_by_location(location):
         return ContractorData.get_contractor_by_location(location)
-
-class dw_properties:
-
-    def get_all_properties():
-        return PropertyData.get_proberty()
-    
-    def get_property_by_number(number):
-        return PropertyData.get_singular_property(number)
-    
-    def get_property_by_location(location):
-        return PropertyData.get_properties_by_location(location)
-    
-    #def get_property_by_contractor_report() #þarf að hugsa þetta
-
-    def add_property(property):
-        return PropertyData.add_property(property)
-    
-    #þarf að bæta við fasteign
-
-    def delete_property(property_number):
-        return PropertyData.delete_property(property_number)
-
-
+"""
     
 
 #x = dw_employee
+
 
 
 #############test kóði################ 
