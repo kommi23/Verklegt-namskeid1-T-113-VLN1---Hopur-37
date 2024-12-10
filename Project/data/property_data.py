@@ -4,7 +4,7 @@ class PropertyData:
     def __init__():
         pass
     
-    def get_singular_property(property_number): 
+    def get_singular_property_data(property_number): 
         try:    
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
                 for line in csv_file:
@@ -14,14 +14,14 @@ class PropertyData:
         except: 
             return None 
         
-    def add_property(proberty):
+    def add_property_data(proberty):
         try:
             with open("Project/data/csv_files/properties.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(proberty)
                 return True
         except: raise
 
-    def get_proberty():
+    def get_proberty_data():
         properties = []
         try:
             with open("Project/data/csv_files/properties.csv", newline='', encoding='utf-8') as csv_file:
@@ -32,7 +32,7 @@ class PropertyData:
             return properties
         except: raise
 
-    def get_properties_by_location(location):
+    def get_properties_by_location_data(location):
         try:    
                 properties = []
                 with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -44,7 +44,7 @@ class PropertyData:
         except: raise          
 
 
-    def delete_property(property_number):  
+    def delete_property_data(property_number):  
         new_file = []
         try:
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
