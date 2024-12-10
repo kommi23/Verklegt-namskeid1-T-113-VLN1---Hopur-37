@@ -62,10 +62,12 @@ def update_employee():
         
         info_list = {
             "name": 1,
-            "location": 2,
-            "phone_number": 3,
-            "email": 4,
-            "address": 5
+            "social_security_number": 2,
+            "email": 3,
+            "address": 4,
+            "work_phone": 5,
+            "personal_phone": 6,
+            "address": 7
         }
 
         if info_change not in info_list:
