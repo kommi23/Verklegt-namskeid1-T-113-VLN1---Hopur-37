@@ -1,35 +1,11 @@
-class Employee:
-    def __init__(self, id: int, name: str, location: str, phone_number: int, email: str, address: str):
-        
-        self.id = id
-        self.name = name
-        self.location = location
-        self.phone_number = phone_number
-        self.email = email
-        self.address = address
-
-
-    def turn_into_list(id: int, name: str, location: str, phone_number: int, email: str, address: str):
-        employee = []
-        employee.append(id)
-        employee.append(name)
-        employee.append(location)
-        employee.append(phone_number)
-        employee.append(email)
-        employee.append(address)
-        print("DEBUG STRING|| After turn_into_list")
-        print(employee)
-        return employee
-
-    def __str__(self) -> str:
-        return f"[{self.id}, {self.name}, {self.location}, {self.phone_number}, {self.email}, {self.address}]"
+class employee_logic:
 
     def write_employee_logic(employee: list):
         # Get a list of all employees from the data layer
         all_employees = dw_employee.get_employees_dw()
         # Loop through all the employees and check if the id, name or email already exist in the db
         for existing_employee in all_employees:
-            if employee[0] == existing_employee[0]:
+            if employee.employee_id == existing_employee.employee_id:
                 raise RuntimeError("An employee with this id already exists")
             
         # If none of the flags are raised return the employee for the data layer to append
@@ -56,7 +32,7 @@ class Employee:
     
 
     def delete_employee_logic(id):
-        if dw_employee.delete_employee_dw(employee_id):
+        if dw_employee.delete_employee_dw():
             return f"Employee with id: {id} deleted"
         else:
             return f"Employee with id: {id} not found!"
