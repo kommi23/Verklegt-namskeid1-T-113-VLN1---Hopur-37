@@ -30,7 +30,7 @@ def display_employees():
 
         
 def add_employee():
-    fields = ["ID", "Name", "Email", "Address","Work Phone", "Personal Phone", "Location"]
+    fields = ["ID", "Name", "Email", "Address", "Work Phone", "Personal Phone", "Location"]
     user_inputs = {}
     
     for field in fields:
@@ -50,7 +50,7 @@ def add_employee():
     confirmation = int(input())
 
     if confirmation == 1:
-        new_employee = Employee(user_inputs["ID"], user_inputs["Name"], user_inputs["Email"], user_inputs["Address"],user_inputs["Work Phone"], user_inputs["Personal Phone"], user_inputs["Location"])
+        new_employee = Employee(user_inputs["ID"], user_inputs["Name"], user_inputs["Email"], user_inputs["Address"], user_inputs["Work Phone"], user_inputs["Personal Phone"], user_inputs["Location"])
         LL_employee.add_employee(new_employee)
 
 
