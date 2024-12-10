@@ -1,6 +1,7 @@
 from tabulate import tabulate # type: ignore
 from logic.contractor_logic import Contractor
-from input_dictionaries import input_dictionaries
+from logic.logic_wrapper import ll_employee
+from Project.ui.input_validators import Input_validators
 
 class ContractorUI:
     def __init__(self):
@@ -43,7 +44,10 @@ class ContractorUI:
                 print("")
                 return
             else:
-                table = [c['id'], c['name'], c['location'], c['gsm'], c['address'], c['opening_hours']]
+                table = [
+                    [con['id'], con['name'], con['location'], con['gsm'], con['address'], con['opening_hours']]
+                    for con in contractors]
+                
                 print(tabulate(table, headers=["ID", "Name", "Location", "GSM", "Address", "Opening hours"], tablefmt="grid"))
             
 
@@ -58,7 +62,7 @@ class ContractorUI:
 
             self.logic.add_contractor(Contractor)
             print("Contractor has been added")
-        except input_dictionaries: # vantar að bæta við 
+        except Input_validators: # vantar að bæta við 
             print("Some error") # réttu exceptions
     
     def update_contractor(self):
@@ -66,10 +70,12 @@ class ContractorUI:
             id = input("Enter Contractos ID to Update: ")
             info_change = input("Enter Contractos Information to change (e.g., name, address): ").lower()
             new_info = input("Enter new here: ")
+
+            # vantar dictlista hér til að tengja við uppls
             
             self.logic.update_contractor(id, {info_change: new_info})
             print(f"Contractor with ID {id} updated successfully")
-        except input_dictionaries:
+        except Input_validators:
             print("Some error") # bæti við
     
     def view_reviews(self):
@@ -81,7 +87,7 @@ class ContractorUI:
             else:
                 for i in reviews:
                     print(f"- {i}")
-        except input_dictionaries:
+        except Input_validators:
             print("Invalid input. Try again.")
     
     def add_review(self):
@@ -91,7 +97,7 @@ class ContractorUI:
 
             self.logic.add_contractor_review(id, {review})
             print(f"New review for {id} has been added")
-        except input_dictionaries:
+        except Input_validators:
             print("some error")
     
     def view_maintenance_history(self):
@@ -103,11 +109,11 @@ class ContractorUI:
             else:
                 for i in history:
                     print(f"- {i}")
-        except input_dictionaries:
+        except Input_validators:
             print("some error")
 
     
-#except input_dictionaries: bæti við þegar það er tilbuið
+#except Input_validators: bæti við þegar það er tilbuið
 
 
 
