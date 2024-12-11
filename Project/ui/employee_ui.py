@@ -1,8 +1,10 @@
-
-
+#import os
+from logic.logic_wrapper import *
+from logic.employee_logic import *
+from Models.Employee import *
 class EmployeeUI:
     def employee_menu(self):
-        
+        #os.system("clear")
 
         print("\nEmployee Menu")
         print("1. List all employees")
@@ -17,7 +19,7 @@ class EmployeeUI:
             pass 
     
     def display_employees():
-            employee = ll_employee.get_employee_list()
+            employee = LL_employee.get_employee_list()
             if not employee:
                 print("No employees found...")
                 return
@@ -28,35 +30,41 @@ class EmployeeUI:
                     ]
                 print(table)
     	
-    def search_employee():
-        print("\n Searching for Employees") 
-        print("1. Search Employee by Name")
-        print("2. Search Employee by ID")
-        print("3. Search Employee by Location")
-         
-        choice = int(input("Enter your choice: "))
 
-        if choice == '1':
-              search_employee_by_name()
-        elif choice == '2':
-             search_employee_by_id()
-        elif choice == '3':
-             search_employee_by_location()
-             
-    def available_maintenance_requests():
-         
 
+    def search_employee_by_name():
+        name = input("Enter Employee Name to search: ")
+        employee = LL_employee.logic.search_employee_name(name)
+        if not employee:
+            print("No Employee found with name {name}.")
+        
+        else:
+            table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
+            #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
+
+    def search_employee_by_id():
+            id = input("Enter Employee ID to search: ")
+            employee = LL_employee.search_employee_id(id)
+            if not employee:
+                print("No employee found with the ID {id}.")
             
-    	
-import os
-from logic.logic_wrapper import *
-from logic.employee_logic import *
-from Models.Employee import *
-from manage_employee_ui import *
+            else:
+                employee = Employee.turn_employee_into_list(employee)
+                #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
+                print(employee)
+
+    def search_employee_by_location():
+        location = input("Enter Employee Location to search from: ")
+        employee = LL_employee.logic.search_employee_name(location)
+        if not employee:
+            print("No employees found in location {location}.")
+        
+        else:
+            table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
+            #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
 
 
 
 
-
-
-
+#def search_employee():
+        #
