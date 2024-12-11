@@ -12,7 +12,9 @@ class LL_employee():
     def add_employee_lw(new_employee) -> str:
         return Employee_logic.write_employee_logic(new_employee)
     
+
     def get_employee_list_lw() -> list:
+
         return Employee_logic.get_employee_list()
     
     def update_employee_lw(id: int, updated_data, what_data: int):
@@ -58,6 +60,10 @@ class LL_property():
     def change_property_lw(id, info_change, what_info) -> list:
         Property_logic.change_property(id, info_change, what_info)
         
+class LL_location():
+
+    def list_all_locations() -> list:
+        return Location_logic.get_location_list()
         
 class LW_maintenance_request:
     def add_maintenance_request_lw(new_request):
@@ -76,3 +82,4 @@ class LW_maintenance_request:
         return Maintenance_request_logic.get_maintenance_request_by_employee_id_logic(employee_id)
 
     
+
