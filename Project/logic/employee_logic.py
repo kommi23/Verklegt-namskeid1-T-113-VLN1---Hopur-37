@@ -14,18 +14,22 @@ class Employee_logic:
     #search employee by id
     def get_singular_employee_logic(id: int):
         return DW_employee.get_singular_employee_dw(id)
+    
+    def get_employees_location_logic(location: str):
+        try:
+            return DW_employee.get_employees_location_dw(location) 
+        except: 
+            return f"No employees form location {location} found"
 
+    def get_employee_list():
+        return DW_employee.get_employees_dw()
     
     # Get the list of all employees in the data layer and send it to the UI layer
     def get_employees_logic():
         return DW_employee.get_employees_dw()
     
 
-    def get_employees_location_logic(location: str):
-        try:
-            return DW_employee.get_employees_location_dw(location) 
-        except: 
-            return f"No employees form location {location} found"
+
 
     # ON HOLD FOR NOW
     # Get employee from data layer and update it
