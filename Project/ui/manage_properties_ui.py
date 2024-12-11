@@ -5,7 +5,7 @@ class Manage_properties():
         
         print("1. Create new property")
         print("2. Search property by location")
-        print("2. Search property by condition")
+        print("3. Update property")
         print("4. List all properties")
         print("0. Go back")
 

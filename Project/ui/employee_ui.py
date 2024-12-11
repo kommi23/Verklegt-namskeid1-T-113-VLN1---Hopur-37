@@ -6,7 +6,7 @@ from ui.common_functions_ui import *
 
 class EmployeeUI:
 
-    def employee_menu():
+    def display_menu():
         os.system("clear")
 
 

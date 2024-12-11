@@ -1,5 +1,5 @@
 property_id, condition, additional_maintenance, location
-1,good, additional_maintenance, location
+1,very bad, additional_maintenance, location
 2, condition, additional_maintenance, location
 3, condition, additional_maintenance, location
 4, condition, additional_maintenance, location
