@@ -24,18 +24,18 @@ class PropertyData:
                 return True
         except: raise
 
-    def get_proberty_data():
+    def get_all_proberties_data():
         properties = []
         try:
             with open("Project/data/csv_files/properties.csv", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
 
                 for line in csv_reader:
-                    property = []
-                    property = Property.turn_list_into_property(line)
+                    property = Property(*line)
                     properties.append(property)
 
             return properties
+                
         except: raise
 
     def get_properties_by_location_data(location):

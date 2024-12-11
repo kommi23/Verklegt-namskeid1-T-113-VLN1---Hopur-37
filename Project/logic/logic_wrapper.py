@@ -48,6 +48,9 @@ class LL_property():
      
     def add_property(property):
         Property_logic.add_property(property)
+    
+     def get_all_proberties_LL():
+        return Property_logic.get_all_proberties_logic()
         
     def change_property_lw(id, info_change, what_info):
         Property_logic.change_property(id, info_change, what_info)

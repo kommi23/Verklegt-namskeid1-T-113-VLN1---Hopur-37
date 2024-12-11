@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 property_id, condition, additional_maintenance, location
 1,good, additional_maintenance, location
 2, condition, additional_maintenance, location
 3, condition, additional_maintenance, location
 4, condition, additional_maintenance, location
+=======
+property_number, condition, additional_maintenance, location
+property_number1, condition, additional_maintenance, location
+property_number2, condition, additional_maintenance, location
+property_number3, condition, additional_maintenance, location
+property_number4, condition, additional_maintenance, location
+>>>>>>> origin
