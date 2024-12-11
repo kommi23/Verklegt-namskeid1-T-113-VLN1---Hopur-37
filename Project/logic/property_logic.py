@@ -9,3 +9,4 @@ class Property_logic():
         DW_properties.add_property_dw(property)
 
 from data.data_wrapper import *
+#test
