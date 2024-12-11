@@ -3,6 +3,7 @@ from logic.logic_wrapper import *
 from logic.employee_logic import *
 from Models.Employee import *
 from ui.common_functions_ui import *
+from Models.Maintenance_request import *
 
 class EmployeeUI:
 
@@ -35,8 +36,16 @@ class EmployeeUI:
             elif user_input == 2:
                 Common_functions.search_employee_by_location()
 
+        elif choice == 3:  
+            Common_functions.display_maintenace_requests()
+            
+        elif choice == 4:
+            Common_functions.search_maintenace_request_by_id()
+
+            
+    def create_maintenance_report():
+             
         
-        
 
 
 
@@ -44,27 +53,7 @@ class EmployeeUI:
 
 
 
-def search_employee_by_id():
-        id = input("Enter Employee ID to search: ")
-        employee = LL_employee.search_employee_id(id)
-        if not employee:
-            print("No employee found with the ID {id}.")
-        
-        else:
-            employee = Employee.turn_employee_into_list(employee)
-            #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-            print(employee)
 
-
-def search_employee_by_location():
-    location = input("Enter Employee Location to search from: ")
-    employee = LL_employee.logic.search_employee_name(location)
-    if not employee:
-        print("No employees found in location {location}.")
-    
-    else:
-        table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
-        print(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid")
 
 
     
