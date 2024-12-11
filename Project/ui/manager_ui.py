@@ -15,6 +15,9 @@ class Manager_ui:
 
         if choice == 2:
             Manage_properties.display_menu()
+    
+
+
 
 from ui.manage_employee_ui import *
 from ui.manage_properties_ui import *

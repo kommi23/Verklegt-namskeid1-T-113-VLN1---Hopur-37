@@ -90,6 +90,7 @@ def update_employee():
 
 def search_employee_by_name():
 
+
         name = input("Enter Employee Name to search: ")
         employee = LL_employee.search_employee_name(name)
         if not employee:
@@ -98,7 +99,7 @@ def search_employee_by_name():
         else:
             table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
             #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-
+# Komið í Common_functions
 def search_employee_by_id(): #virkar
             id = input("Enter Employee ID to search: ")
             employee = LL_employee.search_employee_id(id)
