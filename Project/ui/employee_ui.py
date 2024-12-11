@@ -1,77 +1,73 @@
-#import os
+import os
 from logic.logic_wrapper import *
 from logic.employee_logic import *
 from Models.Employee import *
+from ui.common_functions_ui import *
+
 class EmployeeUI:
-    def employee_menu(self):
-        #os.system("clear")
+
+    def employee_menu():
+        os.system("clear")
 
 
         print("\nEmployee Menu")
         print("1. List all employees")
-        print("1. Search for employee")
-        print("2. Available Maintenance Requests")
-        print("3. Search for Maintenance Requests")
-        print("4. Exit to main menu")
+        print("2. Search for employee")
+        print("3. Available Maintenance Requests")
+        print("4. Search for Maintenance Requests")
+        print("5. Exit to main menu")
 
 
         choice = int(input("Enter your choice:"))
 
 
         if choice == 1:
-            pass
-   
-    def display_employees():
-            employee = LL_employee.get_employee_list()
-            if not employee:
-                print("No employees found...")
-                return
-            else:
-                table = [
-                    [emp['id'], emp['name'], emp['location'], emp['gsm'], emp['address'], emp['opening_hours']]
-                    for emp in employee
-                    ]
-                print(table)
-       
+            Common_functions.display_employees()
+
+        elif choice == 2:
+            print("1. Search Employee by ID")
+            print("2. Search Employee by Location")
+            
+            user_input = int(input("Enter your choice: "))
+
+            if user_input == 1:
+                Common_functions.search_employee_by_id()
+            elif user_input == 2:
+                Common_functions.search_employee_by_location()
+
+        
+        
 
 
 
 
-    def search_employee_by_name():
-        name = input("Enter Employee Name to search: ")
-        employee = LL_employee.logic.search_employee_name(name)
+
+
+
+def search_employee_by_id():
+        id = input("Enter Employee ID to search: ")
+        employee = LL_employee.search_employee_id(id)
         if not employee:
-            print("No Employee found with name {name}.")
-       
+            print("No employee found with the ID {id}.")
+        
         else:
-            table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
+            employee = Employee.turn_employee_into_list(employee)
             #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
+            print(employee)
 
 
-    def search_employee_by_id():
-            id = input("Enter Employee ID to search: ")
-            employee = LL_employee.search_employee_id(id)
-            if not employee:
-                print("No employee found with the ID {id}.")
-           
-            else:
-                employee = Employee.turn_employee_into_list(employee)
-                #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-                print(employee)
+def search_employee_by_location():
+    location = input("Enter Employee Location to search from: ")
+    employee = LL_employee.logic.search_employee_name(location)
+    if not employee:
+        print("No employees found in location {location}.")
+    
+    else:
+        table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
+        print(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid")
 
 
-    def search_employee_by_location():
-        location = input("Enter Employee Location to search from: ")
-        employee = LL_employee.logic.search_employee_name(location)
-        if not employee:
-            print("No employees found in location {location}.")
-       
-        else:
-            table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
-            #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-
-
-
+    
 
 """"class Employee_ui:
     def display_menu():

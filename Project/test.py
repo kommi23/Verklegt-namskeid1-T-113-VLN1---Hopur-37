@@ -1,3 +1,3 @@
-from ui.manage_employee_ui import *
+from ui.employee_ui import *
 
-update_employee()
+EmployeeUI.employee_menu()
