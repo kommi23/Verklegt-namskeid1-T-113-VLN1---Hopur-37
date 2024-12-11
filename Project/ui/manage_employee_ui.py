@@ -79,7 +79,7 @@ def add_employee():
 
 
 def update_employee():
-        id = input("Enter Employee ID to update: ")
+        id = input("Enter the ID of the employee you want to update: ")
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
         new_info = input("Enter new {info_change}: ")
         

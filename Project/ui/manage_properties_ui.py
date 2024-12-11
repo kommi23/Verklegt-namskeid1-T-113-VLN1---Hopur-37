@@ -39,6 +39,20 @@ def add_property():
         LL_property.add_property(new_property)
 
 
+def update_property_information():
+    id = int(input("Enter the ID of the property you want to update"))
+    info_change = input("Enter what information you want to change").lower()
+
+    info_list = {
+        "status" :1,
+        "additional maintenance" : 2
+    }
+
+    if info_change not in info_list:
+        print(f"Error: information not found")
+
+    LL_property.update_property()
+
 import os
 from Models.Property import *
 from ui.manager_ui import *
