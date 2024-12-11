@@ -14,6 +14,29 @@ class Manage_employees:
         if choice == 1:
             add_employee()
             
+        elif choice == 2:
+            print("1. list all employees")
+            print("2. search for employee by name")
+            print("3. search for employee by id")
+            print("4. search for employee by location")
+
+            user_input = int(input("Enter your choice:"))
+        
+            if user_input == 1:
+                display_employees()
+
+            elif user_input == 2:
+                search_employee_by_name()
+            
+            elif user_input == 3: #virkar
+                search_employee_by_id()
+            
+            elif user_input == 4:
+                search_employee_by_location()
+             
+             
+
+
 
 
     
@@ -87,13 +110,14 @@ def search_employee_by_name():
 
 def search_employee_by_id():
             id = input("Enter Employee ID to search: ")
-            employee = LL_employee.logic.search_employee_id(id)
+            employee = LL_employee.search_employee_id(id)
             if not employee:
-                ("No employee found with the ID {id}.")
+                print("No employee found with the ID {id}.")
             
             else:
-                table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
+                employee = Employee.turn_employee_into_list(employee)
                 #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
+                print(employee)
 
 def search_employee_by_location():
         location = input("Enter Employee Location to search from: ")
