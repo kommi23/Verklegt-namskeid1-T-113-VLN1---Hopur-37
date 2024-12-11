@@ -19,8 +19,9 @@ class Manage_properties():
         if choice == 3: 
             pass
         if choice == 4:
-            x = list_proberties()
-            print(x)
+            print("við komumst í choic")
+            list_proberties()
+           
 
 def list_proberties():
     properties = []
@@ -34,7 +35,7 @@ def list_proberties():
             print(i)
 
 
-"""
+
 def add_property():
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
     user_inputs = {}
@@ -59,12 +60,10 @@ def add_property():
         new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
         LL_property.add_property(new_property)
 
-def list_proberties():
-    LL_property.get_all_proberties_LL()
 
 import os
 from Models.Property import *
 from ui.manager_ui import *
-"""
+
 import os
 from logic.logic_wrapper import * 
