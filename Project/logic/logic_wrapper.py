@@ -4,17 +4,17 @@ class LL_employee():
         return Employee_logic.write_employee_logic(new_employee)
     
     # Ekkert input, færð bara lista af öllum eployees
-    def get_employee_list(self) -> list:
-        return Employee.get_employee_list
+    def get_employee_list() -> list:
+        return Employee_logic.get_employee_list
     
     # Tekur inn id til að sjá hvern er verið að updatea, nýja variablið inn í updated_data sem getur verið strengur eða int og 
     # Síðan læturu vita hvað er verið að vinna með með þvi að setja inn númeirð sem representar hvar í listanum breytingin 
     # er (nafn = 1, gsm = 3...). Svo færð þú til baka streng sem segir hvort það hafi tekist
-    def update_employee(self, id: int, updated_data, what_data: int) -> str:
-        return Employee.update_employee(id, updated_data, what_data)
+    def update_employee(id: int, updated_data, what_data: int) -> str:
+        return Employee_logic.update_employee_logic(id, updated_data, what_data)
     
     # Put in the name of the employee and I will return a list of all the info we have about that employee
-    def search_employee_name(self, name: str) -> list:
+    def search_employee_name(name: str) -> list:
         return Employee.search_employee_name(name)
     
     # Put in the id of the employee and I will return a list of all the info we have about the employee
@@ -22,8 +22,8 @@ class LL_employee():
         return Employee_logic.get_singular_employee_logic(id)
     
     # Put in the name of the location and I will pull upp a list with all the employees that work there and their information
-    def search_employee_location(self, location: str) -> list:
-        return Employee.search_employee_location(location)
+    def search_employee_location(location: str) -> list:
+        return Employee_logic.get_employees_location_logic(location)
     
 class LL_contractor:
     def get_contractor_list() -> list:
