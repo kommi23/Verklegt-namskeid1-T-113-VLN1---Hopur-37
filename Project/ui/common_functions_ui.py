@@ -1,5 +1,5 @@
 from logic.logic_wrapper import *
-
+from Models.Maintenance_request import *
 class Common_functions:
 
     def display_employees():
@@ -33,3 +33,26 @@ class Common_functions:
         else:
             for i in employees:
                 print(i)
+    
+    # Vantar að setja í logic wrapperinn
+    def display_maintenace_requests():
+        requests = []
+        requests = LL_Maintenance.list_all_maintenance_requests()
+
+        if not requests:
+            print("No Maintenance Requests found...")
+
+        else:
+             for i in requests:
+                  print(i)
+    
+    def search_maintenace_request_by_id():
+        id = (input("Enter the ID for the Maintenance Request:"))
+        request = LL_Maintenance.search_maintenance_id(id)
+        
+        if not request:
+             print("No Maintenance Request found with the ID {id}")
+
+        else:
+             request = Maintenance_request.turn_maintenance_request_into_list(request) 
+             print(request)
