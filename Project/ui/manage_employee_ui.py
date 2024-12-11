@@ -30,6 +30,9 @@ class Manage_employees:
             
             elif user_input == 3:
                 search_employee_by_location()
+
+        if choice == 3:
+             update_employee()
              
              
 
@@ -65,7 +68,7 @@ def add_employee():
 
 
 def update_employee():
-        id = input("Enter Employee ID to update: ")
+        id = input("Enter the ID of the employee you want to update: ")
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
         new_info = input("Enter new information: ")
         
@@ -77,9 +80,6 @@ def update_employee():
             "email" : 4,
             "address" : 5
         }
-
-        print(info_list[info_change])
-
         if info_change not in info_list:
             print("Error: Information not found")
             return
@@ -88,8 +88,8 @@ def update_employee():
         LL_employee.update_employee(id, new_info, info_list[info_change])
         print(f"Employee with ID {id} updated successfully")
 
-# Komið í common_functions
-def search_employee_by_name(): #þarf ekki að vera
+def search_employee_by_name():
+
 
         name = input("Enter Employee Name to search: ")
         employee = LL_employee.search_employee_name(name)

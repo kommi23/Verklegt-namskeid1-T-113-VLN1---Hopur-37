@@ -1,3 +1,3 @@
-from ui.manager_ui import *
+from ui.main_ui import *
 
-Manager_ui.display_menu()
+Mainmenu_UI.display_menu()
