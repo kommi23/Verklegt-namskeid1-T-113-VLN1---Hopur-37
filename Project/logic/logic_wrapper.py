@@ -1,4 +1,6 @@
 class LL_employee():
+
+    
     # Setur inn allar upplýsingar um employee og ég gef til baka streng sem segir til um hvort það hafi tekist að skrá hann
     def add_employee(new_employee) -> str:
         return Employee_logic.write_employee_logic(new_employee)
@@ -10,8 +12,9 @@ class LL_employee():
     # Tekur inn id til að sjá hvern er verið að updatea, nýja variablið inn í updated_data sem getur verið strengur eða int og 
     # Síðan læturu vita hvað er verið að vinna með með þvi að setja inn númeirð sem representar hvar í listanum breytingin 
     # er (nafn = 1, gsm = 3...). Svo færð þú til baka streng sem segir hvort það hafi tekist
-    def update_employee(self, id: int, updated_data, what_data: int) -> str:
-        return Employee.update_employee(id, updated_data, what_data)
+    def update_employee(id, updated_data, what_data: int):
+        return Employee_logic.update_employee_logic(id, updated_data, what_data)
+
     
     # Put in the name of the employee and I will return a list of all the info we have about that employee
     def search_employee_name(self, name: str) -> list:
@@ -49,7 +52,7 @@ class LL_property():
         Property_logic.add_property(property)
         
 
-    
+
     
 from logic.employee_logic import *
 from logic.contractor_logic import *

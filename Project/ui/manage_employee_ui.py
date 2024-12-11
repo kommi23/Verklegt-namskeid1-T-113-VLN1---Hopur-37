@@ -81,23 +81,27 @@ def add_employee():
 def update_employee():
         id = input("Enter Employee ID to update: ")
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
-        new_info = input("Enter new {info_change}: ")
+        new_info = input("Enter new information: ")
         
         info_list = {
-            "name": 1,
-            "location": 2,
-            "phone_number": 3,
-            "email": 4,
-            "address": 5
+
+            "name" : 1,
+            "location" : 2,
+            "phone_number" : 3,
+            "email" : 4,
+            "address" : 5
         }
+
+        print(info_list[info_change])
 
         if info_change not in info_list:
             print("Error: Information not found")
             return
         
-        LL_employee.update_employee(id, {info_change: new_info})
+        print("Komumst í info change")
+        LL_employee.update_employee(id, new_info, info_list[info_change])
         print(f"Employee with ID {id} updated successfully")
-
+"""
 def search_employee_by_name():
         name = input("Enter Employee Name to search: ")
         employee = LL_employee.logic.search_employee_name(name)
@@ -129,3 +133,4 @@ def search_employee_by_location():
             table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
             #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
 
+"""
