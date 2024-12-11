@@ -78,7 +78,7 @@ class EmployeeData:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
-                    if row[0] == Employee_id: #er ekki búinn að prófa að run-a kóðann en vonandi kemur þetta í veg fyrir tvö files
+                    if row[0] == str(Employee_id): 
                         row[int(what_data)] = updated_data
                         
                     new_file.append(row)

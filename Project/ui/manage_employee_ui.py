@@ -118,9 +118,5 @@ def search_employee_by_location():
         
         else:
             for i in employees:
-<<<<<<< HEAD
-                print(i)
-=======
                 print(i)
 
->>>>>>> main

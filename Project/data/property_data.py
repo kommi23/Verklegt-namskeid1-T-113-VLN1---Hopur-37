@@ -67,16 +67,14 @@ class PropertyData:
 
 
     def update_property_data(property_id, updated_data, what_data):
-        print(f"in property_data.py/update_property_data {property_id}")
-        print(f"in property_data.py/update_property_data {updated_data}")
-        print(f"in property_data.py/update_property_data {what_data}")
         new_file = []
         try:
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
-                    if row[0] == property_id: 
-                        row[what_data] = updated_data
+                    if row[0] == str(property_id): 
+                        print("kemst inn í if statement")
+                        row[int(what_data)] = updated_data
                         
                     new_file.append(row)
             
