@@ -8,4 +8,7 @@ class Property_logic():
         
         DW_properties.add_property_dw(property)
 
+    def get_all_proberties_logic():
+        return DW_properties.get_all_properties_dw()
+
 from data.data_wrapper import *
