@@ -42,8 +42,8 @@ class Employee_logic:
             return f"Employee with id: {id} not found!"
 
 
-    def update_employee_logic(id: int, updated_data, what_data: int):
-        employee_change = DW_employee. update_employee_dw(id,updated_data, what_data)
+    def update_employee_logic(id , updated_data, what_data: int):
+        employee_change = DW_employee.update_employee_dw(id,updated_data, what_data)
 
         if employee_change:
             return f"Employee with ID {id} updated successfully."
