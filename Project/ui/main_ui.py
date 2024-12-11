@@ -8,7 +8,7 @@ class Mainmenu_UI:
                 print("\nMain Menu")
                 print("1. Employee")
                 print("2. Manager")
-                print("4. Contractor")
+                print("3. Contractor")
                 print("0. Exit")
                 choice = input("Enter your choice: ")
                 if choice == '1':
