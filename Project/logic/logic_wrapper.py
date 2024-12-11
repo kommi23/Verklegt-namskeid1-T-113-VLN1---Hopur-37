@@ -4,7 +4,7 @@ class LL_employee():
     
 
     def get_employee_list() -> list:
-        return Employee_logic.get_employee_list
+        return Employee_logic.get_employee_list()
     
 
     def update_employee(id: int, updated_data, what_data: int) -> str:
@@ -49,6 +49,10 @@ class LL_property():
     def change_property_lw(id, info_change, what_info):
         Property_logic.change_property(id, info_change, what_info)
         
+class LL_location():
+
+    def list_all_locations() -> list:
+        return Location_logic.get_location_list()
         
 
     
@@ -56,4 +60,5 @@ class LL_property():
 from logic.employee_logic import *
 from logic.contractor_logic import *
 from logic.property_logic import *
+from logic.location_logic import *
 from Models.Employee import *
