@@ -33,7 +33,7 @@ class EmployeeData:
                 
                 for line in csv_reader:
                     employee = []
-                    employee = Employee.turn_list_into_employee(line)
+                    employee = Employee(*line)
                     employees.append(employee)
             return employees
         except: 
@@ -48,7 +48,8 @@ class EmployeeData:
                     for line in csv_file:
                         line = line.split(",")
                         if location in line[-1]:
-                            employees.append(line)
+                            employee = Employee(*line)
+                            employees.append(employee)
                     return employees
             
         except: raise  
@@ -71,14 +72,16 @@ class EmployeeData:
 
 
 
-    def update_employee_data(Employee_id, updated_data, what_data): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
+    def update_employee_data(Employee_id, updated_data, what_data: int): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
                     if row[0] == Employee_id: #er ekki búinn að prófa að run-a kóðann en vonandi kemur þetta í veg fyrir tvö files
-                        row[what_data] = updated_data
+                        print("DEBUG IN update_empl")
+                        print(what_data)
+                        row[int(what_data)] = updated_data
                         
                     new_file.append(row)
             
