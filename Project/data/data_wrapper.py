@@ -71,6 +71,16 @@ class DW_properties:
         return PropertyData.delete_property_data(property_number)
 
 class DW_Location:
+
+    def get_all_locations_dw():
+        return LocationData.get_locations_data()
     
+    def write_location_dw(location):
+        x = LocationData.write_location_data(location)
+        if x == True:
+            print("success")
+        else: print(":(")
+
+
     def update_location_data(property_number, updated_data, what_data): 
         return LocationData.update_location_data(property_number, updated_data, what_data)

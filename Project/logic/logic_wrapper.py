@@ -46,6 +46,14 @@ class LL_contractor:
     
     def search_contractor_history(id) -> list:
         return Contractor.search_contractor_maintainance_history(id)
+    
+class LL_location():
+    def add_location(location):
+        Location_logic.write_location_logic(location)
+
+    def list_all_locations():
+        return Location_logic.get_location_list()
+        
         
 class LL_property():
      def add_property(property):
@@ -53,7 +61,7 @@ class LL_property():
         
 
 
-    
+from logic.location_logic import *    
 from logic.employee_logic import *
 from logic.contractor_logic import *
 from logic.property_logic import *
