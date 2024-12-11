@@ -13,7 +13,7 @@ class Employee_logic:
 
     #search employee by id
     def get_singular_employee_logic(id: int):
-        DW_employee.get_singular_employee_dw(id)
+        return DW_employee.get_singular_employee_dw(id)
 
     
     # Get the list of all employees in the data layer and send it to the UI layer

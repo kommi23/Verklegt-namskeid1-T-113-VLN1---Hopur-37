@@ -1,6 +1,6 @@
 from data.employee_data import EmployeeData 
 from data.property_data import PropertyData
-
+from data.location_data import LocationData
 #from contractorreport_data import ContractorReport
 #from location_data import LocationData
 #from maintanencereport_data import MaintenanceReportData
@@ -17,7 +17,7 @@ class DW_employee:
             print("success")
         else: print(":(")
 
-    def get_singular_employee_dw(employee_id = "2203792244"):
+    def get_singular_employee_dw(employee_id):
         return EmployeeData.get_singular_employee_data(employee_id)
 
 
@@ -70,3 +70,7 @@ class DW_properties:
     def delete_property_dw(property_number):
         return PropertyData.delete_property_data(property_number)
 
+class DW_Location:
+    
+    def update_location_data(property_number, updated_data, what_data): 
+        return LocationData.update_location_data(property_number, updated_data, what_data)
