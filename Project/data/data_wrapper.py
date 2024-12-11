@@ -52,7 +52,7 @@ class DW_employee:
 class DW_properties:
 
     def get_all_properties_dw():
-        return PropertyData.get_proberty_data()
+        return PropertyData.get_all_proberties_data()
     
     def get_property_by_number_dw(number):
         return PropertyData.get_singular_property_data(number)

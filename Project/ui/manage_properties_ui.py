@@ -4,16 +4,37 @@ class Manage_properties():
         os.system("clear")
         
         print("1. Create new property")
-        print("2. Search for property")
-        print("3. Change property")
+        print("2. Search property by location")
+        print("2. Search property by condition")
         print("4. List all properties")
         print("0. Go back")
 
         choice = int(input())
 
         if choice == 1:
-            add_property()
+            #add_property()
+            pass
+        if choice == 2:
+            pass
+        if choice == 3: 
+            pass
+        if choice == 4:
+            x = list_proberties()
+            print(x)
 
+def list_proberties():
+    properties = []
+    properties = LL_property.get_all_proberties_LL()
+            
+    if not properties:
+        print("No properties found.")
+
+    else:
+        for i in properties:
+            print(i)
+
+
+"""
 def add_property():
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
     user_inputs = {}
@@ -38,8 +59,12 @@ def add_property():
         new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
         LL_property.add_property(new_property)
 
+def list_proberties():
+    LL_property.get_all_proberties_LL()
 
 import os
 from Models.Property import *
 from ui.manager_ui import *
+"""
+import os
 from logic.logic_wrapper import * 
