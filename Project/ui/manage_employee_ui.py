@@ -88,6 +88,7 @@ def update_employee():
         LL_employee.update_employee(id, new_info, info_list[info_change])
         print(f"Employee with ID {id} updated successfully")
 
+# Komið í common_functions
 def search_employee_by_name(): #þarf ekki að vera
 
         name = input("Enter Employee Name to search: ")
@@ -98,7 +99,7 @@ def search_employee_by_name(): #þarf ekki að vera
         else:
             table = [[employee["id"], employee["name"], employee["location"], employee["phone_number"], employee["email"], employee["address"]]]
             #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-
+# Komið í Common_functions
 def search_employee_by_id(): #virkar
             id = input("Enter Employee ID to search: ")
             employee = LL_employee.search_employee_id(id)
@@ -118,5 +119,6 @@ def search_employee_by_location():
         
         else:
             for i in employees:
+
                 print(i)
 

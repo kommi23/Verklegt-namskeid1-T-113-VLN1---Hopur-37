@@ -50,6 +50,9 @@ class LL_contractor:
 class LL_property():
      def add_property(property):
         Property_logic.add_property(property)
+    
+     def get_all_proberties_LL():
+        return Property_logic.get_all_proberties_logic()
         
 
 

@@ -1,3 +1,3 @@
-from data.employee_data import *
+from ui.manage_properties_ui import *
 
-update_employee_data("2203792244", " AA", what_data = 2)
+Manage_properties.display_menu()
