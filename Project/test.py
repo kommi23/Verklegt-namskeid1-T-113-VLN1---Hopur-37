@@ -1,3 +1,3 @@
-from ui.manage_employee_ui import *
+from ui.main_ui import *
 
-update_employee()
+Mainmenu_UI.display_menu()

@@ -13,6 +13,8 @@ class Manage_properties():
 
         if choice == 1:
             add_property()
+        if choice == 3:
+            update_property_information()
 
 def add_property():
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
@@ -40,18 +42,19 @@ def add_property():
 
 
 def update_property_information():
-    id = int(input("Enter the ID of the property you want to update"))
-    info_change = input("Enter what information you want to change").lower()
+    id = int(input("Enter the ID of the property you want to update: "))
+    info_change = input("Do you want to change condition or maintenance: ").lower()
+    new_info = input(f"What is the new {info_change}: ")
 
     info_list = {
-        "status" :1,
-        "additional maintenance" : 2
+        "condition" :1,
+        "maintenance" : 2
     }
 
     if info_change not in info_list:
         print(f"Error: information not found")
 
-    LL_property.update_property()
+    LL_property.change_property_lw(id, new_info, info_list[info_change])
 
 import os
 from Models.Property import *

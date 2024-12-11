@@ -1,11 +1,6 @@
 from data.employee_data import EmployeeData 
 from data.property_data import PropertyData
 from data.location_data import LocationData
-#from contractorreport_data import ContractorReport
-#from location_data import LocationData
-#from maintanencereport_data import MaintenanceReportData
-#from maintenancerequests_data import MaintenanceRequestData
-#from contractor_data import ContractorData
 
 
 class DW_employee:
@@ -24,12 +19,6 @@ class DW_employee:
     def get_employees_dw() -> list:    
         return EmployeeData.get_employees_data()
 
-        #############test kóði################
-       #print(EmployeeData.get_employees())
-
-    #placeholder
-    #employee = ["name", "employee_id", "email", "address", "work_phone", "personal_phone", "location"]
-
     def get_employees_location_dw(location):
         return EmployeeData.get_employees_location_data(location)
 
@@ -43,11 +32,6 @@ class DW_employee:
 
     def update_employee_dw(employee_id,updated_data, what_data):
         return EmployeeData.update_employee_data(employee_id, updated_data, what_data)
-
-
-
-    #2203792244, Jacob Yxa, jacob.yxa@nanair.is, Vei 224 3B Longyearbyen, +47 92 09 77 01, +354 777 1338, Svalbard
-
 
 class DW_properties:
 
@@ -69,6 +53,9 @@ class DW_properties:
 
     def delete_property_dw(property_number):
         return PropertyData.delete_property_data(property_number)
+    
+    def update_property_dw(id, info_change, what_info):
+        PropertyData.update_property_data(id, info_change, what_info)
 
 class DW_Location:
     
