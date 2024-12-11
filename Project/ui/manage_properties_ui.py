@@ -12,23 +12,16 @@ class Manage_properties():
         choice = int(input())
 
         if choice == 1:
-<<<<<<< HEAD
             add_property()
-        if choice == 3:
-            update_property_information()
-=======
-            #add_property()
-            pass
         if choice == 2:
             pass
         if choice == 3: 
-            pass
+            update_property_information()
         if choice == 4:
-            print("við komumst í choic")
-            list_proberties()
+            list_properties()
            
 
-def list_proberties():
+def list_properties():
     properties = []
     properties = LL_property.get_all_proberties_LL()
             
@@ -39,8 +32,6 @@ def list_proberties():
         for i in properties:
             print(i)
 
-
->>>>>>> origin
 
 def add_property():
     fields = ["ID", "Condition", "Additional maintenance", "Location"]

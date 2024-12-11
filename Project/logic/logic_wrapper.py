@@ -1,27 +1,21 @@
 class LL_employee():
-    # Setur inn allar upplýsingar um employee og ég gef til baka streng sem segir til um hvort það hafi tekist að skrá hann
     def add_employee(new_employee) -> str:
         return Employee_logic.write_employee_logic(new_employee)
     
-    # Ekkert input, færð bara lista af öllum eployees
+
     def get_employee_list() -> list:
         return Employee_logic.get_employee_list
     
-    # Tekur inn id til að sjá hvern er verið að updatea, nýja variablið inn í updated_data sem getur verið strengur eða int og 
-    # Síðan læturu vita hvað er verið að vinna með með þvi að setja inn númeirð sem representar hvar í listanum breytingin 
-    # er (nafn = 1, gsm = 3...). Svo færð þú til baka streng sem segir hvort það hafi tekist
+
     def update_employee(id: int, updated_data, what_data: int) -> str:
         return Employee_logic.update_employee_logic(id, updated_data, what_data)
     
-    # Put in the name of the employee and I will return a list of all the info we have about that employee
     def search_employee_name(name: str) -> list:
         return Employee.search_employee_name(name)
     
-    # Put in the id of the employee and I will return a list of all the info we have about the employee
     def search_employee_id(id: int) -> list:
         return Employee_logic.get_singular_employee_logic(id)
     
-    # Put in the name of the location and I will pull upp a list with all the employees that work there and their information
     def search_employee_location(location: str) -> list:
         return Employee_logic.get_employees_location_logic(location)
     
@@ -49,7 +43,7 @@ class LL_property():
     def add_property(property):
         Property_logic.add_property(property)
     
-     def get_all_proberties_LL():
+    def get_all_proberties_LL():
         return Property_logic.get_all_proberties_logic()
         
     def change_property_lw(id, info_change, what_info):
