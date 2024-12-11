@@ -18,8 +18,8 @@ class LL_employee():
         return Employee.search_employee_name(name)
     
     # Put in the id of the employee and I will return a list of all the info we have about the employee
-    def search_employee_id(self, id: int) -> list:
-        return Employee.search_employee_id(id)
+    def search_employee_id(id: int) -> list:
+        return Employee_logic.get_singular_employee_logic(id)
     
     # Put in the name of the location and I will pull upp a list with all the employees that work there and their information
     def search_employee_location(self, location: str) -> list:

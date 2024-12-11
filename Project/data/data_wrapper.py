@@ -17,7 +17,7 @@ class DW_employee:
             print("success")
         else: print(":(")
 
-    def get_singular_employee_dw(employee_id = "2203792244"):
+    def get_singular_employee_dw(employee_id):
         return EmployeeData.get_singular_employee_data(employee_id)
 
 
