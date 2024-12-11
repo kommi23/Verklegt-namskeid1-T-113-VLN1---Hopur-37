@@ -1,7 +1,7 @@
 import os
 from logic.logic_wrapper import *
 from Models.Employee import *
-
+from ui.common_functions_ui import *
 class Manage_employees:
     def display_menu():
         os.system("clear")
@@ -23,7 +23,7 @@ class Manage_employees:
             user_input = int(input("Enter your choice:"))
         
             if user_input == 1:
-                display_employees()
+                Common_functions.display_employees()
             
             elif user_input == 2: #virkar
                 search_employee_by_id()
@@ -36,17 +36,7 @@ class Manage_employees:
 
 
 
-    
-def display_employees(): #virkar
-        employees = []
-        employees = LL_employee.list_all_employees()
-            
-        if not employees:
-            print("No employees found.")
 
-        else:
-            for i in employees:
-                 print(i)
         
 def add_employee():
     fields = ["ID", "Name", "Email", "Address", "Work Phone", "Personal Phone", "Location"]
@@ -128,4 +118,6 @@ def search_employee_by_location():
         
         else:
             for i in employees:
+
                 print(i)
+
