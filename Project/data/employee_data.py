@@ -33,7 +33,7 @@ class EmployeeData:
                 
                 for line in csv_reader:
                     employee = []
-                    employee = Employee.turn_list_into_employee(line)
+                    employee = Employee(*line)
                     employees.append(employee)
             return employees
         except: 
@@ -48,7 +48,8 @@ class EmployeeData:
                     for line in csv_file:
                         line = line.split(",")
                         if location in line[-1]:
-                            employees.append(line)
+                            employee = Employee(*line)
+                            employees.append(employee)
                     return employees
             
         except: raise  
