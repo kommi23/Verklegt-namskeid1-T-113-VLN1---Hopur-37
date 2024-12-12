@@ -1,5 +1,5 @@
 class Maintenance_request:
-    def __init__(self, id, property_number, description, priority, date, budget, recurring_task, employee_id = 0):
+    def __init__(self,id,property_number,description,priority,date,budget,recurring_task,employee_id = 0):
         self.id = id
         self.property_number = property_number
         self.description = description

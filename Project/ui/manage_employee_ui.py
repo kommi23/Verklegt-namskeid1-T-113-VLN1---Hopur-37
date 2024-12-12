@@ -13,9 +13,7 @@ class Manage_employees:
 
         if choice not in valid_choices:
             print("Please enter a valid choice!")
-            I_understand = None
-            I_understand = input("Enter anything to continue")
-            if I_understand != None:
+                
                 Manage_employees.display_menu()
 
         if choice == 1:

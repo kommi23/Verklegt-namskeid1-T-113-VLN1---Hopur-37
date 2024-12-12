@@ -10,7 +10,7 @@ class Manager_ui:
         print("0. Go back")
 
         choice = int(input("Enter your choice:"))
-        valid_choices = ["1", "2", "3", "4", "5", "0"]
+        valid_choices = [1, 2, 3, 4, 5, 0]
         
         if choice not in valid_choices:
             print("Please enter a valid choice!")
