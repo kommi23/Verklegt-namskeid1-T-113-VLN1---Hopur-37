@@ -43,4 +43,4 @@ class Employee_ui:
 import os
 from logic.logic_wrapper import *
 from ui.common_functions_ui import *
-from ui.main_ui import *
+from ui.main_ui import Mainmenu_ui

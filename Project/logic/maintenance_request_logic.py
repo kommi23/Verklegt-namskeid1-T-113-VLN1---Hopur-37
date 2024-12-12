@@ -22,3 +22,14 @@ class Maintenance_request_logic:
     
     def get_maintenance_request_by_employee_id_logic(employee_id):
         return DW_Maintenance_request.get_maintenance_request_by_employee_id_dw(employee_id)
+    
+
+    def get_maintenancereports_by_employee(employee_id: int) -> list[Maintenance_request]:
+        """Returns a list of all MaintenanceReports that the employee is registered to.
+        """
+        maintenencereports = []
+        all_maintenance_reports = DW_Maintenance_request.get_all_maintenance_requests_dw()
+        for maintenance_report in all_maintenance_reports:
+            if maintenance_report.employee_id == employee_id:
+                maintenencereports.append(maintenance_report)
+        return maintenencereports

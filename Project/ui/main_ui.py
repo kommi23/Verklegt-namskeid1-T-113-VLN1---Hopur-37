@@ -9,9 +9,17 @@ class Mainmenu_ui:
                 print("0. Exit")
 
                 choice = input("Enter your choice: ")
+                valid_choices = ["1","2","0"]
+
+                if choice not in valid_choices:
+                    print("Please enter a valid choice!")
+                    I_understand = None
+                    I_understand = input("Enter anything to continue")
+                    if I_understand != None:
+                        Mainmenu_ui.display_menu()
 
                 if choice == '1':
-                     Employee_ui.display_menu()
+                    Employee_ui.display_menu()
                 elif choice == '2':
                     Manager_ui.display_menu()
                 elif choice == '0':
