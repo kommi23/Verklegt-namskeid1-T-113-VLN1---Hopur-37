@@ -72,7 +72,7 @@ def add_maintenance_requests():
             Maintenance_request_logic.add_maintenance_request_logic(new_maintenance)
             print("\nMaintenance request added successfully!")
         
-def display       
+
             
 def update_maint_requests():
         id = input("Enter Maintenance Number: ")

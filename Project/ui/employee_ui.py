@@ -12,7 +12,7 @@ class Employee_ui:
         print("4. Search for Maintenance Requests")
         print("5. Go back")
 
-        choice = int(input("Enter your choice:"))
+        choice = str(input("Enter your choice:"))
 
         if choice == 1:
             Common_functions.display_employees()

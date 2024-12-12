@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 
 property_number, condition, additional_maintenance, location
 property_number1, condition, additional_maintenance, Reykjavík
@@ -7,13 +5,6 @@ property_number2, condition, additional_maintenance, Þórshöfn
 property_number3, condition, additional_maintenance, location
 property_number4, condition, additional_maintenance, Reykjavík
 
-=======
-property_id, condition, additional_maintenance, location
-1,bad,additional_maintenance,Reykjavik
-2,Ok,additional_maintenance,Þórshöfn
-3,Shit,additional_maintenance,Þórshöfn
-4,OK,additional_maintenance,Reykjavik
->>>>>>> Stashed changes
 =======
 property_id,condition,additional_maintenance,location
 1,Good,additional_maintenance,Reykjavik
