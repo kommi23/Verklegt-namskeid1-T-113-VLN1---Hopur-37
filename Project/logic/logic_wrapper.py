@@ -56,6 +56,9 @@ class LL_property():
     
     def get_all_properties_lw() -> list:
         return Property_logic.get_all_proberties_logic()
+     
+     def get_properties_by_location_data_LL(location):
+         return Property_logic.get_properties_by_location_data_logic(location)
         
     def change_property_lw(id, info_change, what_info) -> list:
         Property_logic.change_property(id, info_change, what_info)
