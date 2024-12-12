@@ -3,15 +3,15 @@ import csv
 class MaintenanceRequestData:
     def add_maintenance(maintenance):
         try:
-            with open("maintenances.csv", "a", newline='', encoding='utf-8') as csv_file:
+            with open("maintenancerequest.csv", "a", newline='', encoding='utf-8') as csv_file:
                 csv_file.write(maintenance)
                 return True 
         except: raise
-
+    print("kemst hingað")
     def get_maintenances():
         maintenances = []
         try:
-            with open("maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
+            with open("maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
                     maintenances.append(line)

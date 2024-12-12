@@ -59,8 +59,9 @@ class DW_Location:
 
 class DW_Maintenance_request:
     def add_maintenance_request_dw(new_request):
+        print("lika hingað")
         return MaintenanceRequestData.add_maintenance(new_request)
-    
+        
     def get_all_maintenance_requests_dw():
         return MaintenanceRequestData.get_maintenances()
     
