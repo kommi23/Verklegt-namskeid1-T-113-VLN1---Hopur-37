@@ -13,7 +13,15 @@ class Employee_logic:
 
     #search employee by id
     def get_singular_employee_logic(id: int):
-        return DW_employee.get_singular_employee_dw(id)
+        employee1 = DW_employee.get_singular_employee_dw(id)
+        error = f"No employee found with the ID {id}."
+
+        if not employee1:
+            return error
+        
+        else:
+            employee1 = Employee.turn_employee_into_list(employee1)
+            return employee1
     
     def get_employees_location_logic(location: str):
         try:
@@ -52,3 +60,4 @@ class Employee_logic:
 
 
 from data.data_wrapper import *
+from Models.Employee import *
