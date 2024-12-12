@@ -53,6 +53,9 @@ class LL_property():
     
      def get_all_proberties_LL():
         return Property_logic.get_all_proberties_logic()
+     
+     def get_properties_by_location_data_LL(location):
+         return Property_logic.get_properties_by_location_data_logic(location)
         
 
 

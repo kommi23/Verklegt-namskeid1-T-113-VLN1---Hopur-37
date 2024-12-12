@@ -5,21 +5,20 @@ class Manage_properties():
         
         print("1. Create new property")
         print("2. Search property by location")
-        print("2. Search property by condition")
+        print("3. Search property by condition")
         print("4. List all properties")
         print("0. Go back")
 
         choice = int(input())
 
         if choice == 1:
-            #add_property()
+            add_property()
             pass
         if choice == 2:
-            pass
+            list_properties_by_location()
         if choice == 3: 
             pass
         if choice == 4:
-            print("við komumst í choic")
             list_proberties()
            
 
@@ -33,6 +32,41 @@ def list_proberties():
     else:
         for i in properties:
             print(i)
+
+def list_properties_by_location():
+    
+    os.system("clear")
+    
+    print("1. Properties in Reykjavík")
+    print("2. Properties in Nuuk")
+    print("3. Properties in Kulusuk")
+    print("4. Properties in Þórshöfn")
+    print("5. Properties in Tingwall")
+    print("6. Properties in Þórshöfn")
+    print("0. Go back")
+
+    location_search = int(input())
+    
+    valid_locations = {
+        1: "Reykjavík",
+        2: "Nuuk",
+        3: "Kulusuk",
+        4: "Þórshöfn",
+        5: "Tingwall",
+        6: "Þórshöfn"
+    }
+    if location_search in valid_locations:
+        location = valid_locations[location_search]
+        properties = LL_property.get_properties_by_location_data_LL(location)
+        for i in properties:
+            print(i)
+    elif location == 0:
+        pass # go back 
+    else: 
+        print("invalid input")
+
+  
+       
 
 
 

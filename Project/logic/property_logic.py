@@ -10,5 +10,8 @@ class Property_logic():
 
     def get_all_proberties_logic():
         return DW_properties.get_all_properties_dw()
+    
+    def get_properties_by_location_data_logic(location):
+        return DW_properties.get_property_by_location_dw(location)
 
 from data.data_wrapper import *
