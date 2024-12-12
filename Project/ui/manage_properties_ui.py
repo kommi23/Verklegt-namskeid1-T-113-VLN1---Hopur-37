@@ -10,16 +10,29 @@ class Manage_properties():
         print("0. Go back")
 
         choice = int(input())
+        valid_choices = ["1", "2", "3", "4", "0"]
+
+        if choice not in valid_choices:
+            print("Please enter a valid choice!")
+            I_understand = None
+            I_understand = input("Enter anything to continue")
+            if I_understand != None:
+                Manage_properties.display_menu()
 
         if choice == 1:
             add_property()
+
         if choice == 2:
-            list_properties_by_location()
+            pass
+
         if choice == 3: 
             update_property_information()
-        if choice == 4:
-            list_proberties()
 
+        if choice == 4:
+            list_properties()
+
+        if choice == 0:
+            Manager_ui.display_menu()
            
 
 def list_properties():
@@ -33,43 +46,10 @@ def list_properties():
         for i in properties:
             print(i)
 
-def list_properties_by_location():
-    
-    os.system("clear")
-    
-    print("1. Properties in Reykjavík")
-    print("2. Properties in Nuuk")
-    print("3. Properties in Kulusuk")
-    print("4. Properties in Þórshöfn")
-    print("5. Properties in Tingwall")
-    print("6. Properties in Þórshöfn")
-    print("0. Go back")
-
-    location_search = int(input())
-    
-    valid_locations = {
-        1: "Reykjavík",
-        2: "Nuuk",
-        3: "Kulusuk",
-        4: "Þórshöfn",
-        5: "Tingwall",
-        6: "Þórshöfn"
-    }
-    if location_search in valid_locations:
-        location = valid_locations[location_search]
-        properties = LL_property.get_properties_by_location_data_LL(location)
-        for i in properties:
-            print(i)
-    elif location == 0:
-        pass # go back 
-    else: 
-        print("invalid input")
-
-  
-       
-
 
 def add_property():
+
+    
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
     user_inputs = {}
     

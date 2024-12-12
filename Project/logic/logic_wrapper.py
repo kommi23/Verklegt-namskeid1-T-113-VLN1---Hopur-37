@@ -54,9 +54,6 @@ class LL_property():
     
     def get_all_properties_lw() -> list:
         return Property_logic.get_all_proberties_logic()
-     
-     def get_properties_by_location_data_LL(location):
-         return Property_logic.get_properties_by_location_data_logic(location)
         
     def change_property_lw(id, info_change, what_info) -> list:
         Property_logic.change_property(id, info_change, what_info)
@@ -80,7 +77,7 @@ class LW_maintenance_request:
         return Maintenance_request_logic.get_maintenance_request_by_property_id_logic(property_id)
     
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
-        return Maintenance_request_logic.get_maintenance_request_by_employee_id_logic(employee_id)
+        return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)
 
     
 

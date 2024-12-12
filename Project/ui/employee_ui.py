@@ -10,7 +10,7 @@ class Employee_ui:
         print("2. Search for employee")
         print("3. Available Maintenance Requests")
         print("4. Search for Maintenance Requests")
-        print("5. Exit to main menu")
+        print("5. Go back")
 
         choice = int(input("Enter your choice:"))
 

@@ -17,19 +17,23 @@ class Maintenance_request_logic:
     def get_maintenance_request_by_id_logic(maintenance_id):
         return DW_Maintenance_request.get_all_maintenance_requests_dw(maintenance_id)
 
-    def get_maintenance_request_by_property_id_logic(property_id):
-        return DW_Maintenance_request.get_maintenance_request_by_property_id_dw(property_id)
-    
-    def get_maintenance_request_by_employee_id_logic(employee_id):
-        return DW_Maintenance_request.get_maintenance_request_by_employee_id_dw(employee_id)
-    
-
+ 
     def get_maintenancereports_by_employee(employee_id: int) -> list[Maintenance_request]:
         """Returns a list of all MaintenanceReports that the employee is registered to.
         """
-        maintenencereports = []
+        maintenencerequest = []
         all_maintenance_reports = DW_Maintenance_request.get_all_maintenance_requests_dw()
         for maintenance_report in all_maintenance_reports:
             if maintenance_report.employee_id == employee_id:
+                maintenencerequest.append(maintenance_report)
+        return maintenencerequest
+    
+
+    
+    def get_maintenancerequest_by_property_id(property_number : int) -> list[Maintenance_request]:
+        maintenencereports = []
+        all_maintenance_reports = DW_Maintenance_request.get_all_maintenance_requests_dw()
+        for maintenance_report in all_maintenance_reports:
+            if maintenance_report.property_number == property_number:
                 maintenencereports.append(maintenance_report)
         return maintenencereports
