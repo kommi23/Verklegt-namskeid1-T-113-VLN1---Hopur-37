@@ -1,3 +1,3 @@
-from ui.manager_ui import *
+from ui.contractor_ui import *
 
-Manager_ui.display_menu()
+ContractorUI.contractor_menu()
