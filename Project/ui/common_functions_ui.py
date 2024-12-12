@@ -3,26 +3,20 @@ from Models.Maintenance_request import *
 class Common_functions:
 
     def display_employees():
-        employees = []
-        employees = LL_employee.list_all_employees()
+        list_of_employees = []
+        list_of_employees = LL_employee.get_employee_list_lw()
                 
-        if not employees:
+        if not list_of_employees:
                 print("No employees found.")
 
         else:
-            for i in employees:
-                    print(i)
+            for employee in list_of_employees:
+                    print(employee)
 
     def search_employee_by_id(): #virkar
             id = input("Enter Employee ID to search: ")
-            employee = LL_employee.search_employee_id(id)
-            if not employee:
-                print("No employee found with the ID {id}.")
-            
-            else:
-                employee = Employee.turn_employee_into_list(employee)
-                #print(tabulate(table, headers=["ID", "Name", "Location", "Phone Number", "Email", "Address"], tablefmt="grid"))
-                print(employee)
+            employee1 = LL_employee.search_employee_id_lw(id)
+            return employee1
 
     def search_employee_by_location():
         location = input("Enter Employee Location to search from: ")

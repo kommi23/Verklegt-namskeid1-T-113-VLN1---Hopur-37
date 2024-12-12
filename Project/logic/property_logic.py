@@ -7,8 +7,12 @@ class Property_logic():
                 raise RuntimeError("Property with ID {property.id} already exists")
         
         DW_properties.add_property_dw(property)
-
+    
     def get_all_proberties_logic():
         return DW_properties.get_all_properties_dw()
-
+    
+    def change_property(id, info_change, what_info):
+        DW_properties.update_property_dw(id, info_change, what_info)
+                
+            
 from data.data_wrapper import *

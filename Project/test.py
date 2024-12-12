@@ -1,3 +1,5 @@
-from ui.contractor_ui import *
 
-ContractorUI.contractor_menu()
+from ui.main_ui import *
+
+Mainmenu_ui.display_menu()
+

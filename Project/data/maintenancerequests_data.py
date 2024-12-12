@@ -1,9 +1,6 @@
 import csv
 
 class MaintenanceRequestData:
-    def __init__():
-        pass
-
     def add_maintenance(maintenance):
         try:
             with open("maintenances.csv", "a", newline='', encoding='utf-8') as csv_file:
@@ -33,7 +30,7 @@ class MaintenanceRequestData:
             
         except: raise  
 
-    def get_maintenancerequest_by_property_number(property_number):
+    def get_maintenancerequest_by_property_id(property_number):
         try:    
                 maintenencerequests = []
                 with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
