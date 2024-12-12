@@ -54,6 +54,8 @@ class DW_Location:
     def update_location_data(property_number, updated_data, what_data): 
         return LocationData.update_location_data(property_number, updated_data, what_data)
     
+    def get_all_locations():
+        return LocationData.get_locations_data()
 
 class DW_Maintenance_request:
     def add_maintenance_request_dw(new_request):
