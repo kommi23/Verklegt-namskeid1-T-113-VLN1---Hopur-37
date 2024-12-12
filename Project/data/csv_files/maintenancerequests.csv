@@ -1,1 +1,5 @@
-ID, property_number, description, priority, date, budget, recurring_task, employee_ID
+<<<<<<< HEAD
+id,property_number,description,priority,date,budget,recurring_task,employee_ID
+=======
+ID,property_number,description,priority,date,budget,recurring_task,employee_ID
+>>>>>>> main

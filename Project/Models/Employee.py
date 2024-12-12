@@ -1,5 +1,5 @@
 class Employee:
-    def __init__(self , employee_id, name, email, address, work_phone, personal_phone, location):
+    def __init__(self, employee_id, name, email, address, work_phone, personal_phone, location):
         self.employee_id = employee_id
         self.name = name
         self.email = email
@@ -20,5 +20,5 @@ class Employee:
         return Employee(*employee)
        
     def __str__(self) -> str:
-        return f"[{self.employee_id}, {self.name}, {self.email}, {self.address}, {self.work_phone}, {self.personal_phone}, {self.location}]"
+        return f"{self.employee_id} {self.name} {self.email} {self.address} {self.work_phone} {self.personal_phone} {self.location}"
 

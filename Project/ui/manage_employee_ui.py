@@ -1,27 +1,25 @@
 
 class Manage_employees:
     def display_menu():
-        os.system("clear")
+        #os.system("clear")
 
         print("1. Create new employee")
         print("2. Search for employee")
         print("3. Change employee")
         print("0. Go back")
 
-        choice = int(input("Enter your choice:"))
+        choice = input("Enter your choice:")
         valid_choices = ["1","2","3","0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice!")
-            I_understand = None
-            I_understand = input("Enter anything to continue")
-            if I_understand != None:
+                
                 Manage_employees.display_menu()
 
-        if choice == 1:
+        if choice == "1":
             add_employee()
             
-        elif choice == 2:
+        elif choice == "2":
             print("1. list all employees")
             print("2. search for employee by id")
             print("3. list all employees by location")
@@ -47,13 +45,13 @@ class Manage_employees:
                 Common_functions.search_employee_by_id()
             
             elif choice == 3:
-                Common_functions.search_employee_by_location()
+                list_employees_by_location()
 
             elif choice == 0:
                  Manage_employees.display_menu()
                  
-        if choice == 3:
-             update_employee()
+        #if choice == 3:
+        #     update_employee()
 
         if choice == 0:
              Manager_ui.display_menu()
@@ -181,6 +179,46 @@ def update_employee():
         
         LL_employee.update_employee(id, new_info, info_list[info_change])
         print(f"Employee with ID {id} updated successfully")
+
+
+def list_employees_by_location():
+        
+    #os.system("clear")
+        
+    allEmployees = []
+    allEmployees = LL_employee.get_employee_list_lw()
+
+    count : int = 0
+    for emp in allEmployees:
+        if count == 0:
+            pass
+        else: 
+            print ("    ", str(count), ") " , emp.location)
+            
+        count = count +1
+    # end for 
+    print ("    0) to Go back")
+        
+
+
+    location_search = int(input())
+    opt = int(location_search)
+    selected = None
+    if opt == 0: 
+        # Go back 
+        return
+    elif opt > len(allEmployees):
+        # out of bounds of the array
+        print("WTF!! ")
+    else:
+        selected = allEmployees[opt]
+
+    employees = LL_employee.search_employee_location_lw(selected.location.strip())
+    
+    if len(employees) == 0:
+        print("No employees found for this location: ", selected.location)
+    for i in employees:
+        print(i)    
 
 
 import os

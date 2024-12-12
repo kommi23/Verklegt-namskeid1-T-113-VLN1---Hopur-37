@@ -1,4 +1,3 @@
-
 class Manage_properties():
     def display_menu():
         os.system("clear")
@@ -10,95 +9,25 @@ class Manage_properties():
         print("0. Go back")
 
         choice = int(input())
-        valid_choices = ["1", "2", "3", "4", "0"]
-
-        if choice not in valid_choices:
-            print("Please enter a valid choice!")
-            I_understand = None
-            I_understand = input("Enter anything to continue")
-            if I_understand != None:
-                Manage_properties.display_menu()
 
         if choice == 1:
             add_property()
-
         if choice == 2:
-            pass
-
+            list_properties_by_location()
         if choice == 3: 
             update_property_information()
-
         if choice == 4:
-<<<<<<< HEAD
-
-            list_proberties()
-     # end def
-
-    def list_properties():
-        properties = []
-        properties = LL_property.get_all_properties_lw()
-                
-        if not properties:
-            print("No properties found)
-                  
-      """
-            list_properties()
-
-        if choice == 0:
-            Manager_ui.display_menu()
-           
-"""
-
-        else:
-            for i in properties:
-                print(i)
-
-    def list_properties_by_location():
-        
-        os.system("clear")
-        
-        allLocations = []
-        allLocations = LL_location.list_all_locations()
-
-        count : int = 0
-        for loc in allLocations:
-            if count == 0:
-                pass
-            else: 
-                print ("    ", str(count), ") " , loc.location)
-=======
             list_properties()
      # end def
 
 def list_properties():
     properties = []
     properties = LL_property.get_all_properties_lw()
->>>>>>> b403749 (property varkar 100% en vantar loop-ur og err handling)
             
     if not properties:
         print("No properties found.")
 
-<<<<<<< HEAD
-
-        location_search = int(input())
-        opt = int(location_search)
-        selected = None
-        if opt == 0: 
-            # Go back 
-            return
-        elif opt > len(allLocations):
-            # out of bounds of the array
-            print("WTF!! ")
-        else:
-            selected = allLocations[opt]
-
-        properties = LL_property.get_properties_by_location_data_LL(selected.location.strip())
-    
-        if len(properties) == 0:
-            print("No properties found for this locatio: ", selected.location)
-=======
     else:
->>>>>>> b403749 (property varkar 100% en vantar loop-ur og err handling)
         for i in properties:
             print(i)
 
@@ -141,37 +70,12 @@ def list_properties_by_location():
             print(i)    
     
 
-<<<<<<< HEAD
-"""
-    def add_property():
-        fields = ["ID", "Condition", "Additional maintenance", "Location"]
-        user_inputs = {}
-        
-        for field in fields:
-            os.system("clear")
-
-            for key, value in user_inputs.items():
-                print(f"{key}: {value}")
-            
-            print(f"{field}: ", end="")
-            user_inputs[field] = input()
-       
 
 def add_property():
-
-    
-=======
-
-def add_property():
->>>>>>> b403749 (property varkar 100% en vantar loop-ur og err handling)
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
     user_inputs = {}
     
     for field in fields:
-<<<<<<< HEAD
-
-=======
->>>>>>> b403749 (property varkar 100% en vantar loop-ur og err handling)
         os.system("clear")
 
         for key, value in user_inputs.items():
@@ -191,19 +95,11 @@ def add_property():
         new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
         LL_property.add_property_lw(new_property)
 
-<<<<<<< HEAD
-"""
-    def update_property_information():
-        id = int(input("Enter the ID of the property you want to update: "))
-        info_change = input("Do you want to change condition or maintenance: ").lower()
-        new_info = input(f"What is the new {info_change}: ")
-=======
 
 def update_property_information():
     id = int(input("Enter the ID of the property you want to update: "))
     info_change = input("Do you want to change condition or maintenance: ").lower()
     new_info = input(f"What is the new {info_change}: ")
->>>>>>> b403749 (property varkar 100% en vantar loop-ur og err handling)
 
     info_list = {
         "condition" :1,
@@ -218,6 +114,5 @@ def update_property_information():
 import os
 from Models.Property import *
 from ui.manager_ui import *
-
 import os
 from logic.logic_wrapper import * 
