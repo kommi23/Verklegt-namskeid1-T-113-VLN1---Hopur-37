@@ -1,14 +1,13 @@
 
 class Mainmenu_ui:
     def display_menu():
-                os.system("clear")
-
+            while True:
                 print("\nMain Menu")
                 print("1. Employee")
                 print("2. Manager")
                 print("0. Exit")
 
-                choice = input("Enter your choice: ")
+                choice = str(input("Enter your choice: "))
                 valid_choices = ["1","2","0"]
 
                 if choice not in valid_choices:
