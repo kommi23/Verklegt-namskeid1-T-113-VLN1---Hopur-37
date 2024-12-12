@@ -6,22 +6,20 @@ from logic.employee_logic import *
 from logic.contractor_logic import *
 from logic.property_logic import *
 from logic.maintenance_request_logic import *
-
+from logic.location_logic import Location_logic
 
 class LL_employee():
     def add_employee_lw(new_employee) -> str:
         return Employee_logic.write_employee_logic(new_employee)
     
-
     def get_employee_list_lw() -> list:
-
         return Employee_logic.get_employee_list()
     
     def update_employee_lw(id: int, updated_data, what_data: int):
         return Employee_logic.update_employee_logic(id, updated_data, what_data)
     
     def search_employee_name_lw(name: str):
-        return Employee.search_employee_name(name)
+        return Employee_logic.search_employee_name(name)
     
     def search_employee_id_lw(id: int) -> Employee:
         return Employee_logic.get_singular_employee_logic(id)
@@ -56,9 +54,6 @@ class LL_property():
     
     def get_all_properties_lw() -> list:
         return Property_logic.get_all_proberties_logic()
-     
-     def get_properties_by_location_data_LL(location):
-         return Property_logic.get_properties_by_location_data_logic(location)
         
     def change_property_lw(id, info_change, what_info) -> list:
         Property_logic.change_property(id, info_change, what_info)
@@ -82,7 +77,7 @@ class LW_maintenance_request:
         return Maintenance_request_logic.get_maintenance_request_by_property_id_logic(property_id)
     
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
-        return Maintenance_request_logic.get_maintenance_request_by_employee_id_logic(employee_id)
+        return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)
 
     
 

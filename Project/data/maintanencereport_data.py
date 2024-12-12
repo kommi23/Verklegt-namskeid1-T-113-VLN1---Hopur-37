@@ -18,7 +18,7 @@ class MaintenanceReportData:
                     maintenancereports.append(line)
             return maintenancereports
         except: raise 
-
+#Færa í logic
     def get_maintenancereports_by_property(property):
         try:    
                 maintenencereports = []
@@ -30,7 +30,7 @@ class MaintenanceReportData:
                     return maintenencereports
             
         except: raise  
-
+#Færa í logic
     def get_maintenancereports_by_date(date):
         try:    
                 maintenencereports = []

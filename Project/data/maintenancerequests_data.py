@@ -30,28 +30,4 @@ class MaintenanceRequestData:
             
         except: raise  
 
-    def get_maintenancerequest_by_property_id(property_number):
-        try:    
-                maintenencerequests = []
-                with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
-                    for line in csv_file:
-                        line = line.split(",")
-                        if property_number in line[1]:
-                            maintenencerequests.append(line)
-                    return maintenencerequests
-            
-        except: raise  
-
-    def get_maintenancerequest_by_employee(employee_id):
-        try:    
-                maintenencerequests = []
-                with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
-                    for line in csv_file:
-                        line = line.split(",")
-                        if employee_id in line[0]:
-                            maintenencerequests.append(line)
-                    return maintenencerequests
-            
-        except: raise  
-
     #Bæta við breyta verkbeiðni
