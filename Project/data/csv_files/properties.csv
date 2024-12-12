@@ -1,4 +1,4 @@
-property_id, condition, additional_maintenance, location
+property_id,condition,additional_maintenance,location
 1,Good,additional_maintenance,Reykjavik
 2,Ok,additional_maintenance,Þórshöfn
 3,Shit,additional_maintenance,Þórshöfn

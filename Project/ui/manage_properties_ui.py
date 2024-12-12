@@ -1,3 +1,10 @@
+import os
+from Models.Property import *
+from ui.manager_ui import *
+
+import os
+from logic.logic_wrapper import * 
+
 
 class Manage_properties():
     def display_menu():
@@ -142,9 +149,3 @@ def add_property():
 
         LL_property.change_property_lw(id, new_info, info_list[info_change])
 
-import os
-from Models.Property import *
-from ui.manager_ui import *
-
-import os
-from logic.logic_wrapper import * 

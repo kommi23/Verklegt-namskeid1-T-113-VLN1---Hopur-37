@@ -43,5 +43,5 @@ class Manager_ui:
 import os
 from ui.main_ui import Mainmenu_ui
 from ui.manage_employee_ui import Manage_employees
-from ui.manage_properties_ui import Manage_properties
+#from ui.manage_properties_ui import Manage_properties
 from ui.manage_locations_ui import Manage_Locations
