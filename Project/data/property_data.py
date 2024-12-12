@@ -42,10 +42,12 @@ class PropertyData:
         try:    
                 properties = []
                 with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
+                    
                     for line in csv_file:
-                        line = line.split(",")
+                        line = line.strip("\n").split(",")
                         if location in line[-1]:
-                            properties.append(line)
+                            property = Property(*line)
+                            properties.append(property)
                     return properties
         except: raise          
 
