@@ -10,15 +10,29 @@ class Manage_properties():
         print("0. Go back")
 
         choice = int(input())
+        valid_choices = ["1", "2", "3", "4", "0"]
+
+        if choice not in valid_choices:
+            print("Please enter a valid choice!")
+            I_understand = None
+            I_understand = input("Enter anything to continue")
+            if I_understand != None:
+                Manage_properties.display_menu()
 
         if choice == 1:
             add_property()
+
         if choice == 2:
             pass
+
         if choice == 3: 
             update_property_information()
+
         if choice == 4:
             list_properties()
+
+        if choice == 0:
+            Manager_ui.display_menu()
            
 
 def list_properties():
@@ -34,6 +48,8 @@ def list_properties():
 
 
 def add_property():
+
+    
     fields = ["ID", "Condition", "Additional maintenance", "Location"]
     user_inputs = {}
     
