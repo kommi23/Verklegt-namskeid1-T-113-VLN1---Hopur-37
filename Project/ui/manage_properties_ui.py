@@ -10,14 +10,26 @@ class Manage_properties():
         print("0. Go back")
 
         choice = int(input())
+        valid_choices = ["1", "2", "3", "4", "0"]
+
+        if choice not in valid_choices:
+            print("Please enter a valid choice!")
+            I_understand = None
+            I_understand = input("Enter anything to continue")
+            if I_understand != None:
+                Manage_properties.display_menu()
 
         if choice == 1:
             add_property()
+
         if choice == 2:
-            list_properties_by_location()
+            pass
+
         if choice == 3: 
             update_property_information()
+
         if choice == 4:
+
             list_proberties()
      # end def
 
@@ -26,7 +38,15 @@ class Manage_properties():
         properties = LL_property.get_all_properties_lw()
                 
         if not properties:
-            print("No properties found.")
+            print("No properties found)
+                  
+      """
+            list_properties()
+
+        if choice == 0:
+            Manager_ui.display_menu()
+           
+"""
 
         else:
             for i in properties:
@@ -51,6 +71,7 @@ class Manage_properties():
         print ("    0) to Go back")
         
 
+
         location_search = int(input())
         opt = int(location_search)
         selected = None
@@ -71,7 +92,7 @@ class Manage_properties():
                 print(i)    
         
 
-
+"""
     def add_property():
         fields = ["ID", "Condition", "Additional maintenance", "Location"]
         user_inputs = {}
@@ -84,7 +105,16 @@ class Manage_properties():
             
             print(f"{field}: ", end="")
             user_inputs[field] = input()
-        
+       
+
+def add_property():
+
+    
+    fields = ["ID", "Condition", "Additional maintenance", "Location"]
+    user_inputs = {}
+    
+    for field in fields:
+
         os.system("clear")
         for key, value in user_inputs.items():
             print(f"{key}: {value}")
@@ -96,7 +126,7 @@ class Manage_properties():
             new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
             LL_property.add_property(new_property)
 
-
+"""
     def update_property_information():
         id = int(input("Enter the ID of the property you want to update: "))
         info_change = input("Do you want to change condition or maintenance: ").lower()
