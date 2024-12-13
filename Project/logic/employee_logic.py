@@ -19,7 +19,6 @@ class Employee_logic:
             return print(f"No employee found with the ID {id}.")
         
         else:
-            employee1 = Employee.turn_employee_into_list(employee1)
             return employee1
     
     def get_employees_location_logic(location: str):

@@ -58,8 +58,9 @@ def employee_search():
             return employee_search()
         
         elif choice == "2": 
-            x = Common_functions.search_employee_by_id()
-            print(x)
+            employee = Common_functions.search_employee_by_id()
+            if employee:
+                print(employee)
             return employee_search()
         
         elif choice == "3":
