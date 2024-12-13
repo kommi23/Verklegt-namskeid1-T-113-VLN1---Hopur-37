@@ -25,7 +25,7 @@ class MaintenanceRequestData:
             return maintenances
         except: raise
 
-    def get_maintenancerequest_by_ID(ID):
+    def get_maintenancerequest_by_ID(ID): #virkar svona
         try:    
                 #maintenencerequests = []
                 with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -91,4 +91,16 @@ class MaintenanceRequestData:
             return True
         except: raise      
 
-        
+    def get_maintenancereports_by_property(property): #EKKI NOTAÐ
+        try:    
+                with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+
+                    csv_reader = csv.reader(csv_file)
+                    for line in csv_reader:
+                        if property in line[1]:
+                            #maintenencerequests.append(line)
+                            maintenance = Maintenance_request(*line)
+                            return maintenance
+            
+        except: raise  
+
