@@ -44,7 +44,6 @@ class Maintenance_request_logic:
     def update_maintenance_request_logic(id, info_change, what_info):
         DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
 
-
     def update_maintenance_logic(id , updated_data, what_data: int):
         maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)
 
@@ -54,17 +53,39 @@ class Maintenance_request_logic:
             return f"Employee with ID {id} not found."
         
     def add_maintenance_report_logic(id, employee_id, report):
-        maintenance_report = DW_Maintenance_request.add_maintenance_report_dw(id, employee_id, report)
+        #maintenance_report = DW_Maintenance_request.add_maintenance_report_dw(id, employee_id, report)
+        
+        all_maintenances = DW_Maintenance_request.get_all_maintenance_requests_dw()
+        for maintenance in all_maintenances:
+            if id == maintenance.id:
+                try:
+                    DW_Maintenance_request.add_maintenance_report_dw(id, employee_id, report)
+                    return print("Maintenance report successfully created")
+                except:
+                    pass
+        return print(f"Request with id: {id} can not be found")
 
-        if maintenance_report:
+        """if maintenance_report:
             return f"A report for request {id} was created successfully."
         else:
-            return f"Request with ID {id} not found."
-        
-    def approve_maintenace_report_logic(id):
-        maintenance_report = DW_Maintenance_request.add_approve_maintenance_report_dw(id)
+            return f"Request with ID {id} not found."""
 
-        if maintenance_report:
+    def approve_maintenace_report_logic(id):
+        #maintenance_report = DW_Maintenance_request.add_approve_maintenance_report_dw(id)
+
+        """if maintenance_report:
             return f"A report {id} was closed successfully."
         else:
-            return f"Request with ID {id} not found."       
+            return f"Request with ID {id} not found."""
+
+        all_maintenances = DW_Maintenance_request.get_all_maintenance_requests_dw()
+
+        for maintenance in all_maintenances:
+            if id == maintenance.id:
+                try:
+                    DW_Maintenance_request.add_approve_maintenance_report_dw(id)
+                    return print("Maintenance Report successfully approved")
+                except:
+                    pass
+        raise print(f"Report with id: {id} can not be found")
+        #return print(f"Report with id: {id} can not be found")

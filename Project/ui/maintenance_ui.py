@@ -17,7 +17,7 @@ class Maintenance_ui:
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2", "3", "4", "5", "0"]
+        valid_choices = ["1", "2", "3", "4", "5", "6", "0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
@@ -27,12 +27,15 @@ class Maintenance_ui:
         elif choice == '2':
             add_maintenance_requests()
         elif choice == '3':
-             update_maintenance_requests()
+            update_maintenance_requests()
         elif choice == '4':
             Common_functions.search_maintenace_request_by_id()
         
         elif choice == '5':
-             Common_functions.search_maintenance_request_by_property_id()
+            Common_functions.search_maintenance_request_by_property_id()
+        
+        elif choice == "6":
+             manager_approve_maintenance_report()
              
         elif choice == '0':
              Manager_ui.display_menu()
@@ -120,16 +123,19 @@ def manager_approve_maintenance_report():
     print("0. To go back")
 
 
-    choice = (input("Enter your choice: "))
+    choice = input("Enter your choice: ")
     valid_choices = ["1", "0"]
 
 
     if choice not in valid_choices:
         print("Please enter a valid choice: ")
-        return
+        return manager_approve_maintenance_report()
    
     if choice == '1':
-        LW_maintenance_request.approve_maintenance_report_lw(maintenance_id)
+        try:
+            LW_maintenance_request.approve_maintenance_report_lw(maintenance_id)
+        except:
+            return manager_approve_maintenance_report()
        
     elif choice == '0':
-        pass
+        return Maintenance_ui.manager_maintenance_requests_menu()

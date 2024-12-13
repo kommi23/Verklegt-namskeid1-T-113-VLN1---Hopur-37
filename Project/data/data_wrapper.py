@@ -82,4 +82,4 @@ class DW_Maintenance_request:
     
     def add_approve_maintenance_report_dw(maintenance_id):
         return MaintenanceRequestData.approve_maintenancereport_data(maintenance_id)
-    
+
