@@ -25,10 +25,13 @@ class Maintenance_ui:
             return
         elif choice == '1':
             Common_functions.display_all_maintenace_requests()
+
         elif choice == '2':
             add_maintenance_requests()
+
         elif choice == '3':
             update_maintenance_requests()
+
         elif choice == '4':
             Common_functions.search_maintenace_request_by_id()
         
@@ -88,8 +91,8 @@ def add_maintenance_requests():
             
 def update_maintenance_requests():
         maintenance_id = input("Enter Maintenance Number: ")
-        info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
-        new_info = input("Enter new information: ")
+        info_change = input("Enter what information to change (e.g, Property, Date): ").lower()
+        new_info = input(f"What is the new {info_change}: ")
 
         info_list = { 
             
@@ -98,18 +101,32 @@ def update_maintenance_requests():
             "description": 3,
             "priority": 4,
             "date": 5,
-            "recurrin_task": 6,
+            "recurring_task": 6
         }
 
-        print(info_list[info_change])
+        
 
         if info_change not in info_list:
-            print("Information not found")
-            
+            print(f"Error: {info_change} Information not found")
+            return Maintenance_ui.manager_maintenance_requests_menu()
         
+        else:
+            print("\nYou have entered the following details:")
+            print(f"ID: {id}")
+            print(f"{info_change}: {new_info} ")
+
+            print("Press 1. to confirm that the information is right: ")
             
-            LW_maintenance_request.update_maintenance_request_lw(maintenance_id, new_info, info_list[info_change])
-            print(f"Maintenance Request {info_change} updated successfully")
+            try:
+                confirmation = int(input())
+                if confirmation == 1:
+                    LW_maintenance_request.update_maintenance_request_lw(maintenance_id, new_info, info_list[info_change])
+                    print(f"Maintenance Request {info_change} updated successfully")
+                    return Maintenance_ui.manager_maintenance_requests_menu()
+            
+            except RuntimeError:
+                print("Maintenance Request not changed")
+                return Maintenance_ui.manager_maintenance_requests_menu()
 
 def employee_write_maintenance_report():
     maintenance_id = input("Enter Maintenance Number: ")
