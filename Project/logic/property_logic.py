@@ -30,6 +30,9 @@ class Property_logic():
         all_properties = DW_properties.get_all_properties_dw()
         for property in all_properties:
             if id == property.property_id:
-                return DW_properties.update_property_dw(id, info_change, what_info)
-           
+                try:
+                    DW_properties.update_property_dw(id, info_change, what_info)
+                    return print("Property successfully updated")
+                except:
+                    pass
         return print(f"Property with id: {id} can not be found")
