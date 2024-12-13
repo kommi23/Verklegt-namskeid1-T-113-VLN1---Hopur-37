@@ -2,7 +2,6 @@
 ### NAN AIR TICKETING SOFTWARE
 
 ### Introduction:
-
 This software was created for Chuck Norris's imaginary company called Nan air, where division by zero makes sense, in a first 
 year computer science class in Reykjavik University. In the software the user is asked if he is a manager or an employee and 
 depending on the answer the user is prompted with different options. Managers are supposed to be able to create new: employees, locations, properties and maintenance requests. As well as look up employees, properties, locations, and maintenance requests 
@@ -20,8 +19,8 @@ the second week. But after everything all the group members prevailed and we man
     o Python3 
     o git
     o A working computer with some kind of terminal
-#########################
-Instructions:
+    
+### Instructions:
 To get the project you have to clone the repository onto your computer. 
 To do that you have to open your terminal and use the command:
 ```
