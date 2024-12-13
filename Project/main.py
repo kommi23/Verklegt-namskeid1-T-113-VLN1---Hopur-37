@@ -1,3 +1,7 @@
-from ui.UI_layer import MenuDisplayer
+from ui.main_ui import Mainmenu_ui
 
-menu_display = MenuDisplayer()
+try:
+    Mainmenu_ui.display_menu()
+except Exception:
+    print("Something unexpected went wrong! You have been returned to the Main menu")
+    Mainmenu_ui.display_menu()
