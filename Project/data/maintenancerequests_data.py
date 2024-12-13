@@ -27,20 +27,15 @@ class MaintenanceRequestData:
 
     def get_maintenancerequest_by_ID(ID):
         try:    
-                maintenencerequests = []
+                #maintenencerequests = []
                 with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
-
-                    
-                    for line in csv_file:
-                        line = line.split(",")
-                        if line[0] in maintenencerequests:
-                            maintenencerequests.append(*line)
 
                     csv_reader = csv.reader(csv_file)
                     for line in csv_reader:
                         if ID in line[0]:
-                            maintenencerequests.append(line)
-                    return maintenencerequests
+                            #maintenencerequests.append(line)
+                            maintenance = Maintenance_request(*line)
+                            return maintenance
             
         except: raise  
 
