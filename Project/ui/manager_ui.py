@@ -27,7 +27,7 @@ class Manager_ui:
 
         if choice == 3:
             pass
-            #Manage_maintenance_reports.display_menu()
+            Maintenance_UI.manager_maintenance_requests_menu()
 
         if choice == 4:
             pass
@@ -45,3 +45,4 @@ from ui.main_ui import Mainmenu_ui
 from ui.manage_employee_ui import Manage_employees
 #from ui.manage_properties_ui import Manage_properties
 from ui.manage_locations_ui import Manage_Locations
+from ui.manage_maintenances_ui import Maintenance_UI

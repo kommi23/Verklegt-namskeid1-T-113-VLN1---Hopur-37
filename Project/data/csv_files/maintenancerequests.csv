@@ -1,1 +1,2 @@
-ID,property_number,description,priority,date,budget,recurring_task,employee_ID
+ID,property_number,description,priority,date,budget,recurring_task,employee_ID,report,status
+1,1,1,1,1,69,1,1,blablabla,Ready

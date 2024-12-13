@@ -12,7 +12,7 @@ class Maintenance_UI:
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2" , "0"]
+        valid_choices = ["1","2","0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
@@ -42,15 +42,28 @@ class Maintenance_UI:
             print("Please enter a valid choice: ")
             return
         elif choice == '1':
-            pass
+            list_maintenance_requests()
         elif choice == '2':
-             add_maintenance_requests()
+            add_maintenance_requests()
+        elif choice == '3':
+             update_maintenance_requests()
+
+def list_maintenance_requests():
+            Maintenance_requests = []
+            Maintenance_requests = LW_maintenance_request.get_all_maintenance_requests_lw()
+                
+            if not Maintenance_requests:
+                print("No locations found.")
+
+            else:
+                for i in Maintenance_requests:
+                    print(i)    
 
 
 
 def add_maintenance_requests():
     
-        fields = ["ID", "Property Number", "Description", "Priority", "Date", "Budget", "Recurring Task", "Employee ID"]
+        fields = ["ID","Property Number","Description","priority","Date","Budget","Reccuring Task"]
         user_input = {}
 
         for field in fields:
@@ -68,14 +81,15 @@ def add_maintenance_requests():
         
 
         if confirmation == 1:
-            new_maintenance = Maintenance_request(user_input["ID"], user_input["Property Number"], user_input["Description"], user_input["Date"], user_input["Budget"], user_input["Reccuring Task"], user_input["Employee ID"])
+            new_maintenance = Maintenance_request(user_input["ID"], user_input["Property Number"], user_input["Description"], user_input["priority"], user_input["Date"], user_input["Budget"], user_input["Reccuring Task"])
+            #new_maintenance = Maintenance_request(**user_input)
             Maintenance_request_logic.add_maintenance_request_logic(new_maintenance)
             print("\nMaintenance request added successfully!")
         
 
             
-def update_maint_requests():
-        id = input("Enter Maintenance Number: ")
+def update_maintenance_requests():
+        maintenance_id = input("Enter Maintenance Number: ")
         info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
         new_info = input("Enter new information: ")
 
@@ -87,7 +101,6 @@ def update_maint_requests():
             "priority": 4,
             "date": 5,
             "recurrin_task": 6,
-            "employee_id": 7
         }
 
         print(info_list[info_change])
@@ -97,5 +110,16 @@ def update_maint_requests():
             return
         
             
-            LL_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
-            print(f"Maintenance {info_change} updated successfully")
+        LW_maintenance_request.update_maintenance_request_lw(maintenance_id, new_info, info_list[info_change])
+        print(f"Maintenance {info_change} updated successfully")
+
+def employee_write_maintenance_report():
+    maintenance_id = input("Enter Maintenance Number: ")
+
+    employee_id = input("Enter your id: ")
+
+    report = input(f"Write a report for request {maintenance_id}: ")
+
+    LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)
+
+
