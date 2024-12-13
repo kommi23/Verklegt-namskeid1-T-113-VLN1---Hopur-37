@@ -3,9 +3,11 @@ from Models.Maintenance_request import *
 
 class Maintenance_request_logic:
     def add_maintenance_request_logic(new_request):
+        
         all_requests = DW_Maintenance_request.get_all_maintenance_requests_dw()
-
+        
         for request in all_requests:
+            print(request)
             if request.id == new_request.id:
                 raise RuntimeError(f"A maintenance reqeust with the id {new_request.id} already exists")
         

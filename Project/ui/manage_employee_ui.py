@@ -14,7 +14,7 @@ class Manage_employees:
         if choice not in valid_choices:
             print("Please enter a valid choice!")
                 
-                Manage_employees.display_menu()
+            Manage_employees.display_menu()
 
         if choice == "1":
             add_employee()
