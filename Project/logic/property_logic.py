@@ -32,4 +32,4 @@ class Property_logic():
             if id == property.property_id:
                 return DW_properties.update_property_dw(id, info_change, what_info)
            
-        return print(f"Property with id: {property.property_id} cant be found")
+        return print(f"Property with id: {id} can not be found")
