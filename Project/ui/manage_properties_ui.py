@@ -12,19 +12,26 @@ class Manage_properties():
         print("3. Update property")
         print("4. List all properties")
         print("0. Go back")
+        print("Press any other button for Main Menu")
 
-        choice = int(input())
+        choice_inp = (input())
+        try: 
+            choice = int(choice_inp)
+            if choice == 1:
+                add_property()
+            if choice == 2:
+                list_properties_by_location()
+            if choice == 3: 
+                update_property_information()
+            if choice == 4:
+                list_properties()                  
+            if choice == 0:
+               Manager_ui.display_menu()
+            else: 
+               Mainmenu_ui.display_menu()
+        except:
+            Mainmenu_ui.display_menu()
 
-        if choice == 1:
-            add_property()
-        if choice == 2:
-            list_properties_by_location()
-        if choice == 3: 
-            update_property_information()
-        if choice == 4:
-            list_properties()                  
-        if choice == 0:
-            Manager_ui.display_menu()
            
 def list_properties():
         properties = []
@@ -32,11 +39,11 @@ def list_properties():
                 
         if not properties:
             print("No properties found")
-                  
-
         else:
             for i in properties:
                 print(i)
+        
+        return Manage_properties.display_menu()
 
 def list_properties_by_location():    
     allLocations = []
@@ -55,27 +62,27 @@ def list_properties_by_location():
         location_search = int(input())
         if location_search == 0: 
         # Go back 
-            return
+            return Manage_properties.display_menu()
     except ValueError: 
         print("Please entert a valid input") 
         return list_properties_by_location()
 
-    opt = int(location_search)
     selected = None
+    opt = int(location_search)
     
-    if opt > len(allLocations):
-        # out of bounds of the array
+    try: # var upprunulega með:  if opt > len(allLocations): return "blabla", en það náði ekki að catch-a error við stress test
+            selected = allLocations[opt]
+            properties = LL_property.get_properties_by_location_data_LL(selected.location.strip())
+
+            if len(properties) == 0:
+
+                print("No properties found for this location: ", selected.location)
+            for i in properties:
+                    print(i)    
+            Manage_properties.display_menu()
+    except: 
         print("Please select a valid location")
         return list_properties_by_location()
-    else:
-        selected = allLocations[opt]
-        properties = LL_property.get_properties_by_location_data_LL(selected.location.strip())
-
-        if len(properties) == 0:
-
-            print("No properties found for this location: ", selected.location)
-        for i in properties:
-                print(i)    
        
 
 def add_property():
@@ -98,13 +105,15 @@ def add_property():
         print(f"{key}: {value}")
 
     print("Press 1. to confirm that the information is right: ")
-    confirmation = int(input())
-
-    if confirmation == 1:
-        new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
-        LL_property.add_property_lw(new_property)
-        Manager_ui.display_menu()
-
+    
+    try:
+        confirmation = int(input())
+        if confirmation == 1:
+            new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
+            LL_property.add_property_lw(new_property)
+            return Manage_properties.display_menu()
+    except:
+        return print("Employee not added") 
 
 def update_property_information():
     id = input("Enter the ID of the property you want to update: ")
@@ -117,6 +126,7 @@ def update_property_information():
     }
     if info_change not in info_list:
         print(f"Error: information {info_change} not found")
+        return Manage_properties.display_menu()
     else:
         print("\nYou have entered the following details:")
         print(f"ID: {id}")
@@ -128,8 +138,10 @@ def update_property_information():
             confirmation = int(input())
             if confirmation == 1:
                 LL_property.change_property_lw(id, new_info, info_list[info_change])
+                return Manage_properties.display_menu()
         except:
-            return print("Property information not changed")
+            print("Property information not changed")
+            return Manage_properties.display_menu()
         
 
  
