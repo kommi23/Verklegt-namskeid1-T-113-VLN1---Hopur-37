@@ -25,6 +25,11 @@ class Manager_ui:
             Manage_properties.display_menu()
             Manager_ui.display_menu()
 
+
+        if choice == 3:
+            Maintenance_ui.manager_maintenance_requests_menu()
+            Manager_ui.display_menu()
+
         if choice == "3":
             Maintenance_ui.manager_maintenance_requests_menu()
     

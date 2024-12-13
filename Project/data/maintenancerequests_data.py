@@ -29,6 +29,13 @@ class MaintenanceRequestData:
         try:    
                 maintenencerequests = []
                 with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+
+                    
+                    for line in csv_file:
+                        line = line.split(",")
+                        if line[0] in maintenencerequests:
+                            maintenencerequests.append(*line)
+
                     csv_reader = csv.reader(csv_file)
                     for line in csv_reader:
                         if ID in line[0]:

@@ -17,7 +17,7 @@ class Maintenance_request_logic:
         return DW_Maintenance_request.get_all_maintenance_requests_dw()
     
     def get_maintenance_request_by_id_logic(maintenance_id):
-        return DW_Maintenance_request.get_all_maintenance_requests_dw(maintenance_id)
+        return DW_Maintenance_request.get_maintenance_request_by_id_dw(maintenance_id)
 
  
     def get_maintenancereports_by_employee(employee_id: int) -> list[Maintenance_request]:
@@ -40,6 +40,12 @@ class Maintenance_request_logic:
                 maintenencereports.append(maintenance_report)
         return maintenencereports
     
+
+    def update_maintenance_request_logic(id, info_change, what_info):
+        DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
+
+    def 
+
     def update_maintenance_logic(id , updated_data, what_data: int):
         maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)
 
@@ -56,3 +62,4 @@ class Maintenance_request_logic:
         else:
             return f"Request with ID {id} not found."
         
+
