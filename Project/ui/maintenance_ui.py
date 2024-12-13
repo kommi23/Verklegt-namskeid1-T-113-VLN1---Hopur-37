@@ -118,7 +118,7 @@ def employee_write_maintenance_report():
 
     report = input(f"Write a report for request {maintenance_id}: ")
 
-    LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)
+    x = LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)
 
 def manager_approve_maintenance_report():
     maintenance_id = input("Enter Maintenance Number: ")
