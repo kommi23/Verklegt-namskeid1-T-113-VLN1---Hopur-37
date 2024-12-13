@@ -39,7 +39,7 @@ class MaintenanceRequestData:
             
         except: raise  
 
-    def update_maintenancerequest_data(maintenance_id, updated_data,  what_data: int):
+    def update_maintenancerequest_data(maintenance_id, updated_data,  what_data):
         new_file = []
         try:
             with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:

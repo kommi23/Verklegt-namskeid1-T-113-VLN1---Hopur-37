@@ -1,4 +1,4 @@
 id,property_number,description,priority,date,budget,recurring_task,employee_id,report,status
 7,7,7,7,7,7,7,7,blabla,Ready
-1,1,1,1,1,1,1,None,Empty,Open
+1,1,1,1,1,11.11.11,1,None,Empty,Open
 2,2,2,2,2,2,2,None,Empty,Open
