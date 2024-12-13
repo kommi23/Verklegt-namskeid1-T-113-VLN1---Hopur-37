@@ -1,7 +1,7 @@
-
+from ui.common_functions_ui import *
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
-
+from ui.manager_ui import *
 class Maintenance_UI:
     def display_menu():
         
@@ -32,18 +32,31 @@ class Maintenance_UI:
         print("1. Display all Maintenance Requests")
         print("2. Add Maintenance Request")
         print("3. Update Maintenance Request")
+        print("4. Search Maintenance Request by ID")
+        print("5. Search Maintenance Request by Property Number")
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2", "3", "0"]
+        valid_choices = ["1", "2", "3", "4", "5", "0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
             return
         elif choice == '1':
-            display_all_maintenance_requests()
+            Common_functions.display_all_maintenace_requests()
         elif choice == '2':
             add_maintenance_requests()
+        elif choice == '3':
+             update_maintenance_requests()
+        elif choice == '4':
+            Common_functions.search_maintenace_request_by_id()
+        
+        elif choice == '5':
+             Common_functions.search_maintenance_request_by_property_id()
+             
+        elif choice == '0':
+             Manager_ui.display_menu()
+             
 
 
 
@@ -84,15 +97,7 @@ def add_maintenance_requests():
     else:
          print("Something went worng")    
 
-def display_all_maintenance_requests():
-        requests = LW_maintenance_request.get_all_maintenance_requests_lw()
-        if not requests:
-            print("\nNo maintenance requests found.")
-            return
 
-        print("\nAll Maintenance Requests:")
-        for request in requests:
-            print(request)
 
             
 def update_maintenance_requests():
@@ -115,8 +120,8 @@ def update_maintenance_requests():
 
         if info_change not in info_list:
             print("Information not found")
-            return
+            
         
             
-            LW_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
-            print(f"Maintenance {info_change} updated successfully")
+            LW_maintenance_request.update_maintenance_request_logic(id, new_info, info_list[info_change])
+            print(f"Maintenance Request {info_change} updated successfully")
