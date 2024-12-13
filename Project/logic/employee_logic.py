@@ -14,10 +14,9 @@ class Employee_logic:
     #search employee by id
     def get_singular_employee_logic(id: int):
         employee1 = DW_employee.get_singular_employee_dw(id)
-        error = f"No employee found with the ID {id}."
-
+        
         if not employee1:
-            return error
+            return print(f"No employee found with the ID {id}.")
         
         else:
             employee1 = Employee.turn_employee_into_list(employee1)
