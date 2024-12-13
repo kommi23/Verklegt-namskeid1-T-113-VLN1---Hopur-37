@@ -11,20 +11,23 @@ class SearchEmployeeEmpUI:
         print("2. search by name")
         print("3. seach by id")
         print("4. search by location")
-        print("5. return")
+        print("0. return")
         choice = int(input("Enter your choice: "))
-        try:
-            if choice == 1:
-                Manage_employees.display_employees()
-            if choice == 2:
-                Manage_employees.search_employee_by_name()
-            if choice == 3:
-                Manage_employees.search_employee_by_id()
-            if choice == 4:
-                Manage_employees.search_employee_by_location()
-            if choice == 5:
-                Manage_employees.display_menu()
-            else:
-                print("Invalid input. Please enter choices 1-5: ")
-        except RuntimeError:
-            print("bara profa")
+        
+        if choice == 1:
+            Manage_employees.display_employees()
+            Manage_employees.display_menu()
+        if choice == 2:
+            Manage_employees.search_employee_by_name()
+            Manage_employees.display_menu()
+        if choice == 3:
+            Manage_employees.search_employee_by_id()
+            Manage_employees.display_menu()
+        if choice == 4:
+            Manage_employees.search_employee_by_location()
+            Manage_employees.display_menu()
+        if choice == 0:
+            Manage_employees.display_menu()
+        else:
+            print("Invalid input. Please enter choices 1-5: ")
+            Manage_employees.display_menu()

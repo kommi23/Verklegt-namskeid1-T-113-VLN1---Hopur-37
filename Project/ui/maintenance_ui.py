@@ -1,6 +1,8 @@
-from ui.manager_ui import Manager_ui
+
+from ui.common_functions_ui import *
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
+from ui.manager_ui import *
 
 class Maintenance_ui:
     def display_menu():
@@ -17,6 +19,7 @@ class Maintenance_ui:
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
             return
+        
         elif choice == '1':
             Maintenance_ui.manager_maintenance_requests_menu()
             Manager_ui.display_menu()
@@ -34,18 +37,31 @@ class Maintenance_ui:
         print("1. Display all Maintenance Requests")
         print("2. Add Maintenance Request")
         print("3. Update Maintenance Request")
+        print("4. Search Maintenance Request by ID")
+        print("5. Search Maintenance Request by Property Number")
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2", "3", "0"]
+        valid_choices = ["1", "2", "3", "4", "5", "0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
             return
         elif choice == '1':
-            display_all_maintenance_requests()
+            Common_functions.display_all_maintenace_requests()
         elif choice == '2':
             add_maintenance_requests()
+        elif choice == '3':
+             update_maintenance_requests()
+        elif choice == '4':
+            Common_functions.search_maintenace_request_by_id()
+        
+        elif choice == '5':
+             Common_functions.search_maintenance_request_by_property_id()
+             
+        elif choice == '0':
+             Manager_ui.display_menu()
+             
 
 
 
@@ -78,7 +94,6 @@ def add_maintenance_requests():
                 user_input["Date"],
                 user_input["Budget"],
                 user_input["Recurring Task"],
-                user_input["Employee ID"]
             )
 
             Maintenance_request_logic.add_maintenance_request_logic(new_maintenance)
@@ -86,19 +101,11 @@ def add_maintenance_requests():
     else:
          print("Something went worng")    
 
-def display_all_maintenance_requests():
-        requests = LW_maintenance_request.get_all_maintenance_requests_lw()
-        if not requests:
-            print("\nNo maintenance requests found.")
-            return
 
-        print("\nAll Maintenance Requests:")
-        for request in requests:
-            print(request)
 
             
 def update_maintenance_requests():
-        id = input("Enter Maintenance Number: ")
+        maintenance_id = input("Enter Maintenance Number: ")
         info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
         new_info = input("Enter new information: ")
 
@@ -110,15 +117,23 @@ def update_maintenance_requests():
             "priority": 4,
             "date": 5,
             "recurrin_task": 6,
-            "employee_id": 7
         }
 
         print(info_list[info_change])
 
         if info_change not in info_list:
             print("Information not found")
-            return
+            
         
             
-            LW_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
-            print(f"Maintenance {info_change} updated successfully")
+            LW_maintenance_request.update_maintenance_request_lw(maintenance_id, new_info, info_list[info_change])
+            print(f"Maintenance Request {info_change} updated successfully")
+
+def employee_write_maintenance_report():
+    maintenance_id = input("Enter Maintenance Number: ")
+
+    employee_id = input("Enter your id: ")
+
+    report = input(f"Write a report for request {maintenance_id}: ")
+
+    LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)

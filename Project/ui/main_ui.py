@@ -6,22 +6,17 @@ class Mainmenu_ui:
         print("2. Manager")
         print("0. Exit")
 
-        choice = str(input("Enter your choice: "))
-        valid_choices = ["1","2","0"]
+        choice = int(input("Enter your choice: "))
 
-        if choice not in valid_choices:
-            print("Please enter a valid choice!")
-            I_understand = None
-            I_understand = input("Enter anything to continue")
-            if I_understand != None:
-                Mainmenu_ui.display_menu()
-
-        if choice == '1':
+        if choice == 1:
             Employee_ui.display_menu()
-        elif choice == '2':
+        if choice == 2:
             Manager_ui.display_menu()
-        elif choice == '0':
+        if choice == 0:
             quit()
+        else: 
+            print("Invalid choice, please select a 0-2")
+            Mainmenu_ui.display_menu()
 
 
 from ui.manager_ui import *

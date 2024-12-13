@@ -52,25 +52,31 @@ def list_properties_by_location():
         
         count = count +1
     print ("    0) to Go back")
-    location_search = int(input())
+    try:
+        location_search = int(input())
+        if location_search == 0: 
+        # Go back 
+            return
+    except ValueError: 
+        print("Please entert a valid input") 
+        return list_properties_by_location()
+
     opt = int(location_search)
     selected = None
-    if opt == 0: 
-        # Go back 
-        return
-    elif opt > len(allLocations):
+    
+    if opt > len(allLocations):
         # out of bounds of the array
         print("Please select a valid location")
+        return list_properties_by_location()
     else:
         selected = allLocations[opt]
+        properties = LL_property.get_properties_by_location_data_LL(selected.location.strip())
 
-    properties = LL_property.get_properties_by_location_data_LL(selected.location.strip())
+        if len(properties) == 0:
 
-    if len(properties) == 0:
-
-        print("No properties found for this locatio: ", selected.location)
-    for i in properties:
-            print(i)    
+            print("No properties found for this location: ", selected.location)
+        for i in properties:
+                print(i)    
        
 
 def add_property():
@@ -119,21 +125,31 @@ def add_property():
 
 
 def update_property_information():
-    id = int(input("Enter the ID of the property you want to update: "))
+    id = input("Enter the ID of the property you want to update: ")
     info_change = input("Do you want to change condition or maintenance: ").lower()
     new_info = input(f"What is the new {info_change}: ")
-
-
 
     info_list = {
         "condition" :1,
         "maintenance" : 2
     }
-
     if info_change not in info_list:
-        print(f"Error: information not found")
+        print(f"Error: information {info_change} not found")
+    else:
+        print("\nYou have entered the following details:")
+        print(f"ID: {id}")
+        print(f"{info_change}: {new_info} ")
 
-    LL_property.change_property_lw(id, new_info, info_list[info_change])
+        print("Press 1. to confirm that the information is right: ")
+
+        try:
+            confirmation = int(input())
+            if confirmation == 1:
+                LL_property.change_property_lw(id, new_info, info_list[info_change])
+        except:
+            return print("Property information not changed")
+        
+
  
     
 

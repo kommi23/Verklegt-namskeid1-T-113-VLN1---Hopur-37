@@ -1,61 +1,50 @@
 
 class Manage_employees:
     def display_menu():
-        #os.system("clear")
-
+        # display choices
         print("1. Create new employee")
         print("2. Search for employee")
         print("3. Change employee")
         print("0. Go back")
 
         choice = input("Enter your choice:")
-        valid_choices = ["1","2","3","0"]
 
-        if choice not in valid_choices:
-            print("Please enter a valid choice!")
-                
-            Manage_employees.display_menu()
-
-        if choice == "1":
+        # write all if choice
+        if choice == 1:
             add_employee()
             
-        elif choice == "2":
+        elif choice == 2:
+            # display choices of submenu
             print("1. list all employees")
             print("2. search for employee by id")
             print("3. list all employees by location")
             print("0. Go back")
 
-            choice = int(input("Enter your choice:"))
-            valid_choices = [1,2,3,0]
-
-            if choice not in valid_choices:
-                print("Please enter a valid choice!")
-                I_understand = None
-                I_understand = input("Enter anything to continue")
-                if I_understand != None:
-                    Manage_employees.display_menu()
-
-            if choice not in valid_choices:
-                 print("Please enter a valid choice!")
-        
+            choice = input("Enter your choice:")
+            
+            # write all if choice
             if choice == 1:
                 Common_functions.display_employees()
-                return
+                Manage_employees.display_menu()
             
-            elif choice == 2: 
+            if choice == 2: 
                 Common_functions.search_employee_by_id()
-                return
+                Manage_employees.display_menu()
             
-            elif choice == 3:
+            if choice == 3:
                 list_employees_by_location()
-                return
+                Manage_employees.display_menu()
 
-            elif choice == 0:
+            if choice == 0:
                  Manage_employees.display_menu()
-                 return
+            
+            else:
+                print("Enter a choice between 0-3")
+                Manage_employees.display_menu()
                  
         if choice == 3:
              update_employee()
+             Manage_employees.display_menu()
 
         if choice == 0:
              Manager_ui.display_menu()
@@ -215,7 +204,6 @@ def list_employees_by_location():
     Manager_ui.display_menu()
 
 
-import os
 from ui.manager_ui import Manager_ui
 from logic.logic_wrapper import *
 from Models.Employee import Employee
