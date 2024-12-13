@@ -73,7 +73,7 @@ def list_properties_by_location():
 
         if len(properties) == 0:
 
-            print("No properties found for this locatio: ", selected.location)
+            print("No properties found for this location: ", selected.location)
         for i in properties:
                 print(i)    
        

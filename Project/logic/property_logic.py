@@ -36,3 +36,6 @@ class Property_logic():
                 except:
                     pass
         return print(f"Property with id: {id} can not be found")
+
+#1
+
