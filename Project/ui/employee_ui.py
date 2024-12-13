@@ -18,7 +18,7 @@ class Employee_ui:
             I_understand = None
             I_understand = input("Enter anything to continue")
             if I_understand != None:
-                Mainmenu_ui.display_menu()
+                Employee_ui.display_menu()
 
         if choice == "1":
             Common_functions.display_employees()
@@ -38,11 +38,11 @@ class Employee_ui:
                 I_understand = None
                 I_understand = input("Enter anything to continue")
                 if I_understand != None:
-                    Mainmenu_ui.display_menu()
+                    Employee_ui.display_menu()
 
             if choice == "1":
-                print("We get into search by id")
-                Common_functions.search_employee_by_id()
+                employee1 = Common_functions.search_employee_by_id()
+                print(employee1)
                 Employee_ui.display_menu()
 
 
@@ -55,7 +55,7 @@ class Employee_ui:
 
 
         if choice == "3":  
-            Common_functions.display_maintenace_requests()
+            Common_functions.display_all_maintenace_requests()
             Employee_ui.display_menu()
 
         if choice == "4":
@@ -64,8 +64,9 @@ class Employee_ui:
 
         if choice == "5":
             employee_write_maintenance_report()
+            Employee_ui.display_menu
 
-        if choice == "6":
+        if choice == "0":
             Mainmenu_ui.display_menu()
 
 

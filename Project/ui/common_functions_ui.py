@@ -21,7 +21,7 @@ class Common_functions:
 
     def search_employee_by_location():
         location = input("Enter Employee Location to search from: ")
-        employees = LL_employee.search_employee_location(location)
+        employees = LL_employee.search_employee_location_lw(location)
         if not employees:
             print("No employees found in location {location}.")
         

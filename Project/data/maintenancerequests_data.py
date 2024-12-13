@@ -63,9 +63,9 @@ class MaintenanceRequestData:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
                     if row[0] == str(maintenance_id): 
-                        row[int(7)] = employee_id
-                        row[int(8)] = report
-                        row[int(9)] = "Ready"
+                        row[7] = employee_id
+                        row[8] = report
+                        row[9] = "Ready"
                     new_file.append(row)
             
             with open("Project/data/csv_files/maintenancerequests.csv", "w", newline='', encoding='utf-8') as new_csv_file:
