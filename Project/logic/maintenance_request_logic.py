@@ -39,3 +39,6 @@ class Maintenance_request_logic:
             if maintenance_report.property_number == property_number:
                 maintenencereports.append(maintenance_report)
         return maintenencereports
+    
+    def change_maintenance_request(id, info_change, what_info):
+        DW_Maintenance_request.up

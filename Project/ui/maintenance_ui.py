@@ -95,7 +95,7 @@ def display_all_maintenance_requests():
             print(request)
 
             
-def update_maint_requests():
+def update_maintenance_requests():
         id = input("Enter Maintenance Number: ")
         info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
         new_info = input("Enter new information: ")
@@ -118,5 +118,5 @@ def update_maint_requests():
             return
         
             
-            LL_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
+            LW_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
             print(f"Maintenance {info_change} updated successfully")
