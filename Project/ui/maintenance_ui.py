@@ -13,8 +13,8 @@ class Maintenance_ui:
         print("3. Update Maintenance Request")
         print("4. Search Maintenance Request/Report by ID")
         print("5. Search Maintenance Requests/Reports by Property Number")
-        print("5. Search Maintenance Requests/Reports by employee ID")        
-        print("6. Approve Maintenance report")
+        print("6. Search Maintenance Requests/Reports by employee ID")        
+        print("7. Approve Maintenance report")
         print("0. Go back")
 
         choice = (input("Enter your choice: "))

@@ -36,7 +36,7 @@ class Common_functions:
         requests = LW_maintenance_request.get_all_maintenance_requests_lw()
 
         if not requests:
-            print("No Maintenance Requests found...")
+            print("No Maintenance Requests/Reports found...")
 
         else:
              for i in requests:
@@ -45,7 +45,7 @@ class Common_functions:
     
 
     def search_maintenace_request_by_id():
-        id = (input("Enter the ID for the Maintenance Request:"))
+        id = (input("Enter the ID for the Maintenance Request/Report:"))
 
 
         request = LW_maintenance_request.get_maintenance_request_by_id_lw(id)
@@ -54,28 +54,28 @@ class Common_functions:
 
         
         if not request:
-            print("No Maintenance Request found with the ID {id}")
+            print("No Maintenance Request/Report found with the ID {id}")
 
         else:
             print(request)
     
     def search_maintenances_request_by_property_id():
-        property_number = input("Enter the Property ID for the Maintenance Request: ")
+        property_number = input("Enter the Property ID for the Maintenance Requests/Reports: ")
         requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(property_number)
 
         if not requests:
-              print("No Maintenance Request found with Propery Number {property_id}")
+              print("No Maintenance Request/Report found with Propery Number {property_id}")
 
         else:
             for request in requests:
                 print(request)
 
     def search_maintenances_requests_by_employee_id():
-        employee_id = input("Enter the Property ID for the Maintenance Request: ")
+        employee_id = input("Enter the Employee ID for the Maintenance Requests/Reports: ")
         requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(employee_id)
 
         if not requests:
-              print("No Maintenance Request found with Propery Number {property_id}")
+              print("No Maintenance Request/Report found with Propery Number {property_id}")
 
         else:
             for request in requests:
