@@ -1,4 +1,9 @@
+
 id,property_number,description,priority,date,budget,recurring_task,employee_ID
 1,3,description,low,22.10.25,100,no,3110795949
 3,4,2,2,3,4,2,2
 2,6,hallo,high,22.12.24,100.000,no,IDK
+ID,property_number,description,priority,date,budget,recurring_task,employee_ID,report,status
+1,1,1,1,1,69,1,1,blablablablabla,Ready
+7,7,7,7,7,7,7,7,blabla,Ready
+

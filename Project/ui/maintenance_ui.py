@@ -68,7 +68,6 @@ def add_maintenance_requests():
                 user_input["Date"],
                 user_input["Budget"],
                 user_input["Recurring Task"],
-                user_input["Employee ID"]
             )
 
             Maintenance_request_logic.add_maintenance_request_logic(new_maintenance)
@@ -80,7 +79,7 @@ def add_maintenance_requests():
 
             
 def update_maintenance_requests():
-        id = input("Enter Maintenance Number: ")
+        maintenance_id = input("Enter Maintenance Number: ")
         info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
         new_info = input("Enter new information: ")
 
@@ -92,7 +91,6 @@ def update_maintenance_requests():
             "priority": 4,
             "date": 5,
             "recurrin_task": 6,
-            "employee_id": 7
         }
 
 
@@ -101,5 +99,14 @@ def update_maintenance_requests():
             
         
             
-            LW_maintenance_request.update_maintenance_request_logic(id, new_info, info_list[info_change])
+            LW_maintenance_request.update_maintenance_request_lw(maintenance_id, new_info, info_list[info_change])
             print(f"Maintenance Request {info_change} updated successfully")
+
+def employee_write_maintenance_report():
+    maintenance_id = input("Enter Maintenance Number: ")
+
+    employee_id = input("Enter your id: ")
+
+    report = input(f"Write a report for request {maintenance_id}: ")
+
+    LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)

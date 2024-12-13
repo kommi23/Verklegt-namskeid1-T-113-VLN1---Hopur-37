@@ -75,7 +75,6 @@ class PropertyData:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
                     if row[0] == str(property_id): 
-                        print("kemst inn í if statement")
                         row[int(what_data)] = updated_data
                         
                     new_file.append(row)

@@ -1,32 +1,34 @@
 
 class Manage_employees:
     def display_menu():
-        #os.system("clear")
-
+        # display choices
         print("1. Create new employee")
         print("2. Search for employee")
         print("3. Change employee")
         print("0. Go back")
 
-        choice = input("Enter your choice:")
-        valid_choices = ["1","2","3","0"]
+        choice = str(input("Enter your choice:"))
 
+        # set up valid choices to catch some errors
+        valid_choices = ["1","2","3","0"]
         if choice not in valid_choices:
             print("Please enter a valid choice!")
                 
             Manage_employees.display_menu()
 
+        # set up what the choices do
         if choice == "1":
             add_employee()
             
         elif choice == "2":
+            # display choices of submenu
             print("1. list all employees")
             print("2. search for employee by id")
             print("3. list all employees by location")
             print("0. Go back")
 
-            choice = int(input("Enter your choice:"))
-            valid_choices = [1,2,3,0]
+            choice = str(input("Enter your choice:"))
+            valid_choices = ["1","2","3","0"]
 
             if choice not in valid_choices:
                 print("Please enter a valid choice!")

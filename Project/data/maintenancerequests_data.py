@@ -1,24 +1,27 @@
 import csv
-from Models.Maintenance_request import *
+from Models.Maintenance_request import Maintenance_request
+
 
 class MaintenanceRequestData:
 
     def add_maintenance(maintenance):
         try:
-            with open("project/data/csv_files/maintenancerequests.csv", "a", newline='', encoding='utf-8') as csv_file:
+            with open("Project/data/csv_files/maintenancerequests.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
-                maintenance = Maintenance_request.turn_maintenance_request_into_list(maintenance)
-                list_writer.writerow(maintenance)
+                maintenance_as_list = Maintenance_request.turn_maintenance_request_into_list(maintenance)
+                list_writer.writerow(maintenance_as_list)                
                 return True 
         except: raise
     print("kemst hingað")
+
     def get_maintenances():
         maintenances = []
         try:
-            with open("project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+            with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
                 for line in csv_reader:
-                    maintenances.append(Maintenance_request(*line))
+                    maintenence_request = Maintenance_request(*line) #We want to return a list og Model classes
+                    maintenances.append(maintenence_request)
             return maintenances
         except: raise
 
@@ -26,23 +29,28 @@ class MaintenanceRequestData:
         try:    
                 maintenencerequests = []
                 with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+
                     
                     for line in csv_file:
                         line = line.split(",")
                         if line[0] in maintenencerequests:
                             maintenencerequests.append(*line)
+
+                    csv_reader = csv.reader(csv_file)
+                    for line in csv_reader:
+                        if ID in line[0]:
+                            maintenencerequests.append(line)
                     return maintenencerequests
             
         except: raise  
 
-    def update_maintenance_request_data(property_id, updated_data, what_data):
+    def update_maintenancerequest_data(maintenance_id, updated_data,  what_data: int):
         new_file = []
         try:
             with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
-                    if row[0] == str(property_id): 
-                        
+                    if row[0] == str(maintenance_id): 
                         row[int(what_data)] = updated_data
                         
                     new_file.append(row)
@@ -52,4 +60,23 @@ class MaintenanceRequestData:
                 list_writer.writerows(new_file)
             return True
         except: raise      
-    #Bæta við breyta verkbeiðni
+
+    def add_maintenancereport_data(maintenance_id, employee_id, report):
+        new_file = []
+        try:
+            with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == str(maintenance_id): 
+                        row[int(7)] = employee_id
+                        row[int(8)] = report
+                        row[int(9)] = "Ready"
+                    new_file.append(row)
+            
+            with open("Project/data/csv_files/maintenancerequests.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise      
+
+        

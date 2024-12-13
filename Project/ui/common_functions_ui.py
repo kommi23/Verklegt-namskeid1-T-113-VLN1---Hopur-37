@@ -47,7 +47,11 @@ class Common_functions:
     def search_maintenace_request_by_id():
         id = (input("Enter the ID for the Maintenance Request:"))
 
+
         request = LW_maintenance_request.get_maintenance_request_by_id_lw(id)
+
+        request = LW_maintenance_request.get_maintenance_request_by_employee_id_lw(id)
+
         
         if not request:
              print("No Maintenance Request found with the ID {id}")
