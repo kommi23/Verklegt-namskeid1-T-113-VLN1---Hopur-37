@@ -6,7 +6,7 @@ class Employee_logic:
         # Loop through all the employees and check if the id, name or email already exist in the db
         for existing_employee in all_employees:
             if employee.employee_id == existing_employee.employee_id:
-                raise RuntimeError("An employee with this id already exists")
+                return print("An employee with this id already exists")
             
         # If none of the flags are raised return the employee for the data layer to append
         DW_employee.write_employee_dw(employee)

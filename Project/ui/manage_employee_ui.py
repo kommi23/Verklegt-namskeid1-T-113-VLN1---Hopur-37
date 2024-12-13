@@ -70,7 +70,12 @@ class Manage_employees:
 
 
 def add_employee():
-    list_of_locations = ["Nuuk", "Kulusuk", "Þórshöfn", "Tingwall", "Reykjavik"]
+    #Get all locations
+    all_locations = LL_location.list_all_locations()
+    list_of_locations = []
+    for location in all_locations:
+        list_of_locations = location.location
+    # Initiate variables
     id = None
     name = None
     email = None
@@ -78,7 +83,7 @@ def add_employee():
     work_phone = None
     personal_phone = None
     location = None
-
+    # Do surface level check if input is allowed
     while id == None or not id.isnumeric():
         id = input("ID: ")
         if not id.isnumeric() :
@@ -87,11 +92,11 @@ def add_employee():
     while name == None:
             name = input("Name: ").lower()
 
-    while email == None or email == "wrong":
+    while email == None:
         email = input("Email: ").lower()
 
         if "@" not in email:
-             email = "wrong"
+             email = None
              print("Invalid email: Missing @ sign")
 
         elif "." not in email:
@@ -116,10 +121,9 @@ def add_employee():
              print("Please enter a valid phone number (Use numbers only)")
         
     while location == None or location not in list_of_locations:
-        if location == None or location not in list_of_locations:
             location = input("Location: ")
-        if location not in list_of_locations:
-             print("Not a valid location, please select one of: Nuuk, Kulusuk, Þórshöfn, Tingwall or Reykjavik")
+            if location not in list_of_locations:
+                print(f"Please enter one of these locations: {list_of_locations}")
 
     # Show all the information collected and prompt the user to confirm if its right
     print(f"ID: {id}")
@@ -130,12 +134,13 @@ def add_employee():
     print(f"Personal Phone: {personal_phone}")
     print(f"Location: {location}")
     print("Press 1. to confirm that the information is right, press anything else to restart: ")
-    confirmation = int(input())
+    confirmation = str(input())
 
-    if confirmation == 1:
+    if confirmation == "1":
         new_employee = Employee(id, name, email, address, work_phone, personal_phone, location)
         LL_employee.add_employee_lw(new_employee)
 
+    # Restart loop if the user does not confirm
     else:
          add_employee()
 
@@ -149,10 +154,12 @@ def add_employee():
 
 
 def update_employee():
+        # Collect information
         id = input("Enter the ID of the employee you want to update: ")
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
         new_info = input("Enter new information: ")
         
+        # List of information that is changeable and map to a number
         info_list = {
 
             "name" : 1,
@@ -161,18 +168,19 @@ def update_employee():
             "email" : 4,
             "address" : 5
         }
+        # Check if info to be changed is in the map
         if info_change not in info_list:
             print("Error: Information not found")
-            return
-        
+            update_employee()
+        # Send info down
         LL_employee.update_employee(id, new_info, info_list[info_change])
         print(f"Employee with ID {id} updated successfully")
 
+        Manager_ui.display_menu
+
 
 def list_employees_by_location():
-        
-    #os.system("clear")
-        
+    
     allEmployees = []
     allEmployees = LL_employee.get_employee_list_lw()
 
@@ -184,11 +192,7 @@ def list_employees_by_location():
             print ("    ", str(count), ") " , emp.location)
             
         count = count +1
-    # end for 
     print ("    0) to Go back")
-        
-
-
     location_search = int(input())
     opt = int(location_search)
     selected = None
@@ -207,6 +211,8 @@ def list_employees_by_location():
         print("No employees found for this location: ", selected.location)
     for i in employees:
         print(i)    
+
+    Manager_ui.display_menu()
 
 
 import os

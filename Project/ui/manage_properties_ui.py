@@ -3,27 +3,28 @@ from Models.Property import *
 from ui.manager_ui import *
 import os
 from logic.logic_wrapper import * 
+from Models.Location import Location
 
 
 class Manage_properties():
     def display_menu():        
         print("1. Create new property")
-        print("2. Search property by location")
+        print("2. List property by location")
         print("3. Update property")
         print("4. List all properties")
         print("0. Go back")
 
-        choice = int(input())
+        choice = str(input())
 
-        if choice == 1:
+        if choice == "1":
             add_property()
-        if choice == 2:
+        if choice == "2":
             list_properties_by_location()
-        if choice == 3: 
+        if choice == "3": 
             update_property_information()
-        if choice == 4:
+        if choice == "4":
             list_properties()                  
-        if choice == 0:
+        if choice == "0":
             Manager_ui.display_menu()
            
 def list_properties():
@@ -73,29 +74,46 @@ def list_properties_by_location():
        
 
 def add_property():
-    print("ID:")
+    all_locations = LL_location.list_all_locations()
+    list_of_locations = []
+    for location in all_locations:
+        list_of_locations = location.location
 
-    fields = ["ID", "Condition", "Additional maintenance", "Location"]
-    user_inputs = {}
+    print(list_of_locations)
+    list_of_conditions = ["good", "fair", "bad"]
+    id = None
+    condition = None
+    additional = None
+    location = None
+
+    while id == None or not id.isnumeric():
+        id = input("ID: ")
+        if not id.isnumeric():
+            print("Please enter a valid ID!")
+
+    while condition == None:
+        condition = input("Condition: ")
+        if str(condition) not in list_of_conditions:
+            condition = None
+            print("Please enter Either good, fair or bad")
     
-    for field in fields:
-        os.system("clear")
+    while additional == None:
+        additional = input("Additional maintenance: ").lower
 
-        for key, value in user_inputs.items():
-            print(f"{key}: {value}")
-        
-        
-        user_inputs[field] = input(f"Enter Property {field}: ")
-    
-    os.system("clear")
-    for key, value in user_inputs.items():
-        print(f"{key}: {value}")
+    while location == None or location not in list_of_locations:
+        location = input("Location: ")
+        if location not in list_of_locations:
+            print(f"Please enter one of these locations: {str(list_of_locations)}")
 
-    print("Press 1. to confirm that the information is right: ")
-    confirmation = int(input())
+    print(f"ID: {id}")
+    print(f"Condition: {condition}")
+    print(f"Additional maintenance: {additional}")
+    print(f"Location: {location}")
+    print("Press 1. to confirm that the information is right, press anything else to restart: ")
+    confirmation = str(input())
 
     if confirmation == 1:
-        new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
+        new_property = Property(id, condition, additional, location)
         LL_property.add_property_lw(new_property)
         Manager_ui.display_menu()
 
