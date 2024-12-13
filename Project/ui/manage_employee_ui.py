@@ -22,8 +22,15 @@ class Manage_employees:
             add_employee()
             return 
             
-        elif choice == "2":
+        if choice == "2":
             employee_search()
+        
+        if choice == "3":
+             update_employee()
+
+        if choice == "0":
+            Manager_ui.display_menu()
+             
 
 def employee_search():
         # display choices of submenu
@@ -61,22 +68,7 @@ def employee_search():
 
         elif choice == "0":
             Manage_employees.display_menu() 
-                 
-        if choice == 3:
-             update_employee()
-
-
-        if choice == 0:
-             Manager_ui.display_menu()
-             
-             
-             
-
-
-
-
-
-
+               
 
 def add_employee():
     list_of_locations = ["Nuuk", "Kulusuk", "Þórshöfn", "Tingwall", "Reykjavik"]
@@ -114,7 +106,7 @@ def add_employee():
 
     while work_phone == None or not work_phone.isnumeric():  
         work_phone = input("Work Phone: ")
-
+    
         if not work_phone.isnumeric():
              print("Please enter a valid phone number (Use numbers only)")
 
@@ -144,19 +136,9 @@ def add_employee():
     if confirmation == 1:
         new_employee = Employee(id, name, email, address, work_phone, personal_phone, location)
         LL_employee.add_employee_lw(new_employee)
-
     else:
          add_employee()
-
-
-
-
-
-
-
-
-
-
+         
 def update_employee():
         id = input("Enter the ID of the employee you want to update: ")
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
@@ -182,11 +164,12 @@ def list_employees_by_location():
         
     #os.system("clear")
         
-    allEmployees = []
-    allEmployees = LL_employee.get_employee_list_lw()
+    allLocations = []
+    allLocations = LL_location.list_all_locations()
+
 
     count : int = 0
-    for emp in allEmployees:
+    for emp in allLocations:
         if count == 0:
             pass
         else: 
@@ -196,27 +179,31 @@ def list_employees_by_location():
     # end for 
     print ("    0) to Go back")
         
-
-
-    location_search = int(input())
-    opt = int(location_search)
-    selected = None
-    if opt == 0: 
-        # Go back 
-        return
-    elif opt > len(allEmployees):
-        # out of bounds of the array
-        print("WTF!! ")
-    else:
-        selected = allEmployees[opt]
-
-    employees = LL_employee.search_employee_location_lw(selected.location.strip())
+    try:
+        location_search = int(input())
+        if location_search == 0: 
+            # Go back 
+            return Manage_employees.display_menu()
+    except ValueError: 
+        print("Please entert a valid input") 
+        return list_employees_by_location()
     
-    if len(employees) == 0:
-        print("No employees found for this location: ", selected.location)
-    for i in employees:
-        print(i)    
 
+    selected = None 
+    opt = int(location_search)
+    
+    try: 
+        selected = allLocations[opt]
+        employees = LL_employee.search_employee_location_lw(selected.location.strip())
+    
+        if len(employees) == 0:
+            print("No employees found for this location: ", selected.location)
+        for i in employees:
+            print(i)    
+        employee_search()
+    except: 
+        print("Please select a valid location")
+        return list_employees_by_location()
 
 import os
 from ui.manager_ui import Manager_ui
