@@ -3,7 +3,7 @@ from ui.common_functions_ui import *
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
 from ui.manager_ui import *
-
+from ui.main_ui import *
 class Maintenance_ui:
 
     def manager_maintenance_requests_menu():
@@ -35,7 +35,7 @@ class Maintenance_ui:
              Common_functions.search_maintenance_request_by_property_id()
              
         elif choice == '0':
-             Manager_ui.display_menu()
+            Mainmenu_ui.display_menu()
              
 
 

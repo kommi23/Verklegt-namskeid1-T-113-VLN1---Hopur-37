@@ -3,12 +3,14 @@ from Models.Maintenance_request import Maintenance_request
 
 
 class MaintenanceRequestData:
-
-    def add_maintenance(maintenance):
+    def __init__():
+        pass
+    def add_maintenance(maintenancerequest):
         try:
             with open("Project/data/csv_files/maintenancerequests.csv", "a", newline='', encoding='utf-8') as csv_file:
+                maintenancerequest = []
                 list_writer = csv.writer(csv_file)
-                maintenance_as_list = Maintenance_request.turn_maintenance_request_into_list(maintenance)
+                maintenance_as_list = Maintenance_request.turn_maintenance_request_into_list(maintenancerequest)
                 list_writer.writerow(maintenance_as_list)                
                 return True 
         except: raise
@@ -17,10 +19,13 @@ class MaintenanceRequestData:
     def get_maintenances():
         maintenances = []
         try:
-            with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
-                csv_reader = csv.reader(csv_file)
-                for line in csv_reader:
-                    maintenence_request = Maintenance_request(*line) #We want to return a list og Model classes
+            with open("Project/data/csv_files/maintenancerequests.csv", newline='', encoding='utf-8') as csv_file:
+                
+                for line in csv_file:
+
+                    line1 = line.split(",")
+    
+                    maintenence_request = Maintenance_request(*line1) #We want to return a list og Model classes
                     maintenances.append(maintenence_request)
             return maintenances
         except: raise

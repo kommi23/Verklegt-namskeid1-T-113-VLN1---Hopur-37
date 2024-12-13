@@ -32,7 +32,6 @@ class Common_functions:
 
     # Vantar að setja í logic wrapperinn
     def display_all_maintenace_requests():
-        requests = []
         requests = LW_maintenance_request.get_all_maintenance_requests_lw()
 
         if not requests:

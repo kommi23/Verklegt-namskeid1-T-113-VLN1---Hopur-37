@@ -6,11 +6,10 @@ class Maintenance_request_logic:
         
         all_requests = DW_Maintenance_request.get_all_maintenance_requests_dw()
 
-        for request in all_requests[1:]:
+        for request in all_requests:
             
-            if request.id == new_request.id:
-                raise RuntimeError(f"A maintenance request with the id {new_request.id} already exists")
-        
+            if request == new_request.id:
+                return print(f"A maintenance request with the id {new_request.id} already exists")
         return DW_Maintenance_request.add_maintenance_request_dw(new_request)
     
     def get_all_maintenance_requests_logic():
@@ -44,7 +43,6 @@ class Maintenance_request_logic:
     def update_maintenance_request_logic(id, info_change, what_info):
         DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
 
-    def 
 
     def update_maintenance_logic(id , updated_data, what_data: int):
         maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)

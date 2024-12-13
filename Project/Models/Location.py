@@ -11,4 +11,4 @@ class Location:
         return [self.location, self.country, self.airport, self.phone_number, self.opening_time, self.manager]
     
     def __str__(self) -> str:
-        return f"[{self.location}, {self.country}, {self.airport}, {self.phone_number}, {self.opening_time}, {self.manager}]"
+        return f"[{self.location} {self.country} {self.airport} {self.phone_number} {self.opening_time} {self.manager}]"
