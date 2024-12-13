@@ -6,9 +6,7 @@ from logic.logic_wrapper import *
 
 
 class Manage_properties():
-    def display_menu():
-        os.system("clear")
-        
+    def display_menu():        
         print("1. Create new property")
         print("2. Search property by location")
         print("3. Update property")
