@@ -3,39 +3,9 @@ from ui.common_functions_ui import *
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
 from ui.manager_ui import *
-class Maintenance_UI:
 
-from ui.manager_ui import Manager_ui
-from logic.logic_wrapper import *
-from Models.Maintenance_request import *
 
 class Maintenance_ui:
-    def display_menu():
-        
-
-        print("\n=== Maintenance Menu ===")
-        print("1. Manager")
-        print("2. Employee")
-        print("0. Go back")
-
-        choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2" , "0"]
-
-        if choice not in valid_choices:
-            print("Please enter a valid choice: ")
-            return
-        elif choice == '1':
-            Maintenance_ui.manager_maintenance_requests_menu()
-            Manager_ui.display_menu()
-            
-        
-        elif choice == '2':
-            pass
-
-
-    
-
-
     def manager_maintenance_requests_menu():
 
         print("1. Display all Maintenance Requests")
@@ -56,15 +26,15 @@ class Maintenance_ui:
         elif choice == '2':
             add_maintenance_requests()
         elif choice == '3':
-             update_maintenance_requests()
+            update_maintenance_requests()
         elif choice == '4':
             Common_functions.search_maintenace_request_by_id()
         
         elif choice == '5':
-             Common_functions.search_maintenance_request_by_property_id()
+            Common_functions.search_maintenance_request_by_property_id()
              
         elif choice == '0':
-             Manager_ui.display_menu()
+            Manager_ui.display_menu()
              
 
 
@@ -125,10 +95,9 @@ def update_maintenance_requests():
             "employee_id": 7
         }
 
-        print(info_list[info_change])
 
         if info_change not in info_list:
-            print("Information not found")
+            print(f"Error: Information not found")
             
         
             

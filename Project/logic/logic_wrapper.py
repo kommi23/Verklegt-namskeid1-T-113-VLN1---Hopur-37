@@ -87,3 +87,4 @@ class LW_maintenance_request:
     def update_maintenance_request_logic(id, info_change, what_info):
         DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
 
+    

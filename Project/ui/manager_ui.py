@@ -26,7 +26,7 @@ class Manager_ui:
             Manager_ui.display_menu()
 
         if choice == 3:
-            Maintenance_ui.display_menu()
+            Maintenance_ui.manager_maintenance_requests_menu()
             Manager_ui.display_menu()
     
         if choice == 5:
