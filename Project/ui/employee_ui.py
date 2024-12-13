@@ -1,6 +1,5 @@
 
 class Employee_ui:
-
     def display_menu():
         print("\nEmployee Menu")
         print("1. List all employees")
@@ -11,8 +10,8 @@ class Employee_ui:
         print("6. Go back")
 
         choice = int(input("Enter your choice:"))
-
         if choice == 1:
+            raise Exception("Goober over here")
             Common_functions.display_employees()
             Employee_ui.display_menu()
 
