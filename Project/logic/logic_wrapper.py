@@ -83,17 +83,12 @@ class LW_maintenance_request:
     
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
         return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)
-
-
-    def update_maintenance_request_logic(id, info_change, what_info):
-        DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
-
-    
-
     
     def update_maintenance_request_lw(maintenance_id: int, updated_data, what_data: int):
         return Maintenance_request_logic.update_maintenance_logic(maintenance_id, updated_data, what_data)
     
     def add_maintenance_report_lw(maintenance_id: int, employee_id, report):
         return Maintenance_request_logic.add_maintenance_report_logic(maintenance_id, employee_id, report)
-
+    
+    def approve_maintenance_report_lw(maintenance_id: int):
+        return Maintenance_request_logic.approve_maintenace_report_logic(maintenance_id)

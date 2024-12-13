@@ -4,8 +4,8 @@ from logic.logic_wrapper import *
 from Models.Maintenance_request import *
 from ui.manager_ui import *
 
-
 class Maintenance_ui:
+
     def manager_maintenance_requests_menu():
 
         print("1. Display all Maintenance Requests")
@@ -13,6 +13,7 @@ class Maintenance_ui:
         print("3. Update Maintenance Request")
         print("4. Search Maintenance Request by ID")
         print("5. Search Maintenance Request by Property Number")
+        print("6. Approve Maintenance report")
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
@@ -26,15 +27,15 @@ class Maintenance_ui:
         elif choice == '2':
             add_maintenance_requests()
         elif choice == '3':
-            update_maintenance_requests()
+             update_maintenance_requests()
         elif choice == '4':
             Common_functions.search_maintenace_request_by_id()
         
         elif choice == '5':
-            Common_functions.search_maintenance_request_by_property_id()
+             Common_functions.search_maintenance_request_by_property_id()
              
         elif choice == '0':
-            Manager_ui.display_menu()
+             Manager_ui.display_menu()
              
 
 
@@ -93,9 +94,10 @@ def update_maintenance_requests():
             "recurrin_task": 6,
         }
 
+        print(info_list[info_change])
 
         if info_change not in info_list:
-            print(f"Error: Information not found")
+            print("Information not found")
             
         
             
@@ -110,3 +112,24 @@ def employee_write_maintenance_report():
     report = input(f"Write a report for request {maintenance_id}: ")
 
     LW_maintenance_request.add_maintenance_report_lw(maintenance_id, employee_id, report)
+
+def manager_approve_maintenance_report():
+    maintenance_id = input("Enter Maintenance Number: ")
+   
+    print(f"1. To approve maintenance report {maintenance_id}")
+    print("0. To go back")
+
+
+    choice = (input("Enter your choice: "))
+    valid_choices = ["1", "0"]
+
+
+    if choice not in valid_choices:
+        print("Please enter a valid choice: ")
+        return
+   
+    if choice == '1':
+        LW_maintenance_request.approve_maintenance_report_lw(maintenance_id)
+       
+    elif choice == '0':
+        pass

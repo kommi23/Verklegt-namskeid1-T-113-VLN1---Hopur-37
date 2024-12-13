@@ -62,4 +62,10 @@ class Maintenance_request_logic:
         else:
             return f"Request with ID {id} not found."
         
+    def approve_maintenace_report_logic(id):
+        maintenance_report = DW_Maintenance_request.add_approve_maintenance_report_dw(id)
 
+        if maintenance_report:
+            return f"A report {id} was closed successfully."
+        else:
+            return f"Request with ID {id} not found."       

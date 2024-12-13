@@ -79,4 +79,21 @@ class MaintenanceRequestData:
             return True
         except: raise      
 
+
+    def approve_maintenancereport_data(maintenance_id):
+        new_file = []
+        try:
+            with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+                list_reader = csv.reader(csv_file)
+                for row in list_reader:
+                    if row[0] == str(maintenance_id):    
+                        row[int(9)] = "Closed"
+                new_file.append(row)
+           
+            with open("Project/data/csv_files/maintenancerequests.csv", "w", newline='', encoding='utf-8') as new_csv_file:
+                list_writer = csv.writer(new_csv_file)
+                list_writer.writerows(new_file)
+            return True
+        except: raise      
+
         

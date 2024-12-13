@@ -79,3 +79,7 @@ class DW_Maintenance_request:
     
     def add_maintenance_report_dw(maintenance_id, employee_id, report):
         return MaintenanceRequestData.add_maintenancereport_data(maintenance_id, employee_id, report)
+    
+    def add_approve_maintenance_report_dw(maintenance_id):
+        return MaintenanceRequestData.approve_maintenancereport_data(maintenance_id)
+    
