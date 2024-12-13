@@ -26,9 +26,10 @@ To do that you have to open your terminal and use the command:
 ```
 git clone https://github.com/kommi23/Verklegt-namskeid1-T-113-VLN1---Hopur-37
 ```
-After that use your terminal to navigate to the folder.
+After that use your terminal to navigate to the "Verklegt-namskeid1-T-113-VLN1---Hopur-37" folder. Do NOT go into the Project 
+folder as then the code will run, but it wont be able to read the files where the data is stored.
 Once in the folder you can use the following command to run the file:
 ```
-python3 "main.py"
+python3 "./Project/main.py"
 ```
-And that's it. Congratulations You can see how the program works! 👏👏
+And that's it. Congratulations You can now see how the program works! 👏👏
