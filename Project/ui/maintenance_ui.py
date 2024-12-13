@@ -1,4 +1,4 @@
-import os
+
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
 
@@ -21,11 +21,10 @@ class Maintenance_UI:
             Maintenance_UI.manager_maintenance_requests_menu()
         
         elif choice == '2':
-            Maintenance_UI.employee_maintenance_report_menu()
+            pass
 
 
-
-
+    
 
 
     def manager_maintenance_requests_menu():
@@ -42,39 +41,61 @@ class Maintenance_UI:
             print("Please enter a valid choice: ")
             return
         elif choice == '1':
-            pass
+            display_all_maintenance_requests()
         elif choice == '2':
-             add_maintenance_requests()
+            add_maintenance_requests()
 
 
 
+
+            
 def add_maintenance_requests():
+    print("\n=== Add New Maintenance Request ===")
+    fields = ["Id","Property Number","Description","Priority","Date","Budget","Recurring Task","Employee ID"]
+    user_input = {}
+
     
-        fields = ["ID", "Property Number", "Description", "Priority", "Date", "Budget", "Recurring Task", "Employee ID"]
-        user_input = {}
+    for field in fields:
+        user_input[field] = input(f"Enter Maintenance Request {field}: ")
 
-        for field in fields:
-            
-            for key, value in user_input.items():
-                print(f"{key}: {value}")
-            
-            user_input[field] = input(f"Enter Maintenance Request {field}: ")
+    
+    print("\nYou have entered the following details:")
+    for key, value in user_input.items():
+        print(f"{key}: {value}")
+
+    
+    confirmation = input("\nPress 1 to confirm or any other key to cancel: ")
+
+    if confirmation == "1":
         
-        for key, value in user_input.items():
-            print(f"{key}: {value}")
+            new_maintenance = Maintenance_request(
+                user_input["Id"],
+                user_input["Property Number"],
+                user_input["Description"],
+                user_input["Priority"],
+                user_input["Date"],
+                user_input["Budget"],
+                user_input["Recurring Task"],
+                user_input["Employee ID"]
+            )
 
-            print("press 1 to confirm: ")
-            confirmation = int(input())
-        
-
-        if confirmation == 1:
-            new_maintenance = Maintenance_request(user_input["ID"], user_input["Property Number"], user_input["Description"], user_input["Date"], user_input["Budget"], user_input["Reccuring Task"], user_input["Employee ID"])
             Maintenance_request_logic.add_maintenance_request_logic(new_maintenance)
             print("\nMaintenance request added successfully!")
-        
+    else:
+         print("Something went worng")    
+
+def display_all_maintenance_requests():
+        requests = LW_maintenance_request.get_all_maintenance_requests_lw()
+        if not requests:
+            print("\nNo maintenance requests found.")
+            return
+
+        print("\nAll Maintenance Requests:")
+        for request in requests:
+            print(request)
 
             
-def update_maint_requests():
+def update_maintenance_requests():
         id = input("Enter Maintenance Number: ")
         info_change = input("Enter what information to change (e.g, Property Number, Date): ").lower()
         new_info = input("Enter new information: ")
@@ -97,5 +118,5 @@ def update_maint_requests():
             return
         
             
-            LL_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
+            LW_maintenance_request.update_maint_requests(Id, new_info, info_list[info_change])
             print(f"Maintenance {info_change} updated successfully")

@@ -1,4 +1,5 @@
-from ui.main_ui import *
-from ui.main_ui import *
 
-Mainmenu_ui.display_menu()
+from ui.maintenance_ui import *
+
+Maintenance_UI.display_menu()
+

@@ -12,7 +12,8 @@ class Manage_employees:
         valid_choices = ["1","2","3","0"]
 
         if choice not in valid_choices:
-            print("Please enter a valid choice!")    
+            print("Please enter a valid choice!")
+                
             Manage_employees.display_menu()
 
         if choice == "1":
