@@ -11,15 +11,13 @@ class Property_logic():
                 return print(f"A property with the id: {property.property_id} already exists.")
             
         all_locations = DW_Location.get_all_locations()
-        location_list = []
         for location in all_locations:
-            location_list.append(location.location)
-        
-        if property.location not in location_list:
-            return print(f"The location {property.location} does not exist in the system.")
+            if location.location == property.location:
+                DW_properties.add_property_dw(property)
+                return print("property has been added")
+        return print(f"The location {property.location} does not exist in the system.")
 
-        return DW_properties.add_property_dw(property)
-    
+   
     def get_all_proberties_logic():
         return DW_properties.get_all_properties_dw()
     
@@ -29,6 +27,9 @@ class Property_logic():
 
 
     def change_property(id, info_change, what_info):
-        DW_properties.update_property_dw(id, info_change, what_info)
-                
-
+        all_properties = DW_properties.get_all_properties_dw()
+        for property in all_properties:
+            if id == property.property_id:
+                return DW_properties.update_property_dw(id, info_change, what_info)
+           
+        return print(f"Property with id: {property.property_id} cant be found")
