@@ -17,11 +17,12 @@ class PropertyData:
         
     def add_property_data(property):
         try:
-            with open("Project/data/csv_files/properties.csv", "a", newline='', encoding='utf-8') as csv_file:
+           
+            with open("Project/data/csv_files/properties.csv", "a", newline='\n', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
                 new_property_as_list = Property.turn_property_into_list(property)
                 list_writer.writerow(new_property_as_list)
-                return True
+                return "Success!"
         except: raise
 
     def get_all_proberties_data():
@@ -29,7 +30,6 @@ class PropertyData:
         try:
             with open("Project/data/csv_files/properties.csv", newline='', encoding='utf-8') as csv_file:
                 csv_reader = csv.reader(csv_file)
-
                 for line in csv_reader:
                     property = Property(*line)
                     properties.append(property)
@@ -75,7 +75,6 @@ class PropertyData:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
                     if row[0] == str(property_id): 
-                        print("kemst inn í if statement")
                         row[int(what_data)] = updated_data
                         
                     new_file.append(row)

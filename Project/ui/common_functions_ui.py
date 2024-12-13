@@ -1,5 +1,6 @@
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
+
 class Common_functions:
 
     def display_employees():
@@ -28,10 +29,11 @@ class Common_functions:
             for i in employees:
                 print(i)
     
+
     # Vantar að setja í logic wrapperinn
-    def display_maintenace_requests():
+    def display_all_maintenace_requests():
         requests = []
-        requests = LL_Maintenance.list_all_maintenance_requests()
+        requests = LW_maintenance_request.get_all_maintenance_requests_lw()
 
         if not requests:
             print("No Maintenance Requests found...")
@@ -41,8 +43,12 @@ class Common_functions:
                   print(i)
     
     def search_maintenace_request_by_id():
+        id = (input("Enter the ID for the Maintenance Request: "))
+
+    def search_maintenace_request_by_id():
         id = (input("Enter the ID for the Maintenance Request:"))
-        request = LL_Maintenance.search_maintenance_id(id)
+
+        request = LW_maintenance_request.get_maintenance_request_by_employee_id_lw(id)
         
         if not request:
              print("No Maintenance Request found with the ID {id}")
@@ -50,3 +56,14 @@ class Common_functions:
         else:
              request = Maintenance_request.turn_maintenance_request_into_list(request) 
              print(request)
+    
+    def search_maintenance_request_by_property_id():
+        property_id = input("Enter the Property ID for the Maintenance Request: ")
+        request = LW_maintenance_request.get_maintenance_request_by_property_id_lw(property_id)
+
+        if not request:
+              print("No Maintenance Request found with Propery Number {property_id}")
+
+        else:
+            request = Maintenance_request.turn_maintenance_request_into_list(request)
+            print(request)

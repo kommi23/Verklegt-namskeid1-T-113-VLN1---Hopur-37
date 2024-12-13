@@ -8,6 +8,7 @@ from logic.property_logic import *
 from logic.maintenance_request_logic import *
 from logic.location_logic import Location_logic
 
+
 class LL_employee():
     def add_employee_lw(new_employee) -> str:
         return Employee_logic.write_employee_logic(new_employee)
@@ -54,7 +55,11 @@ class LL_property():
     
     def get_all_properties_lw() -> list:
         return Property_logic.get_all_proberties_logic()
-        
+
+     
+    def get_properties_by_location_data_LL(location):
+         return Property_logic.get_properties_by_location_data_logic(location)
+
     def change_property_lw(id, info_change, what_info) -> list:
         Property_logic.change_property(id, info_change, what_info)
         
@@ -78,6 +83,9 @@ class LW_maintenance_request:
     
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
         return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)
-
     
-
+    def update_maintenance_request_lw(maintenance_id: int, updated_data, what_data: int):
+        return Maintenance_request_logic.update_maintenance_logic(maintenance_id, updated_data, what_data)
+    
+    def add_maintenance_report_lw(maintenance_id: int, employee_id, report):
+        return Maintenance_request_logic.add_maintenance_report_logic(maintenance_id, employee_id, report)

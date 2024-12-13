@@ -1,7 +1,5 @@
 class Manager_ui:
     def display_menu():
-        os.system("clear")
-
         print("1. Manage Employees")
         print("2. Manage Properties")
         print("3. Manage maintainance requests")
@@ -10,24 +8,25 @@ class Manager_ui:
         print("0. Go back")
 
         choice = int(input("Enter your choice:"))
-        valid_choices = ["1", "2", "3", "4", "5", "0"]
+        valid_choices = [1, 2, 3, 4, 5, 0]
         
         if choice not in valid_choices:
             print("Please enter a valid choice!")
             I_understand = None
             I_understand = input("Enter anything to continue")
             if I_understand != None:
-                Manage_employees.display_menu()
+                Manager_ui.display_menu()
 
         if choice == 1:
             Manage_employees.display_menu()
+            Manager_ui.display_menu()
 
         if choice == 2:
             Manage_properties.display_menu()
+            Manager_ui.display_menu()
 
         if choice == 3:
-            pass
-            #Manage_maintenance_reports.display_menu()
+            Maintenance_ui.manager_maintenance_requests_menu()
 
         if choice == 4:
             pass
@@ -35,12 +34,13 @@ class Manager_ui:
     
         if choice == 5:
             Manage_Locations.display_Locations()
+            Manager_ui.display_menu()
         
         if choice == 0:
             Mainmenu_ui.display_menu()
 
 
-import os
+from ui.maintenance_ui import Maintenance_ui
 from ui.main_ui import Mainmenu_ui
 from ui.manage_employee_ui import Manage_employees
 from ui.manage_properties_ui import Manage_properties
