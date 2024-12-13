@@ -47,8 +47,7 @@ def employee_search():
             print("Please enter a valid choice!")
     
         if choice == "1":
-            return Common_functions.display_employees()
-            
+            Common_functions.display_employees()
             return employee_search()
         
         elif choice == "2": 
