@@ -22,10 +22,10 @@ class MaintenanceReportData:
     def get_maintenancereports_by_property(property):
         try:    
                 maintenencereports = []
-                with open("Project/data/csv_files/maintenancereports.csv", "r", newline='', encoding='utf-8') as csv_file:
-                    for line in csv_file:
-                        line = line.split(",")
-                        if property in line[-1]:
+                with open("Project/data/csv_files/maintenancerequests.csv", "r", newline='', encoding='utf-8') as csv_file:
+                    csv_reader = csv.reader(csv_file)
+                    for line in csv_reader:
+                        if property in line[1]:
                             maintenencereports.append(line)
                     return maintenencereports
             

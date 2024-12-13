@@ -79,7 +79,7 @@ class LW_maintenance_request:
         return Maintenance_request_logic.get_maintenance_request_by_id_logic(maintenance_id)
     
     def get_maintenance_request_by_property_id_lw(property_id: int):
-        return Maintenance_request_logic.get_maintenance_request_by_property_id_logic(property_id)
+        return Maintenance_request_logic.get_maintenancerequest_by_property_id(property_id)
     
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
         return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)

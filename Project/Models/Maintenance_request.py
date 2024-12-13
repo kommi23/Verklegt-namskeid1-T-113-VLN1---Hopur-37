@@ -15,4 +15,4 @@ class Maintenance_request:
         return [self.id, self.property_number, self.description, self.priority, self.date, self.budget, self.recurring_task, self.employee_id, self.report, self.status]
     
     def __str__(self) -> str:
-        return f"{self.id} {self.property_number} {self.description} {self.priority} {self.date} {self.budget}  {self.recurring_task} {self.employee_id} {self.report} {self.status}"
+        return f"{self.id} {self.property_number} {self.description} {self.priority} {self.date} {self.budget} {self.recurring_task} {self.employee_id} {self.report} {self.status}"

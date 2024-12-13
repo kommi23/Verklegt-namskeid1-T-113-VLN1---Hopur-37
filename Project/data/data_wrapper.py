@@ -69,7 +69,7 @@ class DW_Maintenance_request:
         return MaintenanceRequestData.get_maintenancerequest_by_ID(maintenance_id)
     
     def get_maintenance_request_by_property_id_dw(property_id):
-        return MaintenanceRequestData.get_maintenancerequest_by_property_id(property_id)
+        return MaintenanceRequestData.get_maintenancereports_by_property(property_id)
     
     def get_maintenance_request_by_employee_id_dw(employee_id):
         return MaintenanceRequestData.get_maintenancerequest_by_employee(employee_id)
