@@ -40,18 +40,22 @@ class Manage_employees:
         
             if choice == 1:
                 Common_functions.display_employees()
+                return
             
             elif choice == 2: 
                 Common_functions.search_employee_by_id()
+                return
             
             elif choice == 3:
                 list_employees_by_location()
+                return
 
             elif choice == 0:
                  Manage_employees.display_menu()
+                 return
                  
-        #if choice == 3:
-        #     update_employee()
+        if choice == 3:
+             update_employee()
 
         if choice == 0:
              Manager_ui.display_menu()
@@ -75,65 +79,49 @@ def add_employee():
     personal_phone = None
     location = None
 
-    while True:
-        if id == None or id.isnumeric() == False:
-            id = input("ID: ")
-        if id.isnumeric() == False:
+    while id == None or not id.isnumeric():
+        id = input("ID: ")
+        if not id.isnumeric() :
             print("Please enter a valid ID! ")
-        else:
-             break
 
-    while True:
-        if name == None:
+    while name == None:
             name = input("Name: ").lower()
-        if name:
-             break
-        
-    while True:
-        if email == None or email == "wrong":
-            email = input("Email: ").lower()
+
+    while email == None or email == "wrong":
+        email = input("Email: ").lower()
+
         if "@" not in email:
              email = "wrong"
              print("Invalid email: Missing @ sign")
+
         elif "." not in email:
              email = "wrong"
              print("Invalid email: Missing .")
-        else:
-             break
         
-    while True:
+    while address == None:
+        address = input("Address: ").lower()
         if address == None:
-            address = input("Address: ").lower()
-        if address == None:
-                print("Please Enter an address!")
-        if address:
-                break
+                print("Please Enter a valid address!")
 
-    while True:
-        if work_phone == None or work_phone.isnumeric() == False:    
-            work_phone = input("Work Phone: ")
-        if work_phone.isnumeric() == False:
+    while work_phone == None or not work_phone.isnumeric():  
+        work_phone = input("Work Phone: ")
+
+        if not work_phone.isnumeric():
              print("Please enter a valid phone number (Use numbers only)")
-        else:
-             break
-    
-    while True:
-        if personal_phone == None or personal_phone.isnumeric() == False:
-            personal_phone = input("Personal Phone: ")
+
+    while personal_phone == None or not personal_phone.isnumeric():
+        personal_phone = input("Personal Phone: ")
+
         if personal_phone.isnumeric() == False:
              print("Please enter a valid phone number (Use numbers only)")
-        else:
-             break
         
-    while True:
+    while location == None or location not in list_of_locations:
         if location == None or location not in list_of_locations:
             location = input("Location: ")
         if location not in list_of_locations:
              print("Not a valid location, please select one of: Nuuk, Kulusuk, Þórshöfn, Tingwall or Reykjavik")
-        else:
-             break
+
     # Show all the information collected and prompt the user to confirm if its right
-    os.system("clear")
     print(f"ID: {id}")
     print(f"Name: {name}")
     print(f"Email: {email}")
@@ -141,7 +129,7 @@ def add_employee():
     print(f"Work Phone: {work_phone}")
     print(f"Personal Phone: {personal_phone}")
     print(f"Location: {location}")
-    print("Press 1. to confirm that the information is right: ")
+    print("Press 1. to confirm that the information is right, press anything else to restart: ")
     confirmation = int(input())
 
     if confirmation == 1:
