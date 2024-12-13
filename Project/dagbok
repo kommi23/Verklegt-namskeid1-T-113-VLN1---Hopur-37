@@ -24,6 +24,7 @@ Dagskrá fyrir næsta fund:
   2)Byrja að tækla Afurðina í hönnunarskýrslunni.
 ###################lok færslu 1 (25.11)######################################
 
+
 #################Færsla 2 (26.11)############################################
 
 Mættir: Anton Breki Bjarnþórsson 
@@ -76,7 +77,6 @@ Dagskrá fyrir næsta fund:
 ###################lok færslu 3 (27.11)######################################
 
 
-
 #################færsla 6 (2.12)#############################################
 
 Mættir: Anton Breki Bjarnþórsson 
@@ -101,6 +101,7 @@ Dagskrá fyrir næsta fund:
 
 #################lok færsla 6 (2.12)##########################################
 
+
 #################færsla 7 (3.12)#############################################
 
 Mættir: Anton Breki Bjarnþórsson 
@@ -124,7 +125,6 @@ Dagskrá fyrir næsta fund:
         þann stað þar sem allir layers communicatea saman.
 
 #################lok færsla 7 (3.12)##########################################
-
 
 
 #################færsla 8 (4.12)##############################################
@@ -152,6 +152,7 @@ Dagskrá fyrir næsta fund:
         pælingar á næsta fundi sem koma upp á meðan við kóðum.
 
 #################lok færsla 8 (4.12)##########################################
+
 
 #################færsla 9 (5.12)##############################################
 
@@ -199,9 +200,10 @@ Dagskrá fyrir næsta fund:
 
 #################lok færsla 10 (6.12)##########################################
 
+
 #################færsla 11 (9.12)##############################################
 
-Mættir: Kormákur Máni Bjarnason 14:00PM - 4:00AM
+Mættir: Kormákur Máni Bjarnason | 14:00PM - 4:00AM
         Alexander Joseph Emilsson 
         Victor Blær Ciesielski Jensen 
 
@@ -211,8 +213,12 @@ Umræður dagsins: 1)Við föttuðum að við þurfum að skila classes á milli
                  myndum breyta classes í lists og öfugt í data layer til að 
                  geyma gögnin saman.
                  3)Við ræddum um mætingu hópsins og hvernig sumir hópmeðlimir 
-                 ættu að leggja meira á sig svo við gætum klárað þetta
-                 verkefni.
+                 ættu að leggja meira á sig og mæta oftar svo við gætum 
+                 klárað þetta verkefni. við áttum okkur á því í dag að sumir 
+                 hópmeðlimir voru að leggja miklu meira á sig í þessu verkefni
+                 en aðrir og að það væri byrjað að hafa neikvæð áhrif á 
+                 verkefnið. Við ákváðum líka að byrja að skrá tímana okkar 
+                 Þannig að hver hópmeðlimur þurfti að taka á sig meiri ábyrgð.
 
 Dagskrá fyrir næsta fund:
         Næsti fundur er boðaður Þriðjudaginn 10. klukkan 8:00
@@ -226,7 +232,7 @@ Dagskrá fyrir næsta fund:
 #################færsla 12 (10.12)##############################################
 
 Mættir: Anton Breki Bjarnþórsson 
-        Kormákur Máni Bjarnason 13:30PM - 21:00PM
+        Kormákur Máni Bjarnason | 13:30PM - 21:00PM
         Alexander Joseph Emilsson 
         Victor Blær Ciesielski Jensen 
 
@@ -251,3 +257,37 @@ Dagskrá fyrir næsta fund:
         liðsmönnum í þessu verkefni en búist var við.
 
 #################lok færsla 12 (10.12)##########################################
+
+
+#################færsla 13 (11.12)##############################################
+
+Mættir: Anton Breki Bjarnþórsson 
+        Kormákur Máni Bjarnason | 12:00PM - 21:00PM
+        Alexander Joseph Emilsson 
+        Victor Blær Ciesielski Jensen 
+        Jóhann Gunnar Bergþórsson
+
+
+Umræður dagsins: 1)Tækluðum margar A kröfur og það gékk frekar vel. Náðum að 
+                 klára A kröfur tengdar manage employee, locations og properties
+                 nú tengjast flestar kröfurnar okkar maintenance reports og 
+                 maintenance requests.
+                 2)Byrjuðum líka að setja inn villuskilaboð og input validators.
+                 3)vörum líka að pæla mikið í hvernig við munum uppfæra skírsluna
+                 fyrir skil þar sem verkefnið okkar og kröfur eru alltaf að 
+                 breytast.
+                 4)Mættingin var betri í dag, en það hefur samt ekki verið dagur
+                 með fullri mætingu í þessari viku og hefur einn hópmeðlimur 
+                 ekki mætt í þessari viku.
+
+Dagskrá fyrir næsta fund:
+        Næsti fundur er boðaður fimmtudaginndaginn 10. klukkan 8:00
+
+        Mikilvægast fyrir okkur á fimmtudaginn er að klára kjarnann á öllu       
+        forritinu, svo við höfum tíma á föstudaginn til að fínpússa og að klára
+        annað sem tengist skilum eins og skýrsluna og tutorial vid. Mögulega 
+        skiptum við því á milli okkar að sumir geta byrjað að vinna í skýrslunni
+        fyrir skil á meðan aðrir klára kóðan.
+
+#################lok færsla 12 (10.12)##########################################
+        

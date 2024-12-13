@@ -1,3 +1,4 @@
-from ui.employee_ui import *
+from ui.main_ui import *
+from ui.main_ui import *
 
-EmployeeUI.employee_menu()
+Mainmenu_ui.display_menu()

@@ -1,7 +1,8 @@
-Nuuk, smoke, green, 453451123, 4:20, snoop
-Kulusuk, ehv, ehv, 874334823, 2:00, bolli 
-Þórshöfn, is, whatever, 8346578, 5:00, fannar
-Tingwall, nkd, sfasdf, 745834798, 6:00, ldf
-Longyearbyen, sad, dsf, 53848343
-location, country, airport, phone_number, opening_time, manager
-Reykjavik, iceland, keflavík, 123456789, 8:00, 
+location,country,airport,phone_number,opening_time,manager
+Nuuk ,smoke,green,453451123,4:20,snoop
+Kulusuk,ehv,ehv,874334823,2:00,bolli 
+Þórshöfn,is,whatever,8346578,5:00,fannar
+Tingwall,nkd,sfasdf,745834798,6:00,ldf
+Longyearbyen,sad,dsf,53848343,1123,trofhg
+Reykjavik,iceland,keflavík,123456789,8:00,ipjdfp
+Djupivogur,Iceland,DDF,123456,8:00,Gylfi
