@@ -40,5 +40,5 @@ class Maintenance_request_logic:
                 maintenencereports.append(maintenance_report)
         return maintenencereports
     
-    def change_maintenance_request(id, info_change, what_info):
-        DW_Maintenance_request.up
+    def update_maintenance_request_logic(id, info_change, what_info):
+        DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)

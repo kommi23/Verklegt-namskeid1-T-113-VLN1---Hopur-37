@@ -73,3 +73,6 @@ class DW_Maintenance_request:
     
     def get_maintenance_request_by_employee_id_dw(employee_id):
         return MaintenanceRequestData.get_maintenancerequest_by_employee(employee_id)
+
+    def update_maintenance_request_dw(id, info_change, what_info):
+        MaintenanceRequestData.update_maintenance_request_data(id, info_change, what_info)

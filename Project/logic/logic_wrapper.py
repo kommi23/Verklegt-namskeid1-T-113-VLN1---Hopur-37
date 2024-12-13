@@ -84,5 +84,6 @@ class LW_maintenance_request:
     def get_maintenance_request_by_employee_id_lw(employee_id: int):
         return Maintenance_request_logic.get_maintenancereports_by_employee(employee_id)
 
-    
+    def update_maintenance_request_logic(id, info_change, what_info):
+        DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
 
