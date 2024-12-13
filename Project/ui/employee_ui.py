@@ -1,7 +1,7 @@
 
 class Employee_ui:
     def display_menu():
-        print("\nEmployee Menu")
+        print("\n==Employee Menu==")
         print("1. List all employees")
         print("2. Search for employee")
         print("3. Available Maintenance Requests")

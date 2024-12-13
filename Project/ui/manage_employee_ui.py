@@ -2,6 +2,7 @@
 class Manage_employees:
     def display_menu():
         # display choices
+        print("\n==Employee Menu==")
         print("1. Create new employee")
         print("2. Search for employee")
         print("3. Change employee")

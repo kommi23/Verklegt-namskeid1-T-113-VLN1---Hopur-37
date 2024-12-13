@@ -1,7 +1,7 @@
 
 class Mainmenu_ui:
     def display_menu():
-        print("\nMain Menu")
+        print("\n=== Main Menu ===")
         print("1. Employee")
         print("2. Manager")
         print("0. Exit")

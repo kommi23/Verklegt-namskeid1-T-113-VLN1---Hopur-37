@@ -7,7 +7,7 @@ from ui.manager_ui import *
 class Maintenance_ui:
 
     def manager_maintenance_requests_menu():
-
+        print("\n==Maintenance Request Menu==")
         print("1. Display all Maintenance Requests")
         print("2. Add Maintenance Request")
         print("3. Update Maintenance Request")

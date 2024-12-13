@@ -1,5 +1,6 @@
 class Manager_ui:
     def display_menu():
+        print("\n=== Mananger Menu ===")
         print("1. Manage Employees")
         print("2. Manage Properties")
         print("3. Manage maintainance requests")
