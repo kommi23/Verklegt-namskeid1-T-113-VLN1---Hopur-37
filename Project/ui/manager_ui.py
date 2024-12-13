@@ -15,33 +15,29 @@ class Manager_ui:
             I_understand = None
             I_understand = input("Enter anything to continue")
             if I_understand != None:
-                Manage_employees.display_menu()
+                Manager_ui.display_menu()
 
         if choice == 1:
             Manage_employees.display_menu()
+            Manager_ui.display_menu()
 
         if choice == 2:
             Manage_properties.display_menu()
+            Manager_ui.display_menu()
 
         if choice == 3:
-            pass
-            #Manage_maintenance_reports.display_menu()
-            Manage_properties.display_menu()
-
-        if choice == 4:
-            pass
-            #Manage_contractors.display_menu()
-            Manage_properties.display_menu()
+            Maintenance_ui.display_menu()
+            Manager_ui.display_menu()
     
         if choice == 5:
             Manage_Locations.display_Locations()
-            Manage_properties.display_menu()
+            Manager_ui.display_menu()
         
         if choice == 0:
             Mainmenu_ui.display_menu()
 
 
-import os
+from ui.maintenance_ui import Maintenance_ui
 from ui.main_ui import Mainmenu_ui
 from ui.manage_employee_ui import Manage_employees
 from ui.manage_properties_ui import Manage_properties

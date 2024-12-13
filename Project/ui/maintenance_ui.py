@@ -1,8 +1,15 @@
+
 from ui.common_functions_ui import *
 from logic.logic_wrapper import *
 from Models.Maintenance_request import *
 from ui.manager_ui import *
 class Maintenance_UI:
+
+from ui.manager_ui import Manager_ui
+from logic.logic_wrapper import *
+from Models.Maintenance_request import *
+
+class Maintenance_ui:
     def display_menu():
         
 
@@ -18,7 +25,9 @@ class Maintenance_UI:
             print("Please enter a valid choice: ")
             return
         elif choice == '1':
-            Maintenance_UI.manager_maintenance_requests_menu()
+            Maintenance_ui.manager_maintenance_requests_menu()
+            Manager_ui.display_menu()
+            
         
         elif choice == '2':
             pass
