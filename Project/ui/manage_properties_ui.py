@@ -15,25 +15,22 @@ class Manage_properties():
         print("0. Go back")
         print("--Press any other button for Main Menu--")
 
-        choice_inp = (input())
-        try: 
-            choice = int(choice_inp)
-            if choice == 1:
-                add_property()
-            if choice == 2:
-                list_properties_by_location()
-            if choice == 3: 
-                update_property_information()
-            if choice == 4:
-                list_properties()                  
-            if choice == 0:
-               Manager_ui.display_menu()
-            else: 
-               Mainmenu_ui.display_menu()
-        except:
+        choice = (input())
+    
+        if choice == "1":
+            add_property()
+        if choice == "2":
+            list_properties_by_location()
+        if choice == "3": 
+            update_property_information()
+        if choice == "4":
+            list_properties()                  
+        if choice == "0":
+            Manager_ui.display_menu()
+        else: 
             Mainmenu_ui.display_menu()
 
-           
+
 def list_properties():
         properties = []
         properties = LL_property.get_all_properties_lw()
