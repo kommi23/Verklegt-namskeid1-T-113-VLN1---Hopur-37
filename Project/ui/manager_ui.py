@@ -1,7 +1,5 @@
 class Manager_ui:
     def display_menu():
-        os.system("clear")
-
         print("1. Manage Employees")
         print("2. Manage Properties")
         print("3. Manage maintainance requests")
@@ -28,13 +26,16 @@ class Manager_ui:
         if choice == 3:
             pass
             #Manage_maintenance_reports.display_menu()
+            Manage_properties.display_menu()
 
         if choice == 4:
             pass
             #Manage_contractors.display_menu()
+            Manage_properties.display_menu()
     
         if choice == 5:
             Manage_Locations.display_Locations()
+            Manage_properties.display_menu()
         
         if choice == 0:
             Mainmenu_ui.display_menu()
@@ -43,5 +44,5 @@ class Manager_ui:
 import os
 from ui.main_ui import Mainmenu_ui
 from ui.manage_employee_ui import Manage_employees
-#from ui.manage_properties_ui import Manage_properties
+from ui.manage_properties_ui import Manage_properties
 from ui.manage_locations_ui import Manage_Locations
