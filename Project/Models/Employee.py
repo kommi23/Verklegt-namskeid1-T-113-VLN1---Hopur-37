@@ -10,8 +10,7 @@ class Employee:
 
 
     def turn_employee_into_list(self):
-        return [self.employee_id, self.name, self.email, self.address,
-                self.work_phone, self.personal_phone, self.location]
+        return [self.employee_id, self.name, self.email, self.address, self.work_phone, self.personal_phone, self.location]
    
     def turn_list_into_employee(employee: list):
         if len(employee) != 7:

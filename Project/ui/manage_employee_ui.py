@@ -2,7 +2,7 @@
 class Manage_employees:
     def display_menu():
         # display choices
-        print("\n==Employee Menu==")
+        print("\n==Employee Mananger Menu==")
         print("1. Create new employee")
         print("2. Search for employee")
         print("3. Change employee")
@@ -20,45 +20,51 @@ class Manage_employees:
         # set up what the choices do
         if choice == "1":
             add_employee()
+            return 
             
         elif choice == "2":
-            # display choices of submenu
-            print("1. list all employees")
-            print("2. search for employee by id")
-            print("3. list all employees by location")
-            print("0. Go back")
+            employee_search()
 
-            choice = str(input("Enter your choice:"))
-            valid_choices = ["1","2","3","0"]
+def employee_search():
+        # display choices of submenu
+        print("\n == Employee mananger Search==")
+        print("1. list all employees")
+        print("2. search for employee by id")
+        print("3. list all employees by location")
+        print("0. Go back")
 
-            if choice not in valid_choices:
-                print("Please enter a valid choice!")
-                I_understand = None
-                I_understand = input("Enter anything to continue")
-                if I_understand != None:
-                    Manage_employees.display_menu()
+        choice = str(input("Enter your choice:"))
+        valid_choices = ["1","2","3","0"]
 
-            if choice not in valid_choices:
-                 print("Please enter a valid choice!")
+        if choice not in valid_choices:
+            print("Please enter a valid choice!")
+            I_understand = None
+            I_understand = input("Enter anything to continue")
+            if I_understand != None:
+                employee_search()()
+
+        if choice not in valid_choices:
+            print("Please enter a valid choice!")
+    
+        if choice == "1":
+            return Common_functions.display_employees()
+            
+            return employee_search()
         
-            if choice == 1:
-                Common_functions.display_employees()
-                return
-            
-            elif choice == 2: 
-                Common_functions.search_employee_by_id()
-                return
-            
-            elif choice == 3:
-                list_employees_by_location()
-                return
+        elif choice == "2": 
+            Common_functions.search_employee_by_id()
+            return employee_search()
+        
+        elif choice == "3":
+            list_employees_by_location()
+            return employee_search()
 
-            elif choice == 0:
-                 Manage_employees.display_menu()
-                 return
+        elif choice == "0":
+            Manage_employees.display_menu() 
                  
         if choice == 3:
              update_employee()
+
 
         if choice == 0:
              Manager_ui.display_menu()

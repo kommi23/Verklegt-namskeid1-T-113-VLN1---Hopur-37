@@ -16,8 +16,8 @@ class Common_functions:
 
     def search_employee_by_id(): #virkar
             id = input("Enter Employee ID to search: ")
-            employee1 = LL_employee.search_employee_id_lw(id)
-            return employee1
+            return LL_employee.search_employee_id_lw(id)
+            
 
     def search_employee_by_location():
         location = input("Enter Employee Location to search from: ")
