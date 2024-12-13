@@ -7,32 +7,30 @@ from logic.logic_wrapper import *
 
 class Manage_properties():
     def display_menu():        
+        print("\n=== Property Menu ===")
         print("1. Create new property")
         print("2. Search property by location")
         print("3. Update property")
         print("4. List all properties")
         print("0. Go back")
-        print("Press any other button for Main Menu")
+        print("--Press any other button for Main Menu--")
 
-        choice_inp = (input())
-        try: 
-            choice = int(choice_inp)
-            if choice == 1:
-                add_property()
-            if choice == 2:
-                list_properties_by_location()
-            if choice == 3: 
-                update_property_information()
-            if choice == 4:
-                list_properties()                  
-            if choice == 0:
-               Manager_ui.display_menu()
-            else: 
-               Mainmenu_ui.display_menu()
-        except:
+        choice = (input())
+    
+        if choice == "1":
+            add_property()
+        if choice == "2":
+            list_properties_by_location()
+        if choice == "3": 
+            update_property_information()
+        if choice == "4":
+            list_properties()                  
+        if choice == "0":
+            Manager_ui.display_menu()
+        else: 
             Mainmenu_ui.display_menu()
 
-           
+
 def list_properties():
         properties = []
         properties = LL_property.get_all_properties_lw()
@@ -57,7 +55,7 @@ def list_properties_by_location():
             print ("    ", str(count), ") " , loc.location)
         
         count = count +1
-    print ("    0) to Go back")
+    print ("     0 )  Go back")
     try:
         location_search = int(input())
         if location_search == 0: 
@@ -105,15 +103,26 @@ def add_property():
         print(f"{key}: {value}")
 
     print("Press 1. to confirm that the information is right: ")
-    
+        
+    confirmation = (input())
+
     try:
-        confirmation = int(input())
-        if confirmation == 1:
-            new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
-            LL_property.add_property_lw(new_property)
-            return Manage_properties.display_menu()
+        confirmation_int = int(confirmation)
     except:
-        return print("Employee not added") 
+        print("Employee was not added")
+        Manage_properties.display_menu() 
+    
+    if confirmation_int == 1: 
+        ("1")
+        new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
+        LL_property.add_property_lw(new_property)
+        return Manage_properties.display_menu()
+    else:
+        print("Employee not added")
+        return Manage_properties.display_menu()
+
+
+        
 
 def update_property_information():
     id = input("Enter the ID of the property you want to update: ")

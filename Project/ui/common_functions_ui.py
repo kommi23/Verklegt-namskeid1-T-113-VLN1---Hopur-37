@@ -49,13 +49,15 @@ class Common_functions:
 
 
         request = LW_maintenance_request.get_maintenance_request_by_id_lw(id)
+
+        #request = LW_maintenance_request.get_maintenance_request_by_employee_id_lw(id)
+
         
         if not request:
-             print(f"No Maintenance Request found with the ID {id}")
+            print("No Maintenance Request found with the ID {id}")
 
         else:
-             request = Maintenance_request.turn_maintenance_request_into_list(request) 
-             print(request)
+            print(request)
     
     def search_maintenance_request_by_property_id():
         property_number = input("Enter the Property ID for the Maintenance Request: ")

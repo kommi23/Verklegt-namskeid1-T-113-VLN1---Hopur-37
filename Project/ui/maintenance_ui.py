@@ -47,7 +47,7 @@ class Maintenance_ui:
             
 def add_maintenance_requests():
     print("\n=== Add New Maintenance Request ===")
-    fields = ["Id","Property Number","Description","Priority","Date","Budget","Recurring Task","Employee ID"]
+    fields = ["Id","Property Number","Description","Priority","Date","Budget","Recurring Task"]
     user_input = {}
 
     
