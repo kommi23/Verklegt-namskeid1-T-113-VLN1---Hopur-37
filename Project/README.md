@@ -1,91 +1,35 @@
-# dagbok-h37
-Færsla 1 (25.11)
-Unnum í því að gera github-handbók. Kynntum okkur hvernig verkefnið er sett upp og hvernig GitHub virkar.
-planið er að halda áfram að vinna í handbókinni í dag og reyna að klára hana fyrir hádegi á morgun og byrja svo að hanna verkefnið
-Mæting:
-Allir
+###########################
+NAN AIR TICKETING SOFTWARE
+###########################
 
-#################Færsla 1 (25.11)#####################################
+This software was created for Chuck Norris's imaginary company called Nan air, where division by zero makes sense, in a first 
+year computer science class in Reykjavik University. In the software the user is asked if he is a manager or an employee and 
+depending on the answer the user is prompted with different options. Managers are supposed to be able to create new: employees, locations, properties and maintenance requests. As well as look up employees, properties, locations, and maintenance requests 
+with appropriate filters. Employees are supposed to be able to look up employees, properties, locations and open maintenance 
+requests. Then they can add a maintenance report on maintenance requests which the manager can then accept to close the 
+request.
 
-Mættir:
-    Anton Breki Bjarnþórsson
-    Kormákur Máni Bjarnason
-    Jóhann Gunnar Bergþórsson
-    Alexander Joseph Emilsson 
-    Victor Blær Ciesielski Jensen
-    Viktor Már Heiðarsson
+#########################
 
-Umræður dagsins:
-    1)Við ræddum aðallega hvernig git virkar til að kynna okkur 
-    git sem undirbúning fyrir gerð github handbókarinnar.
+The idea with this project is to develop our teamworking, programming and conflict resolution skills. But the group 
+struggled a lot with git. Another pain point throughout the project was communication. The group as a whole almost disbanded in
+the second week. But after everything all the group members prevailed and we managed to pull together a decent project
 
-    2)Hvernig hugbúnaðarverkefnið er sett upp og hvernig við myndum 
-    úthluta mismunandi afurða verkefni fyrir hverja hópmeðlimi.
-
-Dagskrá fyrir næsta fund:
-    Næsti fundur er boðaður þriðujudaginn 26. klukkan 9:00
-
-    1)Fyrsta Markmið okkar er að klára handbókina fyrir GitHub og
-    GitHub Desktop vonandi fyrir hádegi. (mikilvægasta verkefnið)
-
-    2)Byrja að tækla Afurðina í hönnunarskýrslunni.
-
-###################lok færslu fyrir fyrsta dag(25.11)##################   
-
-
-
-
-
-
-#################Færsla 2 (26.11)######################################
-
-Mættir:
-    Anton Breki Bjarnþórsson
-    Kormákur Máni Bjarnason
-    Jóhann Gunnar Bergþórsson
-    Alexander Joseph Emilsson 
-    Victor Blær Ciesielski Jensen
-    Viktor Már Heiðarsson
-
-Umræður dagsins:
-    1)ræddum hvað þyrfti að vera til staðar í git handbókinni og 
-    hvernig værri best að lýsa hverjari aðgerð í notkun git fyrir
-    byrjanda. byrjuðum á handbókinni og komumst langa leið með hana.
-
-    2)ræddum hvaða requirements þyrftu að vera til staðar í
-    requirement list og gerðum requirement list. Könnuðum vandlega 
-    hvaða user group væri með hvaða requirements.
-
-Dagskrá fyrir næsta fund:
-    Næsti fundur er boðaður miðvikudaginn 27. klukkan 10:00
-
-    1)Fyrsta markmið okkar er að klára B og C kröfur fyrir requirement 
-    analysis.
-
-    2)Byrja á að gera use cases útfrá requirement list.
-
-###################lok færslu fyrir (27.11)###########################   
-
-################## færsla fyrir (28.11) ##############################
-
-Unnum í Use cases og wireframeinu. hönnuðum hvernig TUI á að líta út. ætlum líklegast 
-að klára Use cases fyrir morgundaginn og byrja svo í að vinna í klasaritunum.
-fengum leiðbeiningar frá kennara TA og hann skýrði fyrir okkur mörg atriði.
-Mættir:
-
-################# lok færslu fyrir (28.11) ##########################
-
-################ færsla fyrir (29.11) ###############################
-
-fundað var í byrjun dags og ákveðið var að klára bæði klasaritið fyrir 3 laga hönnunnina og model klasana.
-
-klasaritið og model klasarnir voru kláraðir og við skilum skýrlsunni seinna í kvöld eftir að hafa farið yfir
-hana vel.
-mættir: 
-  Anton Breki Bjarnþórsson
-  Jóhann Gunnar Bergþórsson
-  Victor Blær Ciesielski Jensen
-  Viktor Már Heiðarsson
-
-############### lok færslu (29.11) ################################
-
+#########################
+Requirements:
+    o Python3 
+    o git
+    o A working computer with some kind of terminal
+#########################
+Instructions:
+To get the project you have to clone the repository onto your computer. 
+To do that you have to open your terminal and use the command:
+```
+git clone https://github.com/kommi23/Verklegt-namskeid1-T-113-VLN1---Hopur-37
+```
+After that use your terminal to navigate to the folder.
+Once in the folder you can use the following command to run the file:
+```
+python3 "main.py"
+```
+And that's it. Congratulations You can see how the program works! 👏👏
