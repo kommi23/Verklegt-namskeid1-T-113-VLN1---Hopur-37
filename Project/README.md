@@ -1,6 +1,7 @@
-###########################
-NAN AIR TICKETING SOFTWARE
-###########################
+
+### NAN AIR TICKETING SOFTWARE
+
+### Introduction:
 
 This software was created for Chuck Norris's imaginary company called Nan air, where division by zero makes sense, in a first 
 year computer science class in Reykjavik University. In the software the user is asked if he is a manager or an employee and 
@@ -15,8 +16,7 @@ The idea with this project is to develop our teamworking, programming and confli
 struggled a lot with git. Another pain point throughout the project was communication. The group as a whole almost disbanded in
 the second week. But after everything all the group members prevailed and we managed to pull together a decent project
 
-#########################
-Requirements:
+### Requirements:
     o Python3 
     o git
     o A working computer with some kind of terminal
