@@ -7,17 +7,18 @@ from ui.manager_ui import *
 class Maintenance_ui:
 
     def manager_maintenance_requests_menu():
-        print("\n==Maintenance Request Menu==")
-        print("1. Display all Maintenance Requests")
+        print("\n==Maintenance Request/Report Menu==")
+        print("1. Display all Maintenance/Report Requests")
         print("2. Add Maintenance Request")
         print("3. Update Maintenance Request")
-        print("4. Search Maintenance Request by ID")
-        print("5. Search Maintenance Request by Property Number")
+        print("4. Search Maintenance Request/Report by ID")
+        print("5. Search Maintenance Requests/Reports by Property Number")
+        print("5. Search Maintenance Requests/Reports by employee ID")        
         print("6. Approve Maintenance report")
         print("0. Go back")
 
         choice = (input("Enter your choice: "))
-        valid_choices = ["1", "2", "3", "4", "5", "6", "0"]
+        valid_choices = ["1", "2", "3", "4", "5", "6", "7", "0"]
 
         if choice not in valid_choices:
             print("Please enter a valid choice: ")
@@ -32,9 +33,12 @@ class Maintenance_ui:
             Common_functions.search_maintenace_request_by_id()
         
         elif choice == '5':
-            Common_functions.search_maintenance_request_by_property_id()
+            Common_functions.search_maintenances_request_by_property_id()
         
-        elif choice == "6":
+        elif choice == '6':
+            Common_functions.search_maintenances_requests_by_employee_id()
+        
+        elif choice == "7":
              manager_approve_maintenance_report()
              
         elif choice == '0':

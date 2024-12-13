@@ -59,7 +59,7 @@ class Common_functions:
         else:
             print(request)
     
-    def search_maintenance_request_by_property_id():
+    def search_maintenances_request_by_property_id():
         property_number = input("Enter the Property ID for the Maintenance Request: ")
         requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(property_number)
 
@@ -69,3 +69,14 @@ class Common_functions:
         else:
             for request in requests:
                 print(request)
+
+    def search_maintenances_requests_by_employee_id():
+        employee_id = input("Enter the Property ID for the Maintenance Request: ")
+        requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(employee_id)
+
+        if not requests:
+              print("No Maintenance Request found with Propery Number {property_id}")
+
+        else:
+            for request in requests:
+                print(request)      
