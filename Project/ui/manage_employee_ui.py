@@ -136,6 +136,7 @@ def add_employee():
     if confirmation == 1:
         new_employee = Employee(id, name, email, address, work_phone, personal_phone, location)
         LL_employee.add_employee_lw(new_employee)
+        return Manage_employees.display_menu()
     else:
          add_employee()
          
