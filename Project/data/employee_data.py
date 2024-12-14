@@ -36,8 +36,9 @@ class EmployeeData:
                     employee = Employee(*line)
                     employees.append(employee)
             return employees
-        except: 
-            raise ValueError("Shit no work")
+        except Exception as e: 
+            print(e)
+            raise ValueError("WTH!!!")
         
     
 

@@ -72,7 +72,7 @@ class MaintenanceRequestData:
                 list_writer = csv.writer(new_csv_file)
                 list_writer.writerows(new_file)
             return True
-        except: raise      
+        except: raise RuntimeError()
 
 
     def approve_maintenancereport_data(maintenance_id):

@@ -64,7 +64,7 @@ class Employee_ui:
 
         if choice == "5":
             employee_write_maintenance_report()
-            Employee_ui.display_menu
+            Employee_ui.display_menu()
 
         if choice == "0":
             Mainmenu_ui.display_menu()

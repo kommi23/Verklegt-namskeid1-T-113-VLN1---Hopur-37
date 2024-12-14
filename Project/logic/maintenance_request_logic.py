@@ -71,14 +71,10 @@ class Maintenance_request_logic:
                 try:
                     DW_Maintenance_request.add_maintenance_report_dw(id, employee_id, report)
                     return print("Maintenance report successfully created")
-                except:
+                except RuntimeError:
                     pass
         return print(f"Request with id: {id} can not be found")
 
-        """if maintenance_report:
-            return f"A report for request {id} was created successfully."
-        else:
-            return f"Request with ID {id} not found."""
 
     def approve_maintenace_report_logic(id):
         #maintenance_report = DW_Maintenance_request.add_approve_maintenance_report_dw(id)
