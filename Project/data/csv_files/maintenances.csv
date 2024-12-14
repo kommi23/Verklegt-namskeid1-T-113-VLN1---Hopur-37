@@ -1,4 +1,4 @@
 id,property_number,description,priority,date,budget,recurring_task,employee_id,report,status
-1,1,Paint the walls,low,22.12.24,27.000kr,yes,2203792244,Painting is finished for now,Ready
+1,1,Paint the walls,low,22.12.24,27.000kr,yes,2203792244,Painting is finished for now,Open
 2,2,Clean up on isle 3,high,15.12.24,0kr,no,3,Rodents have been dealt with!,Ready
-3,3,Kill the rodents,high,21.12.24,10.000kr,no,2910995544,Too Many rodents,Ready
+3,3,Kill the rodents,high,21.12.24,10.000kr,no,2910995544,Too Many rodents,Closed
