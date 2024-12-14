@@ -14,8 +14,7 @@ class MaintenanceRequestData:
                 list_writer.writerow(maintenance_as_list)                
                 return True 
         except: raise
-    print("kemst hingað")
-
+        
     def get_maintenances(self):
         maintenances = []
         try:
