@@ -44,7 +44,7 @@ class Manage_employees:
     def employee_search(self):
         while True:
             # display choices of submenu
-            print("\n == Employee mananger Search==")
+            print("\n == Search for employees Search==")
             print("1. list all employees")
             print("2. search for employee by id")
             print("3. list all employees by location")
@@ -64,24 +64,21 @@ class Manage_employees:
                 print("Please enter a valid choice!")
         
             if choice == "1":
-                self.llw.add_employee_lw()
+                self.comon.display_employees()
             
             elif choice == "2": 
-                employee = self.llw.search_employee_id_lw()
-                if not employee:
-                    print("Employee does not exist in the system")
-                else:
-                    print(employee)
+                employee = self.comon.search_employee_by_id()
+                print(employee)
             
             elif choice == "3":
-                self.llw.search_employee_location_lw()
+                self.list_employees_by_location()
 
             elif choice == "0":
                 break  
                
 
     def add_employee(self):
-        list_of_locations = ["Nuuk", "Kulusuk", "Þórshöfn", "Tingwall", "Reykjavik"]
+        list_of_locations = ["Nuuk", "Kulusuk", "Þórshöfn", "Tingwall", "Reykjavik", ]
         id = None
         name = None
         email = None
