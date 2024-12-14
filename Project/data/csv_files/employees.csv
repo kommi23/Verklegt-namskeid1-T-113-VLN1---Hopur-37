@@ -1,9 +1,8 @@
 employee_id,name,email,address,work_phone,personal_phone,location
-2203792244,goober,jacob.yxa@nanair.is,Vei 224 3B,+47 92 09 77 01,+354 777 1338,Nuuk
+2203792244,Jacob Yxa,jacob.yxa@nanair.is,Vei 224 3B,+47 92 09 77 01,+354 777 1338,Nuuk
 0505953993,Greenland,nanna.daema@nanair.is,Ivan Starostin st. 109,+47 92 09 77 02,+354 777 1339,Kulusuk
 2910995544,Greenland,aqqaluk.lynge@nanair.is,Qattaaq 44 3905,+299 35 24 66,+354 777 1362,Þórshöfn
 1010902244,Faroe Islands,nauja.lynge@nanair.is,Qunguleq 3759 3905,+299 31 21 64,+354 777 1363,Tingwall
 3110795949,Scotland,aki.knudsen@nanair.is,Traðartún 3 108,+298 617210,+354 777 1381,Longyearbyen
 0707932291,Svalbard,Andre.hjaltalin@nanair.is, Lágni 13 100,+298 661441,+354 777 1382,Reykjavik
 0707932291,iceland,Andre.hjaltalin@nanair.is,holl 19,+298 661441,+354 777 1382,Djupivogur
-

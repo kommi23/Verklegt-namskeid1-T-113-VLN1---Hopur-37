@@ -1,6 +1,4 @@
 id,property_number,description,priority,date,budget,recurring_task,employee_id,report,status
-7,7,7,7,7,7,7,7,blabla,Closed
-1,1,1,1,1,1,1,31223,halllllllllo,Ready
-2,2,2,2,2,2,2,12312312,tilbuin,Ready
-0,0,0,0,0,0,0,None,Empty,Open
-123,123,213,1231,123,123,123123,None,Empty,Open
+1,1,Paint the walls,low,22.12.24,27.000kr,yes,2203792244,Painting is finished for now,Ready
+2,2,Clean up on isle 3,high,15.12.24,0kr,no,0707932291,"Isle 3 looking good",Ready
+3,3,Kill the rodents,high,21.12.24,10.000kr,no,2910995544,"Too Many rodents",Ready

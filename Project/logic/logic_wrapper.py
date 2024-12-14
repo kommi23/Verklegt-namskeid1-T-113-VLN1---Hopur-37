@@ -44,7 +44,7 @@ class LogicWrapper():
     def get_properties_by_location_data_LL(self, location):
          return self.lpro.get_properties_by_location_data_logic(location)
 
-    def change_property_lw(self, d, info_change, what_info) -> list:
+    def change_property_lw(self, id, info_change, what_info) -> list:
         return self.lpro.change_property(id, info_change, what_info)
         
     # location 
