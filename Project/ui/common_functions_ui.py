@@ -22,13 +22,6 @@ class Common_functions:
     def search_employee_by_location():
         location = input("Enter Employee Location to search from: ")
         employees = LL_employee.search_employee_location_lw(location)
-        if not employees:
-            print("No employees found in location {location}.")
-        
-        else:
-            for i in employees:
-                print(i)
-    
 
     # Vantar að setja í logic wrapperinn
     def display_all_maintenace_requests():
@@ -54,7 +47,7 @@ class Common_functions:
 
         
         if not request:
-            print("No Maintenance Request/Report found with the ID {id}")
+            print(f"No Maintenance Request/Report found with the ID {id}")
 
         else:
             print(request)

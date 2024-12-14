@@ -13,7 +13,6 @@ class Manage_properties():
         print("3. Update property")
         print("4. List all properties")
         print("0. Go back")
-        print("--Press any other button for Main Menu--")
 
         choice = (input())
 
@@ -28,7 +27,8 @@ class Manage_properties():
         if choice == "0":
             Manager_ui.display_menu()
         else: 
-            Mainmenu_ui.display_menu()
+            print("Please choose a valid input!")
+            Manage_properties.display_menu()
 
 def list_properties():
         properties = []
@@ -84,37 +84,42 @@ def list_properties_by_location():
        
 
 def add_property():
-    print("ID:")
+    list_of_locations = ["Nuuk", "Kulusuk", "Þórshöfn", "Tingwall", "Reykjavik"]
+    list_of_conditions = ["good", "fair", "bad"]
+    id = None
+    condition = None
+    additional = None
+    location = None
 
-    fields = ["ID", "Condition", "Additional maintenance", "Location"]
-    user_inputs = {}
+    while id == None or not id.isnumeric():
+        id = input("ID: ")
+        if not id.isnumeric():
+            print("Please enter a valid ID!")
     
-    for field in fields:
-        os.system("clear")
+    while condition == None or condition not in list_of_conditions:
+        print(list_of_conditions)
+        condition = input("Condition: ")
+        condition = condition.lower()
+        if condition not in list_of_conditions:
+            print("Please set condition as good, fair or bad")
 
-        for key, value in user_inputs.items():
-            print(f"{key}: {value}")
-        
-        
-        user_inputs[field] = input(f"Enter Property {field}: ")
-    
-    os.system("clear")
-    for key, value in user_inputs.items():
-        print(f"{key}: {value}")
+    while additional == None:
+        additional = input("Additional Maintenance: ")
 
-    print("Press 1. to confirm that the information is right: ")
-        
-    confirmation = (input())
+    while location == None or location not in list_of_locations:
+        location = input("Location: ")
+        if location not in list_of_locations:
+            print("Not a valid location, please select one of: Nuuk, Kulusuk, Þórshöfn, Tingwall or Reykjavik")
 
-    try:
-        confirmation_int = int(confirmation)
-    except:
-        print("Employee was not added")
-        Manage_properties.display_menu() 
-    
-    if confirmation_int == 1: 
-        ("1")
-        new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
+    print(f"ID: {id}")
+    print(f"Condition: {condition}")
+    print(f"Additional maintenance: {additional}")
+    print(f"Location: {location}")
+    print("Press 1. to confirm that the information is right, press anything else to restart: ")
+    confirmation = str(input())    
+
+    if confirmation == "1": 
+        new_property = Property(id, condition, additional, location)
         LL_property.add_property_lw(new_property)
         return Manage_properties.display_menu()
     else:

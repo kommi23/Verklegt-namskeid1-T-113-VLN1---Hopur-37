@@ -146,19 +146,18 @@ def update_employee():
         info_change = input("Enter what information to update (e.g. name, location): ").lower()
         new_info = input("Enter new information: ")
         
-        info_list = {
-
+        info_dict = {
             "name" : 1,
             "location" : 2,
             "phone_number" : 3,
             "email" : 4,
             "address" : 5
         }
-        if info_change not in info_list:
+        if info_change not in info_dict:
             print("Error: Information not found")
             return
         
-        LL_employee.update_employee(id, new_info, info_list[info_change])
+        LL_employee.update_employee_lw(id, new_info, info_dict[info_change])
         print(f"Employee with ID {id} updated successfully")
 
 

@@ -16,16 +16,20 @@ class Employee_logic:
         employee1 = DW_employee.get_singular_employee_dw(id)
         
         if not employee1:
-            return print(f"No employee found with the ID {id}.")
+            return f"No employee found with the ID {id}."
         
         else:
             return employee1
     
     def get_employees_location_logic(location: str):
-        try:
-            return DW_employee.get_employees_location_dw(location) 
-        except: 
-            return f"No employees form location {location} found"
+        employees = DW_employee.get_employees_location_dw(location)
+        if not employees:
+            print(f"No employees found in location {location}.")
+
+        else:
+            for i in employees:
+                print(i) 
+
 
     def get_employee_list():
         return DW_employee.get_employees_dw()

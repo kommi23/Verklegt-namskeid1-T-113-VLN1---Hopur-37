@@ -6,5 +6,6 @@ employee_id,name,email,address,work_phone,personal_phone,location
 3110795949,Áki Knudsen,aki.knudsen@nanair.is,Traðartún 3 108 Argir,+298 617210,+354 777 1381,Faroe Islands
 0707932291,André Hjaltalin,Andre.hjaltalin@nanair.is, Lágni 19 100 Tórshavn,+298 661441,+354 777 1382,Faroe Islands1441
 0707932291,goober 2,Andre.hjaltalin@nanair.is,Lágni 19 100 Tórshavn,+298 661441,+354 777 1382,Faroe Islands1441
-123,alex,alex@ru.is,heima,123,123,Nuuk
+123,alex,Nuuk,heima,123,123,Nuuk
 1,daeifir,ioadkwo@gmdadw.com,dajnlsdflnndsf,34653982497,83409238,Nuuk
+234235,aelle,alex@ru.is,heie,5434543,345432,Nuuk
