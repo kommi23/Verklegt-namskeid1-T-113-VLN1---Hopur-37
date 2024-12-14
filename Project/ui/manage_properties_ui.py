@@ -21,13 +21,13 @@ class Manage_properties():
 
             if choice == "1":
                 Manage_properties.add_property(self)
-            if choice == "2":
+            elif choice == "2":
                 Manage_properties.list_properties_by_location(self)
-            if choice == "3": 
+            elif choice == "3": 
                 Manage_properties.update_property_information(self)
-            if choice == "4":
+            elif choice == "4":
                 Manage_properties.list_properties(self)                  
-            if choice == "0":
+            elif choice == "0":
                 return
             else: 
                 input("incorrect input, try again..")
@@ -95,7 +95,7 @@ class Manage_properties():
         user_inputs = {}
         
         for field in fields:
-            os.system("clear")
+        
 
             for key, value in user_inputs.items():
                 print(f"{key}: {value}")
@@ -118,7 +118,7 @@ class Manage_properties():
         if confirmation_int == 1: 
             ("1")
             new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
-            LogicWrapper.add_property_lw(new_property)
+            self.llw.add_property_lw(new_property)
             return
         else:
             print("Employee not added")

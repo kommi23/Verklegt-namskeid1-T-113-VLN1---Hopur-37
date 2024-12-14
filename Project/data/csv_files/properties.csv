@@ -1,5 +1,6 @@
-property_number, condition, additional_maintenance,Nuuk
+property_number,condition,additional_maintenance,location
 1,good,paint the walls,Reykjavik
 2,fair,clean up on isle 3,Þórshöfn
 3,bad,restore restrooms,location
 4,good,kill the rodents,Reykjavik
+1235421,Good,no,Reykjavik

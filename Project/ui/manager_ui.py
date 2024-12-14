@@ -46,10 +46,6 @@ class Manager_ui:
             if choice == "4":
                 self.manloc.display_Locations()
 
-            #if choice == "5":
-            #    pass
-            #    Manage_contractors.display_menu()
-            
             if choice == "0":
                 return
 

@@ -27,21 +27,21 @@ class Maintenance_ui:
             if choice not in valid_choices:
                 print("Please enter a valid choice: ")
                 continue
-            elif choice == '1':
+            if choice == '1':
                 self.common.display_all_maintenace_requests()                
-            elif choice == '2':
+            if choice == '2':
                 self.add_maintenance_requests()
-            elif choice == '3':
+            if choice == '3':
                 self.update_maintenance_requests()
-            elif choice == '4':
+            if choice == '4':
                 self.common.search_maintenace_request_by_id()
-            elif choice == '5':
+            if choice == '5':
                 self.common.search_maintenances_request_by_property_id()
-            elif choice == '6':
+            if choice == '6':
                 self.common.search_maintenances_requests_by_employee_id()
-            elif choice == "7":
+            if choice == "7":
                 self.manager_approve_maintenance_report()
-            elif choice == '0':
+            if choice == '0':
                 return
              
             
