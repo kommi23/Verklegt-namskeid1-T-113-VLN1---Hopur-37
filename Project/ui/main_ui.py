@@ -26,4 +26,3 @@ class Mainmenu_ui:
 
 from ui.manager_ui import *
 from ui.employee_ui import *
-import os

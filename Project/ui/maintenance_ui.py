@@ -90,7 +90,11 @@ def add_maintenance_requests():
 
             
 def update_maintenance_requests():
-        maintenance_id = input("Enter Maintenance Number: ")
+        maintenance_id = None
+        while maintenance_id == None or not maintenance_id.isnumeric():
+            maintenance_id = input("Enter Maintenance Number: ")
+            if not maintenance_id.isnumeric():
+                print("Please enter a valid ID!")
         info_change = input("Enter what information to change (e.g, Property, Date): ").lower()
         new_info = input(f"What is the new {info_change}: ")
 

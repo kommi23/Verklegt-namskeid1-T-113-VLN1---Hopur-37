@@ -40,7 +40,7 @@ class Manager_ui:
         #    pass
         #    Manage_contractors.display_menu()
         
-        if choice == 0:
+        if choice == "0":
             Mainmenu_ui.display_menu()
 
 

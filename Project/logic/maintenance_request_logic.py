@@ -58,9 +58,9 @@ class Maintenance_request_logic:
                 maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)
 
         if maintenance_change:
-            return f"Employee with ID {id} updated successfully."
+            return f"Maintenance request with ID {id} updated successfully."
         else:
-            return f"Employee with ID {id} not found."
+            return f"Maintenance request with ID {id} not found."
         
     def add_maintenance_report_logic(id, employee_id, report):
         #maintenance_report = DW_Maintenance_request.add_maintenance_report_dw(id, employee_id, report)
