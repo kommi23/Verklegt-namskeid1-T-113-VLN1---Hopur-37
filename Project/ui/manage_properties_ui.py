@@ -26,7 +26,7 @@ class Manage_properties():
             if choice == "3": 
                 Manage_properties.update_property_information(self)
             if choice == "4":
-                list_properties(self)                  
+                Manage_properties.list_properties(self)                  
             if choice == "0":
                 return
             else: 
