@@ -1,11 +1,11 @@
 from tabulate import tabulate # type: ignore
-from logic.contractor_logic import Contractor
+from logic.contractor_logic import Contractor_logic
 from logic.logic_wrapper import ll_employee
 from Project.ui.input_validators import Input_validators
 
 class ContractorUI:
     def __init__(self):
-        self.logic = Contractor
+        self.logic = Contractor_logic
     
     def contractor_menu(self):
         print("Contractor Menu")
@@ -58,7 +58,7 @@ class ContractorUI:
             address = input("Enter Contractos Address: ")
             opening_hours = input("Enter Contractos Opening Hours: ")
 
-            self.logic.add_contractor(Contractor)
+            self.logic.add_contractor(Contractor_logic)
             print("Contractor has been added")
         except Input_validators: # vantar að bæta við 
             print("Some error") # réttu exceptions

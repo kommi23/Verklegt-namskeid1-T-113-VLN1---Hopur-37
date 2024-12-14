@@ -2,10 +2,10 @@ import csv
 from Models.Property import *
 
 class PropertyData:
-    def __init__():
+    def __init__(self):
         pass
     
-    def get_singular_property_data(property_number): 
+    def get_singular_property_data(self, property_number): 
         try:    
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
                 for line in csv_file:
@@ -15,7 +15,7 @@ class PropertyData:
         except: 
             return None 
         
-    def add_property_data(property):
+    def add_property_data(self, property):
         try:
            
             with open("Project/data/csv_files/properties.csv", "a", newline='\n', encoding='utf-8') as csv_file:
@@ -25,7 +25,7 @@ class PropertyData:
                 return "Success!"
         except: raise
 
-    def get_all_proberties_data():
+    def get_all_proberties_data(self):
         properties = []
         try:
             with open("Project/data/csv_files/properties.csv", newline='', encoding='utf-8') as csv_file:
@@ -38,7 +38,7 @@ class PropertyData:
                 
         except: raise
 
-    def get_properties_by_location_data(location):
+    def get_properties_by_location_data(self, location):
         try:    
                 properties = []
                 with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -52,7 +52,7 @@ class PropertyData:
         except: raise          
 
 
-    def delete_property_data(property_number):  
+    def delete_property_data(self, property_number):  
         new_file = []
         try:
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -68,7 +68,7 @@ class PropertyData:
         except: raise
 
 
-    def update_property_data(property_id, updated_data, what_data):
+    def update_property_data(self, property_id, updated_data, what_data):
         new_file = []
         try:
             with open("Project/data/csv_files/properties.csv", "r", newline='', encoding='utf-8') as csv_file:

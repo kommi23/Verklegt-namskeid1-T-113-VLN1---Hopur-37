@@ -1,11 +1,13 @@
-from logic.logic_wrapper import *
-from Models.Maintenance_request import *
+from logic.logic_wrapper import LogicWrapper
+from Models.Maintenance_request import Maintenance_request
 
 class Common_functions:
+    def __init__(self, llw : LogicWrapper):
+         self.llw : LogicWrapper = llw
 
-    def display_employees():
+    def display_employees(self):
         list_of_employees = []
-        list_of_employees = LL_employee.get_employee_list_lw()
+        list_of_employees = self.llw.get_employee_list_lw()
                 
         if not list_of_employees:
                 print("No employees found.")
@@ -14,14 +16,14 @@ class Common_functions:
             for employee in list_of_employees:
                     print(employee)
 
-    def search_employee_by_id(): #virkar
+    def search_employee_by_id(self): #virkar
             id = input("Enter Employee ID to search: ")
-            return LL_employee.search_employee_id_lw(id)
+            return self.llw.search_employee_id_lw(id)
             
 
-    def search_employee_by_location():
+    def search_employee_by_location(self):
         location = input("Enter Employee Location to search from: ")
-        employees = LL_employee.search_employee_location_lw(location)
+        employees = self.llw.search_employee_location_lw(location)
         if not employees:
             print("No employees found in location {location}.")
         
@@ -31,9 +33,9 @@ class Common_functions:
     
 
     # Vantar að setja í logic wrapperinn
-    def display_all_maintenace_requests():
+    def display_all_maintenace_requests(self):
         requests = []
-        requests = LW_maintenance_request.get_all_maintenance_requests_lw()
+        requests = self.llw.get_all_maintenance_requests_lw()
 
         if not requests:
             print("No Maintenance Requests/Reports found...")
@@ -44,11 +46,11 @@ class Common_functions:
     
     
 
-    def search_maintenace_request_by_id():
+    def search_maintenace_request_by_id(self):
         id = (input("Enter the ID for the Maintenance Request/Report:"))
 
 
-        request = LW_maintenance_request.get_maintenance_request_by_id_lw(id)
+        request = self.llw.get_maintenance_request_by_id_lw(id)
 
         #request = LW_maintenance_request.get_maintenance_request_by_employee_id_lw(id)
 
@@ -59,9 +61,9 @@ class Common_functions:
         else:
             print(request)
     
-    def search_maintenances_request_by_property_id():
+    def search_maintenances_request_by_property_id(self):
         property_number = input("Enter the Property ID for the Maintenance Requests/Reports: ")
-        requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(property_number)
+        requests = self.llw.get_maintenance_request_by_property_id_lw(property_number)
 
         if not requests:
               print("No Maintenance Request/Report found with Propery Number {property_id}")
@@ -70,9 +72,9 @@ class Common_functions:
             for request in requests:
                 print(request)
 
-    def search_maintenances_requests_by_employee_id():
+    def search_maintenances_requests_by_employee_id(self):
         employee_id = input("Enter the Employee ID for the Maintenance Requests/Reports: ")
-        requests = LW_maintenance_request.get_maintenance_request_by_property_id_lw(employee_id)
+        requests = self.llw.get_maintenance_request_by_property_id_lw(employee_id)
 
         if not requests:
               print("No Maintenance Request/Report found with Propery Number {property_id}")

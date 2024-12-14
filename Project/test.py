@@ -1,5 +1,6 @@
 from ui.main_ui import Mainmenu_ui
 
-Mainmenu_ui.display_menu()
+myMain = Mainmenu_ui() 
+myMain.display_menu()
 
 

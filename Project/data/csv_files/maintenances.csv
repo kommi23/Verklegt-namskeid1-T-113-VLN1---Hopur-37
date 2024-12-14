@@ -1,5 +1,6 @@
 id,property_number,description,priority,date,budget,recurring_task,employee_id,report,status
 7,7,7,7,7,7,7,7,blabla,Closed
-1,1,1,1,1,1,1,None,Empty,Open
-2,2,2,2,2,2,2,None,Empty,Open
+1,1,1,1,1,1,1,31223,halllllllllo,Ready
+2,2,2,2,2,2,2,12312312,tilbuin,Ready
 0,0,0,0,0,0,0,None,Empty,Open
+123,123,213,1231,123,123,123123,None,Empty,Open

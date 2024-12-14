@@ -2,10 +2,10 @@ import csv
 from Models.Location import *
 
 class LocationData:
-    def __init__():
+    def __init__(self):
         pass
                 
-    def get_locations_data():
+    def get_locations_data(self):
         locations = []
         try:
             with open("project/data/csv_files/locations.csv", "r", newline='', encoding='utf-8') as csv_file:

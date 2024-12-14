@@ -3,10 +3,10 @@ from Models.Employee import *
 
 
 class EmployeeData:
-    def __init__():
+    def __init__(self):
         pass
 
-    def write_employe_data(employee):
+    def write_employe_data(self, employee):
         try:
             with open("Project/data/csv_files/employees.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
@@ -15,7 +15,7 @@ class EmployeeData:
                 return True 
         except: raise 
     
-    def get_singular_employee_data(employee_id): 
+    def get_singular_employee_data(self, employee_id): 
         try:    
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
                     csv_reader = csv.reader(csv_file)
@@ -25,7 +25,7 @@ class EmployeeData:
                             return employee
         except: raise  
             
-    def get_employees_data():
+    def get_employees_data(self):
         employees = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -41,7 +41,7 @@ class EmployeeData:
         
     
 
-    def get_employees_location_data(location: str) -> list: 
+    def get_employees_location_data(self, location: str) -> list: 
         try:    
                 employees = []
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -54,7 +54,7 @@ class EmployeeData:
             
         except: raise  
 
-    def delete_employee_data(Employee_id):   
+    def delete_employee_data(self, Employee_id):   
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -72,7 +72,7 @@ class EmployeeData:
 
 
 
-    def update_employee_data(Employee_id, updated_data, what_data: int): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
+    def update_employee_data(self, Employee_id, updated_data, what_data: int): #breytti þannig "what_data" er sent til okkar og segir þá til um hvaða row verður f breytingum 
         new_file = []
         try:
             with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -90,5 +90,3 @@ class EmployeeData:
         except: raise      
 
 
-import csv
-from Models.Employee import *

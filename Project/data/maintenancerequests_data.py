@@ -3,8 +3,10 @@ from Models.Maintenance_request import Maintenance_request
 
 
 class MaintenanceRequestData:
+    def __init__(self):
+        pass
 
-    def add_maintenance(maintenance):
+    def add_maintenance(self, maintenance):
         try:
             with open("Project/data/csv_files/maintenances.csv", "a", newline='', encoding='utf-8') as csv_file:
                 list_writer = csv.writer(csv_file)
@@ -14,7 +16,7 @@ class MaintenanceRequestData:
         except: raise
     print("kemst hingað")
 
-    def get_maintenances():
+    def get_maintenances(self):
         maintenances = []
         try:
             with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -25,7 +27,7 @@ class MaintenanceRequestData:
             return maintenances
         except: raise
 
-    def get_maintenancerequest_by_ID(ID): #virkar svona
+    def get_maintenancerequest_by_ID(self,ID): #virkar svona
         try:    
                 #maintenencerequests = []
                 with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -39,7 +41,7 @@ class MaintenanceRequestData:
             
         except: raise  
 
-    def update_maintenancerequest_data(maintenance_id, updated_data,  what_data: int):
+    def update_maintenancerequest_data(self,maintenance_id, updated_data,  what_data: int):
         new_file = []
         try:
             with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -56,10 +58,10 @@ class MaintenanceRequestData:
             return True
         except: raise      
 
-    def add_maintenancereport_data(maintenance_id, employee_id, report):
+    def add_maintenancereport_data(self,maintenance_id, employee_id, report):
         new_file = []
         try:
-            with open("Project/data/csv_files/maintenanceres.csv", "r", newline='', encoding='utf-8') as csv_file:
+            with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
                 list_reader = csv.reader(csv_file)
                 for row in list_reader:
                     if row[0] == str(maintenance_id): 
@@ -75,7 +77,7 @@ class MaintenanceRequestData:
         except: raise      
 
 
-    def approve_maintenancereport_data(maintenance_id):
+    def approve_maintenancereport_data(self,maintenance_id):
         new_file = []
         try:
             with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
@@ -91,7 +93,7 @@ class MaintenanceRequestData:
             return True
         except: raise      
 
-    def get_maintenancereports_by_property(property): #EKKI NOTAÐ
+    def get_maintenancereports_by_property(self,property): #EKKI NOTAÐ
         try:    
                 with open("Project/data/csv_files/maintenances.csv", "r", newline='', encoding='utf-8') as csv_file:
 
