@@ -18,9 +18,9 @@ class EmployeeData:
     def get_singular_employee_data(employee_id): 
         try:    
                 with open("Project/data/csv_files/employees.csv", "r", newline='', encoding='utf-8') as csv_file:
-                    for line in csv_file:
-                        line = line.split(",")
-                        if str(employee_id) in line[0]:
+                    csv_reader = csv.reader(csv_file)
+                    for line in csv_reader:
+                        if employee_id in line[0]:
                             employee = Employee(*line)
                             return employee
         except: raise  

@@ -41,11 +41,21 @@ class Maintenance_request_logic:
         return maintenencereports
     
 
-    def update_maintenance_request_logic(id, info_change, what_info):
-        DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
+   # def update_maintenance_request_logic(id, info_change, what_info):
+
+       # all_requests = DW_Maintenance_request.get_all_maintenance_requests_dw()
+
+       # for request in all_requests[1:]:
+
+       # DW_Maintenance_request.update_maintenance_request_dw(id, info_change, what_info)
 
     def update_maintenance_logic(id , updated_data, what_data: int):
-        maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)
+
+        all_maintenances = DW_Maintenance_request.get_all_maintenance_requests_dw()
+        for maintenance in all_maintenances:
+            if id == maintenance.id and maintenance.status != "closed":
+
+                maintenance_change = DW_Maintenance_request.update_maintenance_request_dw(id, updated_data, what_data)
 
         if maintenance_change:
             return f"Employee with ID {id} updated successfully."
@@ -77,7 +87,7 @@ class Maintenance_request_logic:
         all_maintenances = DW_Maintenance_request.get_all_maintenance_requests_dw()
 
         for maintenance in all_maintenances:
-            if id == maintenance.id:
+            if id == maintenance.id and maintenance.status == "Ready":
                 try:
                     DW_Maintenance_request.add_approve_maintenance_report_dw(id)
                     return print("Maintenance Report successfully approved")

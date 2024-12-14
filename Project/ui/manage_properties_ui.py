@@ -1,5 +1,5 @@
 import os
-from Models.Property import *
+from Models.Property import * 
 from ui.manager_ui import *
 import os
 from logic.logic_wrapper import * 
@@ -16,7 +16,7 @@ class Manage_properties():
         print("--Press any other button for Main Menu--")
 
         choice = (input())
-    
+
         if choice == "1":
             add_property()
         if choice == "2":
@@ -29,7 +29,6 @@ class Manage_properties():
             Manager_ui.display_menu()
         else: 
             Mainmenu_ui.display_menu()
-
 
 def list_properties():
         properties = []
@@ -56,6 +55,7 @@ def list_properties_by_location():
         
         count = count +1
     print ("     0 )  Go back")
+
     try:
         location_search = int(input())
         if location_search == 0: 
@@ -120,9 +120,6 @@ def add_property():
     else:
         print("Employee not added")
         return Manage_properties.display_menu()
-
-
-        
 
 def update_property_information():
     id = input("Enter the ID of the property you want to update: ")
