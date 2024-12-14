@@ -3,7 +3,6 @@ from Models.Employee import Employee
 from Models.Property import Property
 
 from logic.employee_logic import Employee_logic
-#from logic.contractor_logic import Contractor_logic
 from logic.property_logic import Property_logic
 from logic.maintenance_request_logic import Maintenance_request_logic
 from logic.location_logic import Location_logic
@@ -28,34 +27,11 @@ class LogicWrapper():
     def update_employee_lw(self, id: int, updated_data, what_data: int):
         return self.lemp.update_employee_logic(id, updated_data, what_data)
     
-    def search_employee_name_lw(self,name: str):
-        return self.lemp.search_employee_name(name)
-    
     def search_employee_id_lw(self, id: int) -> Employee:
         return self.lemp.get_singular_employee_logic(id)
     
     def search_employee_location_lw(self, location: str) -> list:
         return self.lemp.get_employees_location_logic(location)
-    
-    """ # contractors 
-    def get_contractor_list_lw() -> list:
-        return Contractor_logic.get_contractor_list()
-    
-    def add_contractor_lw(contractor):
-        Contractor_logic.add_contractor(contractor)
-
-    def update_contractor_lw(id: int, updated_data, what_data: int):
-        Contractor_logic.update_contractor(id, updated_data, what_data)
-
-    def add_contractor_review_lw(id: int, review: str):
-        Contractor_logic.add_contractor_review(id, review)
-
-    def get_contractor_review_lw(id) -> list :
-        return Contractor_logic.get_contractor_review
-    
-    def search_contractor_history_lw(id) -> list:
-        return Contractor_logic.search_contractor_maintainance_history(id) """
-        
 
     # properties 
     def add_property_lw(self, property):
