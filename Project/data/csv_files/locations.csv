@@ -1,8 +1,8 @@
 location,country,airport,phone_number,opening_time,manager
-Nuuk,smoke,green,453451123,4:20,snoop
-Kulusuk,ehv,ehv,874334823,2:00,bolli 
-Þórshöfn,is,whatever,8346578,5:00,fannar
-Tingwall,nkd,sfasdf,745834798,6:00,ldf
-Longyearbyen,sad,dsf,53848343,1123,trofhg
-Reykjavik,iceland,keflavík,123456789,8:00,ipjdfp
-Djupivogur,Iceland,DDF,123456,8:00,Gylfi
+Nuuk,Greenland,Nuuk Airport,4534511,from 6:00 to 17:00,Simon Frederik
+Kulusuk,Greenland,Kulusuk Airport,8743348,from 8:00 to 17:00,Bole Kale
+Þórshöfn,Faroe Islands,Vágar Airport,8346578,from 8:00 to 16:00,Fanar Smare
+Tingwall,Scotland,Glasgow Airport,7458344,from 7:00 to 17:00,Edris Ilba
+Longyearbyen,Svalbard,Svalbard Airport,5384843,from 10:00 to 14:00,Langjen patt
+Reykjavik,iceland,Keflavik Airport,8844345,from 8:00 to 16:00,Hinrik Friðrik
+Djupivogur,Iceland,Keflavik Airport,7213344,8:00 to 16:00,Gylfi Karl

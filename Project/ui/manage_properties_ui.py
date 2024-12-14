@@ -1,12 +1,11 @@
 import os
 from Models.Property import * 
-from logic.logic_wrapper import * 
+from logic.logic_wrapper import LogicWrapper
 
 
 class Manage_properties():
     def __init__(self, llw: LogicWrapper):
         self.llw : LogicWrapper= llw
-
 
     def display_menu(self):        
         while True:
@@ -21,13 +20,13 @@ class Manage_properties():
             choice = (input())
 
             if choice == "1":
-                add_property()
+                add_property(self)
             if choice == "2":
-                list_properties_by_location()
+                list_properties_by_location(self)
             if choice == "3": 
-                update_property_information()
+                update_property_information(self)
             if choice == "4":
-                list_properties()                  
+                list_properties(self)                  
             if choice == "0":
                 return
             else: 
@@ -119,7 +118,7 @@ def add_property(self):
     if confirmation_int == 1: 
         ("1")
         new_property = Property(user_inputs["ID"], user_inputs["Condition"], user_inputs["Additional maintenance"], user_inputs["Location"])
-        self.llw.add_property_lw(new_property)
+        LogicWrapper.add_property_lw(new_property)
         return
     else:
         print("Employee not added")
@@ -145,7 +144,7 @@ def update_property_information(self):
         try:
             confirmation = int(input("Press 1. to confirm that the information is right: "))
             if confirmation == 1:
-                self.llw.change_property_lw(id, new_info, info_list[info_change])
+                LogicWrapper.change_property_lw(info_list[info_change])
                 return 
         except:
             print("Property information not changed")

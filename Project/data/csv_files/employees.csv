@@ -1,8 +1,13 @@
 employee_id,name,email,address,work_phone,personal_phone,location
-2203792244,goober,jacob.yxa@nanair.is,Vei 224 3B Longyearbyen,+47 92 09 77 01,+354 777 1338,Nuuk
-0505953993,Nanna Daema,nanna.daema@nanair.is,Ivan Starostin st. 109 Barantsburg,+47 92 09 77 02,+354 777 1339,Kulusuk
-2910995544,Aqqaluk Lynge,aqqaluk.lynge@nanair.is,Qattaaq 44 3905 Nuuk,+299 35 24 66,+354 777 1362,Þórshöfn
-1010902244,Nauja Lynge,nauja.lynge@nanair.is,Qunguleq 3759 3905 Nuuk,+299 31 21 64,+354 777 1363,Tingwall
-3110795949,Áki Knudsen,aki.knudsen@nanair.is,Traðartún 3 108 Argir,+298 617210,+354 777 1381,Longyearbyen
-0707932291,André Hjaltalin,Andre.hjaltalin@nanair.is, Lágni 19 100 Tórshavn,+298 661441,+354 777 1382,Reykjavik
-0707932291,goober 2,Andre.hjaltalin@nanair.is,Lágni 19 100 Tórshavn,+298 661441,+354 777 1382,Djupivogur
+2203792244,Jacob Yxa,jacob.yxa@nanair.is,Vei 224 3B,+47 92 09 77 01,+354 777 1338,Nuuk
+0505953993,Nanna Daema,nanna.daema@nanair.is,Ivan Starostin st. 109,+47 92 09 77 02,+354 777 1339,Kulusuk
+2910995544,Jakob,aqqaluk.lynge@nanair.is,Qattaaq 44 3905,+299 35 24 66,+354 777 1362,Þórshöfn
+1010902244,Faroe Islands,nauja.lynge@nanair.is,Qunguleq 3759 3905,+299 31 21 64,+354 777 1363,Tingwall
+3110795949,Scotland,aki.knudsen@nanair.is,Traðartún 3 108,+298 617210,+354 777 1381,Longyearbyen
+0707932291,Sími Símon,Andre.hjaltalin@nanair.is, Lágni 13 100,+298 661441,+354 777 1382,Reykjavik
+0707932291,Sími Símon,Andre.hjaltalin@nanair.is,holl 19,+298 661441,+354 777 1382,Djupivogur
+2207962209,tölvi hannes,andfnj@msk.is,heima,8889933,83234432,Reykjavik
+5938293399,bolli borð,asdsf@dsfsfd.is,menntavegur 44,7775443,88998821,Reykjavik
+2207939922,glas derhúfa,der@der.is,heima 123,2353256632,88898973,Reykjavik
+0,0,s@s.is,ldof,435523,2352343232,Reykjavik
+2209082240,jackson borð,jack@ru.is,kópavogur,45480382,6997574,Reykjavik

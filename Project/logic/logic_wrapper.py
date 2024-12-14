@@ -12,7 +12,6 @@ class LogicWrapper():
     def __init__(self):
         self.dlw = DataLayerWrapper()
         self.lemp = Employee_logic(self.dlw)
-        #self.lcon = Contractor_logic(self.dlw)
         self.lpro = Property_logic(self.dlw)
         self.lloc = Location_logic(self.dlw)
         self.matn = Maintenance_request_logic(self.dlw)
@@ -44,9 +43,10 @@ class LogicWrapper():
     def get_properties_by_location_data_LL(self, location):
          return self.lpro.get_properties_by_location_data_logic(location)
 
-    def change_property_lw(self, d, info_change, what_info) -> list:
+    def change_property_lw(self, id, info_change, what_info) -> list:
         return self.lpro.change_property(id, info_change, what_info)
-        
+    
+    
     # location 
 
     def list_all_locations(self) -> list:
